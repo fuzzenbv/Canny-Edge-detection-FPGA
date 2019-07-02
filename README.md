@@ -1,7 +1,12 @@
 # Canny on ArtyZ7000 Architecture
 Canny Edge detector C++ algorithm optimized on the Programmable Logic (HW) of FPGA
 
-https://www.youtube.com/watch?v=6s_39VUlr0U
+DEMO video: https://www.youtube.com/watch?v=6s_39VUlr0U
+
+Software used:
+* Vivado HLS 2018.3
+* Vivado Design Suite 2018.3
+* PYNQ Libraries
 
 ![alt text](https://imgur.com/bKwGCx8.png)
 ![alt text](https://imgur.com/IVyDtJY.png)
