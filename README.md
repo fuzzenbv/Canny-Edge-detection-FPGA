@@ -3,7 +3,7 @@ Canny Edge detector algorith optimized on the Programmable Logic (HW) of the Zyn
 
 https://www.youtube.com/watch?v=6s_39VUlr0U
 
-![alt text](https://imgur.com/bKwGCx8)
+![alt text](https://imgur.com/bKwGCx8.png)
 ![alt text](https://imgur.com/Izc7nkP)
 ![alt text](https://imgur.com/vBWzqCv)
 ![alt text](https://imgur.com/IVyDtJY)
