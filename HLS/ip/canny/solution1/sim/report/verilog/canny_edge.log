@@ -1,0 +1,6 @@
+INFO: [COSIM-47] Using XSIM for RTL simulation.
+INFO: [COSIM-14] Instrumenting C test bench ...
+ERROR: [COSIM-24] TB preprocess failed : /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/test1.cpp:6:24: fatal error: canny_edge.h: No such file or directory
+ #include "canny_edge.h"
+                        ^
+compilation terminated.

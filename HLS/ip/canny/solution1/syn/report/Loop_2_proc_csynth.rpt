@@ -1,0 +1,162 @@
+
+
+================================================================
+== Vivado HLS Report for 'Loop_2_proc'
+================================================================
+* Date:           Mon Apr  8 12:37:56 2019
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        canny
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   6.00|     2.625|        0.75|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+---------+-----+---------+---------+
+    |    Latency    |    Interval   | Pipeline|
+    | min |   max   | min |   max   |   Type  |
+    +-----+---------+-----+---------+---------+
+    |    1|  2592001|    1|  2592001|   none  |
+    +-----+---------+-----+---------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+---------+----------+-----------+-----------+------------+----------+
+        |          |    Latency    | Iteration|  Initiation Interval  |    Trip    |          |
+        | Loop Name| min |   max   |  Latency |  achieved |   target  |    Count   | Pipelined|
+        +----------+-----+---------+----------+-----------+-----------+------------+----------+
+        |- Loop 1  |    0|  2592000|         5|          -|          -| 0 ~ 518400 |    no    |
+        +----------+-----+---------+----------+-----------+-----------+------------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|     60|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|    107|
+|Register         |        -|      -|     157|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|     157|    167|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|   ~0   |   ~0  |
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +------------------------------------+----------+-------+---+----+------------+------------+
+    |            Variable Name           | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +------------------------------------+----------+-------+---+----+------------+------------+
+    |r_fu_115_p2                         |     +    |      0|  0|  26|          19|           1|
+    |out_stream_data_V_1_load_A          |    and   |      0|  0|   2|           1|           1|
+    |out_stream_data_V_1_load_B          |    and   |      0|  0|   2|           1|           1|
+    |out_stream_data_V_1_state_cmp_full  |   icmp   |      0|  0|   8|           2|           1|
+    |tmp_116_i_i_fu_110_p2               |   icmp   |      0|  0|  18|          20|          20|
+    |ap_block_state1                     |    or    |      0|  0|   2|           1|           1|
+    |ap_block_state2                     |    or    |      0|  0|   2|           1|           1|
+    +------------------------------------+----------+-------+---+----+------------+------------+
+    |Total                               |          |      0|  0|  60|          45|          26|
+    +------------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------------------------------+----+-----------+-----+-----------+
+    |                Name               | LUT| Input Size| Bits| Total Bits|
+    +-----------------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                          |  38|          7|    1|          7|
+    |ap_done                            |   9|          2|    1|          2|
+    |canny_edges_data_stream_0_V_blk_n  |   9|          2|    1|          2|
+    |out_stream_data_V_1_data_out       |   9|          2|   32|         64|
+    |out_stream_data_V_1_state          |  15|          3|    2|          6|
+    |out_stream_data_V_TDATA_blk_n      |   9|          2|    1|          2|
+    |p_0169_rec_i_i_reg_95              |   9|          2|   19|         38|
+    |packets_cast_loc_blk_n             |   9|          2|    1|          2|
+    +-----------------------------------+----+-----------+-----+-----------+
+    |Total                              | 107|         22|   58|        123|
+    +-----------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------------+----+----+-----+-----------+
+    |              Name             | FF | LUT| Bits| Const Bits|
+    +-------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                      |   6|   0|    6|          0|
+    |ap_done_reg                    |   1|   0|    1|          0|
+    |out_stream_data_V_1_payload_A  |  32|   0|   32|          0|
+    |out_stream_data_V_1_payload_B  |  32|   0|   32|          0|
+    |out_stream_data_V_1_sel_rd     |   1|   0|    1|          0|
+    |out_stream_data_V_1_sel_wr     |   1|   0|    1|          0|
+    |out_stream_data_V_1_state      |   2|   0|    2|          0|
+    |p_0169_rec_i_i_reg_95          |  19|   0|   19|          0|
+    |packets_cast_loc_rea_reg_131   |  20|   0|   20|          0|
+    |r_reg_139                      |  19|   0|   19|          0|
+    |tmp_69_reg_149                 |   8|   0|    8|          0|
+    |tmp_70_reg_154                 |   8|   0|    8|          0|
+    |tmp_reg_144                    |   8|   0|    8|          0|
+    +-------------------------------+----+----+-----+-----------+
+    |Total                          | 157|   0|  157|          0|
+    +-------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------------------------+-----+-----+------------+-----------------------------+--------------+
+|              RTL Ports              | Dir | Bits|  Protocol  |        Source Object        |    C Type    |
++-------------------------------------+-----+-----+------------+-----------------------------+--------------+
+|ap_clk                               |  in |    1| ap_ctrl_hs |         Loop_2_proc         | return value |
+|ap_rst                               |  in |    1| ap_ctrl_hs |         Loop_2_proc         | return value |
+|ap_start                             |  in |    1| ap_ctrl_hs |         Loop_2_proc         | return value |
+|ap_done                              | out |    1| ap_ctrl_hs |         Loop_2_proc         | return value |
+|ap_continue                          |  in |    1| ap_ctrl_hs |         Loop_2_proc         | return value |
+|ap_idle                              | out |    1| ap_ctrl_hs |         Loop_2_proc         | return value |
+|ap_ready                             | out |    1| ap_ctrl_hs |         Loop_2_proc         | return value |
+|packets_cast_loc_dout                |  in |   20|   ap_fifo  |       packets_cast_loc      |    pointer   |
+|packets_cast_loc_empty_n             |  in |    1|   ap_fifo  |       packets_cast_loc      |    pointer   |
+|packets_cast_loc_read                | out |    1|   ap_fifo  |       packets_cast_loc      |    pointer   |
+|canny_edges_data_stream_0_V_dout     |  in |    8|   ap_fifo  | canny_edges_data_stream_0_V |    pointer   |
+|canny_edges_data_stream_0_V_empty_n  |  in |    1|   ap_fifo  | canny_edges_data_stream_0_V |    pointer   |
+|canny_edges_data_stream_0_V_read     | out |    1|   ap_fifo  | canny_edges_data_stream_0_V |    pointer   |
+|out_stream_data_V_TDATA              | out |   32|    axis    |      out_stream_data_V      |    pointer   |
+|out_stream_data_V_TVALID             | out |    1|    axis    |      out_stream_data_V      |    pointer   |
+|out_stream_data_V_TREADY             |  in |    1|    axis    |      out_stream_data_V      |    pointer   |
++-------------------------------------+-----+-----+------------+-----------------------------+--------------+
+

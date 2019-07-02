@@ -1,0 +1,54 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'canny_edge'" level="0">
+<item name = "Date">Mon Apr  8 12:37:52 2019
+</item>
+<item name = "Version">2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)</item>
+<item name = "Project">canny</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020clg400-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">6.00, 5.250, 0.75</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">234, 10368021, 233, 10368007, dataflow</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grp_hysteresis_fu_310">hysteresis, 10, 10368006, 10, 10368006, none</column>
+<column name="grp_Sobel_fu_322">Sobel, 232, 2093672, 232, 2093672, none</column>
+<column name="grp_Sobel_1_fu_330">Sobel_1, 232, 2093672, 232, 2093672, none</column>
+<column name="grp_nonmax_suppression_fu_338">nonmax_suppression, 1, 2079001, 1, 2079001, none</column>
+<column name="grp_gradient_decompositi_fu_346">gradient_decompositi, 1, 6222961, 1, 6222961, none</column>
+<column name="grp_Loop_2_proc_fu_355">Loop_2_proc, 1, 2592001, 1, 2592001, none</column>
+<column name="grp_Loop_1_proc_fu_363">Loop_1_proc, 1, 2073601, 1, 2073601, none</column>
+<column name="grp_Duplicate_fu_372">Duplicate, 1, 2076841, 1, 2076841, none</column>
+<column name="grp_Block_Mat_exit27932_s_fu_381">Block_Mat_exit27932_s, 3, 3, 3, 3, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

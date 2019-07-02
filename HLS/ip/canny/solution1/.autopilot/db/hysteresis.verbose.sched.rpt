@@ -1,0 +1,391 @@
+
+
+================================================================
+== Vivado HLS Report for 'hysteresis'
+================================================================
+* Date:           Mon Apr  8 12:37:50 2019
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        canny
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   6.00|     5.032|        0.75|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+----------+-----+----------+---------+
+    |     Latency    |    Interval    | Pipeline|
+    | min |    max   | min |    max   |   Type  |
+    +-----+----------+-----+----------+---------+
+    |   10|  10368006|   10|  10368006|   none  |
+    +-----+----------+-----+----------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+----------+----------+-----------+-----------+-------------+----------+
+        |          |     Latency    | Iteration|  Initiation Interval  |     Trip    |          |
+        | Loop Name| min |    max   |  Latency |  achieved |   target  |    Count    | Pipelined|
+        +----------+-----+----------+----------+-----------+-----------+-------------+----------+
+        |- Loop 1  |    4|  10368000|   4 ~ 5  |          -|          -| 1 ~ 2073600 |    no    |
+        +----------+-----+----------+----------+-----------+-----------+-------------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 11
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / (!exitcond_flatten)
+8 --> 
+	9  / (tmp_29)
+	10  / (!tmp_29)
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	7  / true
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.55>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%win_val_0_1 = alloca i16"   --->   Operation 12 'alloca' 'win_val_0_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%win_val_0_1_2 = alloca i16"   --->   Operation 13 'alloca' 'win_val_0_1_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%win_val_1_1 = alloca i16"   --->   Operation 14 'alloca' 'win_val_1_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%win_val_1_1_2 = alloca i16"   --->   Operation 15 'alloca' 'win_val_1_1_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%win_val_2_1 = alloca i16"   --->   Operation 16 'alloca' 'win_val_2_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%win_val_2_1_2 = alloca i16"   --->   Operation 17 'alloca' 'win_val_2_1_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%tmp1_1 = alloca i16"   --->   Operation 18 'alloca' 'tmp1_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%tmp0_1 = alloca i16"   --->   Operation 19 'alloca' 'tmp0_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%element_gd_1 = alloca i16"   --->   Operation 20 'alloca' 'element_gd_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%src_cols_V_read = call i32 @_ssdm_op_Read.ap_stable.i32(i32 %src_cols_V)"   --->   Operation 21 'read' 'src_cols_V_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%src_rows_V_read = call i32 @_ssdm_op_Read.ap_stable.i32(i32 %src_rows_V)"   --->   Operation 22 'read' 'src_rows_V_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%linebuff_val_0 = alloca [1920 x i16], align 2" [canny/canny_edge.cpp:186]   --->   Operation 23 'alloca' 'linebuff_val_0' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 1920> <RAM>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%linebuff_val_1 = alloca [1920 x i16], align 2" [canny/canny_edge.cpp:186]   --->   Operation 24 'alloca' 'linebuff_val_1' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 1920> <RAM>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%lhs_V_cast = zext i32 %src_rows_V_read to i33" [canny/canny_edge.cpp:198]   --->   Operation 25 'zext' 'lhs_V_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (2.55ns)   --->   "%ret_V = add i33 %lhs_V_cast, 1" [canny/canny_edge.cpp:198]   --->   Operation 26 'add' 'ret_V' <Predicate = true> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%lhs_V_2_cast = zext i32 %src_cols_V_read to i33" [canny/canny_edge.cpp:200]   --->   Operation 27 'zext' 'lhs_V_2_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (2.55ns)   --->   "%ret_V_4 = add i33 %lhs_V_2_cast, 1" [canny/canny_edge.cpp:200]   --->   Operation 28 'add' 'ret_V_4' <Predicate = true> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 2 <SV = 1> <Delay = 3.95>
+ST_2 : Operation 29 [1/1] (0.00ns)   --->   "%cast_cast = zext i33 %ret_V to i65" [canny/canny_edge.cpp:198]   --->   Operation 29 'zext' 'cast_cast' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 30 [1/1] (0.00ns)   --->   "%cast1_cast = zext i33 %ret_V_4 to i65" [canny/canny_edge.cpp:200]   --->   Operation 30 'zext' 'cast1_cast' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 31 [5/5] (3.95ns)   --->   "%bound = mul i65 %cast_cast, %cast1_cast" [canny/canny_edge.cpp:198]   --->   Operation 31 'mul' 'bound' <Predicate = true> <Delay = 3.95> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 3.95> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 3 <SV = 2> <Delay = 3.95>
+ST_3 : Operation 32 [4/5] (3.95ns)   --->   "%bound = mul i65 %cast_cast, %cast1_cast" [canny/canny_edge.cpp:198]   --->   Operation 32 'mul' 'bound' <Predicate = true> <Delay = 3.95> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 3.95> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 4 <SV = 3> <Delay = 3.95>
+ST_4 : Operation 33 [3/5] (3.95ns)   --->   "%bound = mul i65 %cast_cast, %cast1_cast" [canny/canny_edge.cpp:198]   --->   Operation 33 'mul' 'bound' <Predicate = true> <Delay = 3.95> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 3.95> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 5 <SV = 4> <Delay = 3.95>
+ST_5 : Operation 34 [2/5] (3.95ns)   --->   "%bound = mul i65 %cast_cast, %cast1_cast" [canny/canny_edge.cpp:198]   --->   Operation 34 'mul' 'bound' <Predicate = true> <Delay = 3.95> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 3.95> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 6 <SV = 5> <Delay = 3.95>
+ST_6 : Operation 35 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %dst_data_stream_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str222, i32 0, i32 0, [1 x i8]* @p_str223, [1 x i8]* @p_str224, [1 x i8]* @p_str225, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str226, [1 x i8]* @p_str227)"   --->   Operation 35 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 36 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16* %src_data_stream_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str215, i32 0, i32 0, [1 x i8]* @p_str216, [1 x i8]* @p_str217, [1 x i8]* @p_str218, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str219, [1 x i8]* @p_str220)"   --->   Operation 36 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 37 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %src_cols_V, [10 x i8]* @ap_stable_str, i32 0, i32 0, [1 x i8]* @p_str158, i32 0, i32 0, [1 x i8]* @p_str159, [1 x i8]* @p_str160, [1 x i8]* @p_str161, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str162, [1 x i8]* @p_str163)"   --->   Operation 37 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 38 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %src_rows_V, [10 x i8]* @ap_stable_str, i32 0, i32 0, [1 x i8]* @p_str164, i32 0, i32 0, [1 x i8]* @p_str165, [1 x i8]* @p_str166, [1 x i8]* @p_str167, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str168, [1 x i8]* @p_str169)"   --->   Operation 38 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 39 [1/1] (0.00ns)   --->   "%threshold_high_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %threshold_high)"   --->   Operation 39 'read' 'threshold_high_read' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 40 [1/1] (0.00ns)   --->   "%threshold_low_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %threshold_low)"   --->   Operation 40 'read' 'threshold_low_read' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 41 [1/1] (0.00ns)   --->   "%rbegin_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([65 x i8]* @hls_KD_KD_LineBuffe_1) nounwind" [/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_mem.h:627->canny/canny_edge.cpp:186]   --->   Operation 41 'specregionbegin' 'rbegin_i' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 42 [1/1] (0.00ns)   --->   "%rend_i = call i32 (...)* @_ssdm_op_SpecRegionEnd([65 x i8]* @hls_KD_KD_LineBuffe_1, i32 %rbegin_i) nounwind" [/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_mem.h:627->canny/canny_edge.cpp:186]   --->   Operation 42 'specregionend' 'rend_i' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 43 [1/1] (2.55ns)   --->   "%tmp_s = add i33 %lhs_V_cast, -1" [canny/canny_edge.cpp:238]   --->   Operation 43 'add' 'tmp_s' <Predicate = true> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 44 [1/1] (2.55ns)   --->   "%ret_V_5 = add i33 %lhs_V_2_cast, -1" [canny/canny_edge.cpp:238]   --->   Operation 44 'add' 'ret_V_5' <Predicate = true> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 45 [1/5] (3.95ns)   --->   "%bound = mul i65 %cast_cast, %cast1_cast" [canny/canny_edge.cpp:198]   --->   Operation 45 'mul' 'bound' <Predicate = true> <Delay = 3.95> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 3.95> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 46 [1/1] (1.76ns)   --->   "br label %1" [canny/canny_edge.cpp:198]   --->   Operation 46 'br' <Predicate = true> <Delay = 1.76>
+
+State 7 <SV = 6> <Delay = 5.03>
+ST_7 : Operation 47 [1/1] (0.00ns)   --->   "%indvar_flatten = phi i65 [ 0, %0 ], [ %indvar_flatten_next, %._crit_edge368 ]"   --->   Operation 47 'phi' 'indvar_flatten' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 48 [1/1] (0.00ns)   --->   "%t_V = phi i32 [ 0, %0 ], [ %t_V_mid2, %._crit_edge368 ]" [canny/canny_edge.cpp:200]   --->   Operation 48 'phi' 't_V' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 49 [1/1] (0.00ns)   --->   "%t_V_2 = phi i32 [ 0, %0 ], [ %j_V, %._crit_edge368 ]"   --->   Operation 49 'phi' 't_V_2' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 50 [1/1] (0.00ns)   --->   "%win_val_0_1_load = load i16* %win_val_0_1"   --->   Operation 50 'load' 'win_val_0_1_load' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 51 [1/1] (0.00ns)   --->   "%win_val_0_1_2_load = load i16* %win_val_0_1_2" [canny/canny_edge.cpp:248]   --->   Operation 51 'load' 'win_val_0_1_2_load' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 52 [1/1] (0.00ns)   --->   "%win_val_1_1_load = load i16* %win_val_1_1"   --->   Operation 52 'load' 'win_val_1_1_load' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 53 [1/1] (0.00ns)   --->   "%win_val_1_1_2_load = load i16* %win_val_1_1_2" [canny/canny_edge.cpp:250]   --->   Operation 53 'load' 'win_val_1_1_2_load' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 54 [1/1] (0.00ns)   --->   "%win_val_2_1_load = load i16* %win_val_2_1"   --->   Operation 54 'load' 'win_val_2_1_load' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 55 [1/1] (0.00ns)   --->   "%win_val_2_1_2_load = load i16* %win_val_2_1_2" [canny/canny_edge.cpp:253]   --->   Operation 55 'load' 'win_val_2_1_2_load' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 56 [1/1] (0.00ns)   --->   "%tmp_cast_mid1 = zext i32 %t_V to i33" [canny/canny_edge.cpp:198]   --->   Operation 56 'zext' 'tmp_cast_mid1' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 57 [1/1] (2.47ns)   --->   "%tmp_24 = icmp ult i32 %t_V, %src_rows_V_read" [canny/canny_edge.cpp:207]   --->   Operation 57 'icmp' 'tmp_24' <Predicate = true> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 58 [1/1] (0.00ns)   --->   "%tmp = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %t_V, i32 1, i32 31)" [canny/canny_edge.cpp:238]   --->   Operation 58 'partselect' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 59 [1/1] (2.47ns)   --->   "%icmp = icmp eq i31 %tmp, 0" [canny/canny_edge.cpp:238]   --->   Operation 59 'icmp' 'icmp' <Predicate = true> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 60 [1/1] (2.47ns)   --->   "%tmp_26 = icmp eq i32 %t_V, 0" [canny/canny_edge.cpp:262]   --->   Operation 60 'icmp' 'tmp_26' <Predicate = true> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 61 [1/1] (2.48ns)   --->   "%tmp_27 = icmp sgt i33 %tmp_cast_mid1, %tmp_s" [canny/canny_edge.cpp:238]   --->   Operation 61 'icmp' 'tmp_27' <Predicate = true> <Delay = 2.48> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 62 [1/1] (0.00ns)   --->   "%tmp_30_cast = zext i32 %t_V_2 to i33" [canny/canny_edge.cpp:200]   --->   Operation 62 'zext' 'tmp_30_cast' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 63 [1/1] (2.48ns)   --->   "%tmp_28 = icmp ult i33 %tmp_30_cast, %ret_V_4" [canny/canny_edge.cpp:200]   --->   Operation 63 'icmp' 'tmp_28' <Predicate = true> <Delay = 2.48> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 64 [1/1] (2.78ns)   --->   "%exitcond_flatten = icmp eq i65 %indvar_flatten, %bound" [canny/canny_edge.cpp:198]   --->   Operation 64 'icmp' 'exitcond_flatten' <Predicate = true> <Delay = 2.78> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 65 [1/1] (3.54ns)   --->   "%indvar_flatten_next = add i65 %indvar_flatten, 1"   --->   Operation 65 'add' 'indvar_flatten_next' <Predicate = true> <Delay = 3.54> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 66 [1/1] (0.00ns)   --->   "store i16 %win_val_2_1_load, i16* %win_val_2_1_2"   --->   Operation 66 'store' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 67 [1/1] (0.00ns)   --->   "store i16 %win_val_1_1_load, i16* %win_val_1_1_2"   --->   Operation 67 'store' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 68 [1/1] (0.00ns)   --->   "store i16 %win_val_0_1_load, i16* %win_val_0_1_2"   --->   Operation 68 'store' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 69 [1/1] (0.00ns)   --->   "br i1 %exitcond_flatten, label %4, label %.reset" [canny/canny_edge.cpp:198]   --->   Operation 69 'br' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 70 [1/1] (2.55ns)   --->   "%i_V = add i32 %t_V, 1" [canny/canny_edge.cpp:198]   --->   Operation 70 'add' 'i_V' <Predicate = (!exitcond_flatten)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 71 [1/1] (0.00ns)   --->   "%tmp_cast = zext i32 %i_V to i33" [canny/canny_edge.cpp:198]   --->   Operation 71 'zext' 'tmp_cast' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_7 : Operation 72 [1/1] (2.47ns)   --->   "%tmp_25_mid1 = icmp ult i32 %i_V, %src_rows_V_read" [canny/canny_edge.cpp:207]   --->   Operation 72 'icmp' 'tmp_25_mid1' <Predicate = (!exitcond_flatten)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 73 [1/1] (0.00ns)   --->   "%tmp_46 = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %i_V, i32 1, i32 31)" [canny/canny_edge.cpp:238]   --->   Operation 73 'partselect' 'tmp_46' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_7 : Operation 74 [1/1] (2.47ns)   --->   "%icmp2 = icmp eq i31 %tmp_46, 0" [canny/canny_edge.cpp:238]   --->   Operation 74 'icmp' 'icmp2' <Predicate = (!exitcond_flatten)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 75 [1/1] (2.47ns)   --->   "%tmp_27_mid1 = icmp eq i32 %i_V, 0" [canny/canny_edge.cpp:262]   --->   Operation 75 'icmp' 'tmp_27_mid1' <Predicate = (!exitcond_flatten)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 76 [1/1] (2.48ns)   --->   "%tmp_28_mid1 = icmp sgt i33 %tmp_cast, %tmp_s" [canny/canny_edge.cpp:238]   --->   Operation 76 'icmp' 'tmp_28_mid1' <Predicate = (!exitcond_flatten)> <Delay = 2.48> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 77 [1/1] (0.69ns)   --->   "%t_V_mid2 = select i1 %tmp_28, i32 %t_V, i32 %i_V" [canny/canny_edge.cpp:200]   --->   Operation 77 'select' 't_V_mid2' <Predicate = (!exitcond_flatten)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_7 : Operation 78 [1/1] (0.00ns)   --->   "ret void" [canny/canny_edge.cpp:268]   --->   Operation 78 'ret' <Predicate = (exitcond_flatten)> <Delay = 0.00>
+
+State 8 <SV = 7> <Delay = 4.16>
+ST_8 : Operation 79 [1/1] (0.69ns)   --->   "%col_assign_mid2 = select i1 %tmp_28, i32 %t_V_2, i32 0" [canny/canny_edge.cpp:200]   --->   Operation 79 'select' 'col_assign_mid2' <Predicate = true> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_8 : Operation 80 [1/1] (0.00ns) (grouped into LUT with out node or_cond)   --->   "%tmp_25_mid2 = select i1 %tmp_28, i1 %tmp_24, i1 %tmp_25_mid1" [canny/canny_edge.cpp:207]   --->   Operation 80 'select' 'tmp_25_mid2' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_8 : Operation 81 [1/1] (0.99ns)   --->   "%tmp_26_mid2 = select i1 %tmp_28, i1 %icmp, i1 %icmp2" [canny/canny_edge.cpp:238]   --->   Operation 81 'select' 'tmp_26_mid2' <Predicate = true> <Delay = 0.99> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_8 : Operation 82 [1/1] (0.99ns)   --->   "%tmp_27_mid2 = select i1 %tmp_28, i1 %tmp_26, i1 %tmp_27_mid1" [canny/canny_edge.cpp:262]   --->   Operation 82 'select' 'tmp_27_mid2' <Predicate = true> <Delay = 0.99> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_8 : Operation 83 [1/1] (0.99ns)   --->   "%tmp_28_mid2 = select i1 %tmp_28, i1 %tmp_27, i1 %tmp_28_mid1" [canny/canny_edge.cpp:238]   --->   Operation 83 'select' 'tmp_28_mid2' <Predicate = true> <Delay = 0.99> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_8 : Operation 84 [1/1] (0.00ns)   --->   "%tmp_30_cast_mid2_cas = zext i32 %col_assign_mid2 to i33" [canny/canny_edge.cpp:200]   --->   Operation 84 'zext' 'tmp_30_cast_mid2_cas' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 85 [1/1] (2.47ns)   --->   "%tmp_29 = icmp ult i32 %col_assign_mid2, %src_cols_V_read" [canny/canny_edge.cpp:207]   --->   Operation 85 'icmp' 'tmp_29' <Predicate = true> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 86 [1/1] (0.99ns) (out node of the LUT)   --->   "%or_cond = and i1 %tmp_25_mid2, %tmp_29" [canny/canny_edge.cpp:207]   --->   Operation 86 'and' 'or_cond' <Predicate = true> <Delay = 0.99> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 87 [1/1] (0.00ns)   --->   "br i1 %or_cond, label %2, label %._crit_edge" [canny/canny_edge.cpp:207]   --->   Operation 87 'br' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 88 [1/1] (0.00ns)   --->   "%tmp_30 = call i32 (...)* @_ssdm_op_SpecRegionBegin([13 x i8]* @p_str59)" [/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:672->/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:711->canny/canny_edge.cpp:208]   --->   Operation 88 'specregionbegin' 'tmp_30' <Predicate = (or_cond)> <Delay = 0.00>
+ST_8 : Operation 89 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecProtocol(i32 0, [1 x i8]* @p_str1) nounwind" [/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:676->/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:711->canny/canny_edge.cpp:208]   --->   Operation 89 'specprotocol' <Predicate = (or_cond)> <Delay = 0.00>
+ST_8 : Operation 90 [1/1] (2.62ns)   --->   "%tmp_51 = call i16 @_ssdm_op_Read.ap_fifo.volatile.i16P(i16* %src_data_stream_V)" [/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:679->/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:711->canny/canny_edge.cpp:208]   --->   Operation 90 'read' 'tmp_51' <Predicate = (or_cond)> <Delay = 2.62> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 0> <FIFO>
+ST_8 : Operation 91 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecRegionEnd([13 x i8]* @p_str59, i32 %tmp_30)" [/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:681->/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:711->canny/canny_edge.cpp:208]   --->   Operation 91 'specregionend' 'empty' <Predicate = (or_cond)> <Delay = 0.00>
+ST_8 : Operation 92 [1/1] (0.00ns)   --->   "store i16 %tmp_51, i16* %element_gd_1" [/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:679->/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:711->canny/canny_edge.cpp:208]   --->   Operation 92 'store' <Predicate = (or_cond)> <Delay = 0.00>
+ST_8 : Operation 93 [1/1] (0.00ns)   --->   "br label %._crit_edge" [canny/canny_edge.cpp:210]   --->   Operation 93 'br' <Predicate = (or_cond)> <Delay = 0.00>
+ST_8 : Operation 94 [1/1] (0.00ns)   --->   "br i1 %tmp_29, label %getval.exit379, label %._crit_edge353" [canny/canny_edge.cpp:214]   --->   Operation 94 'br' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 95 [1/1] (0.00ns)   --->   "%tmp_31 = zext i32 %col_assign_mid2 to i64" [/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_mem.h:835->canny/canny_edge.cpp:215]   --->   Operation 95 'zext' 'tmp_31' <Predicate = (tmp_29)> <Delay = 0.00>
+ST_8 : Operation 96 [1/1] (0.00ns)   --->   "%linebuff_val_1_addr = getelementptr [1920 x i16]* %linebuff_val_1, i64 0, i64 %tmp_31" [/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_mem.h:835->canny/canny_edge.cpp:215]   --->   Operation 96 'getelementptr' 'linebuff_val_1_addr' <Predicate = (tmp_29)> <Delay = 0.00>
+ST_8 : Operation 97 [2/2] (3.25ns)   --->   "%tmp1 = load i16* %linebuff_val_1_addr, align 2" [canny/canny_edge.cpp:215]   --->   Operation 97 'load' 'tmp1' <Predicate = (tmp_29)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 1920> <RAM>
+ST_8 : Operation 98 [1/1] (0.00ns)   --->   "%linebuff_val_0_addr = getelementptr [1920 x i16]* %linebuff_val_0, i64 0, i64 %tmp_31" [/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_mem.h:835->canny/canny_edge.cpp:216]   --->   Operation 98 'getelementptr' 'linebuff_val_0_addr' <Predicate = (tmp_29)> <Delay = 0.00>
+ST_8 : Operation 99 [2/2] (3.25ns)   --->   "%tmp0 = load i16* %linebuff_val_0_addr, align 2" [canny/canny_edge.cpp:216]   --->   Operation 99 'load' 'tmp0' <Predicate = (tmp_29)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 1920> <RAM>
+
+State 9 <SV = 8> <Delay = 3.25>
+ST_9 : Operation 100 [1/2] (3.25ns)   --->   "%tmp1 = load i16* %linebuff_val_1_addr, align 2" [canny/canny_edge.cpp:215]   --->   Operation 100 'load' 'tmp1' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 1920> <RAM>
+ST_9 : Operation 101 [1/2] (3.25ns)   --->   "%tmp0 = load i16* %linebuff_val_0_addr, align 2" [canny/canny_edge.cpp:216]   --->   Operation 101 'load' 'tmp0' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 1920> <RAM>
+ST_9 : Operation 102 [1/1] (0.00ns)   --->   "store i16 %tmp0, i16* %tmp0_1" [canny/canny_edge.cpp:216]   --->   Operation 102 'store' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 103 [1/1] (0.00ns)   --->   "store i16 %tmp1, i16* %tmp1_1" [canny/canny_edge.cpp:215]   --->   Operation 103 'store' <Predicate = true> <Delay = 0.00>
+
+State 10 <SV = 9> <Delay = 4.43>
+ST_10 : Operation 104 [1/1] (3.25ns)   --->   "store i16 %tmp0, i16* %linebuff_val_1_addr, align 2" [canny/canny_edge.cpp:218]   --->   Operation 104 'store' <Predicate = (tmp_29)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 1920> <RAM>
+ST_10 : Operation 105 [1/1] (0.00ns)   --->   "br label %._crit_edge353" [canny/canny_edge.cpp:219]   --->   Operation 105 'br' <Predicate = (tmp_29)> <Delay = 0.00>
+ST_10 : Operation 106 [1/1] (0.00ns)   --->   "br i1 %or_cond, label %insert_bottom.exit, label %._crit_edge354_ifconv" [canny/canny_edge.cpp:221]   --->   Operation 106 'br' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 107 [1/1] (0.00ns)   --->   "%element_gd_1_load_1 = load i16* %element_gd_1" [/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_mem.h:797->/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_mem.h:873->canny/canny_edge.cpp:222]   --->   Operation 107 'load' 'element_gd_1_load_1' <Predicate = (or_cond)> <Delay = 0.00>
+ST_10 : Operation 108 [1/1] (0.00ns)   --->   "%tmp_32 = zext i32 %col_assign_mid2 to i64" [/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_mem.h:797->/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_mem.h:873->canny/canny_edge.cpp:222]   --->   Operation 108 'zext' 'tmp_32' <Predicate = (or_cond)> <Delay = 0.00>
+ST_10 : Operation 109 [1/1] (0.00ns)   --->   "%linebuff_val_0_addr_1 = getelementptr [1920 x i16]* %linebuff_val_0, i64 0, i64 %tmp_32" [/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_mem.h:797->/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_mem.h:873->canny/canny_edge.cpp:222]   --->   Operation 109 'getelementptr' 'linebuff_val_0_addr_1' <Predicate = (or_cond)> <Delay = 0.00>
+ST_10 : Operation 110 [1/1] (3.25ns)   --->   "store i16 %element_gd_1_load_1, i16* %linebuff_val_0_addr_1, align 2" [/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_mem.h:797->/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_mem.h:873->canny/canny_edge.cpp:222]   --->   Operation 110 'store' <Predicate = (or_cond)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 1920> <RAM>
+ST_10 : Operation 111 [1/1] (0.00ns)   --->   "br label %._crit_edge354_ifconv" [canny/canny_edge.cpp:223]   --->   Operation 111 'br' <Predicate = (or_cond)> <Delay = 0.00>
+ST_10 : Operation 112 [1/1] (0.00ns)   --->   "%win_val_0_1_load_2 = load i16* %win_val_0_1" [canny/canny_edge.cpp:247]   --->   Operation 112 'load' 'win_val_0_1_load_2' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 113 [1/1] (0.00ns)   --->   "%win_val_1_1_load_2 = load i16* %win_val_1_1" [canny/canny_edge.cpp:242]   --->   Operation 113 'load' 'win_val_1_1_load_2' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 114 [1/1] (0.00ns)   --->   "%win_val_2_1_load_2 = load i16* %win_val_2_1" [canny/canny_edge.cpp:252]   --->   Operation 114 'load' 'win_val_2_1_load_2' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 115 [1/1] (0.00ns)   --->   "%tmp1_1_load = load i16* %tmp1_1" [canny/canny_edge.cpp:229]   --->   Operation 115 'load' 'tmp1_1_load' <Predicate = (tmp_29)> <Delay = 0.00>
+ST_10 : Operation 116 [1/1] (0.00ns)   --->   "%tmp0_1_load = load i16* %tmp0_1" [canny/canny_edge.cpp:229]   --->   Operation 116 'load' 'tmp0_1_load' <Predicate = (tmp_29)> <Delay = 0.00>
+ST_10 : Operation 117 [1/1] (0.00ns)   --->   "%element_gd_1_load = load i16* %element_gd_1" [canny/canny_edge.cpp:229]   --->   Operation 117 'load' 'element_gd_1_load' <Predicate = (tmp_29)> <Delay = 0.00>
+ST_10 : Operation 118 [1/1] (0.80ns)   --->   "%win_val_2_0_0_win_va = select i1 %tmp_29, i16 %tmp1_1_load, i16 %win_val_2_1_load_2" [canny/canny_edge.cpp:229]   --->   Operation 118 'select' 'win_val_2_0_0_win_va' <Predicate = true> <Delay = 0.80> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_10 : Operation 119 [1/1] (0.80ns)   --->   "%win_val_1_0_0_win_va = select i1 %tmp_29, i16 %tmp0_1_load, i16 %win_val_1_1_load_2" [canny/canny_edge.cpp:229]   --->   Operation 119 'select' 'win_val_1_0_0_win_va' <Predicate = true> <Delay = 0.80> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_10 : Operation 120 [1/1] (0.80ns)   --->   "%win_val_0_0_0_win_va = select i1 %tmp_29, i16 %element_gd_1_load, i16 %win_val_0_1_load_2" [canny/canny_edge.cpp:229]   --->   Operation 120 'select' 'win_val_0_0_0_win_va' <Predicate = true> <Delay = 0.80> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_10 : Operation 121 [1/1] (0.00ns)   --->   "%tmp_50 = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %col_assign_mid2, i32 1, i32 31)" [canny/canny_edge.cpp:238]   --->   Operation 121 'partselect' 'tmp_50' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 122 [1/1] (2.47ns)   --->   "%icmp3 = icmp eq i31 %tmp_50, 0" [canny/canny_edge.cpp:238]   --->   Operation 122 'icmp' 'icmp3' <Predicate = true> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 123 [1/1] (2.48ns)   --->   "%tmp_34 = icmp sgt i33 %tmp_30_cast_mid2_cas, %ret_V_5" [canny/canny_edge.cpp:238]   --->   Operation 123 'icmp' 'tmp_34' <Predicate = true> <Delay = 2.48> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 124 [1/1] (0.00ns) (grouped into LUT with out node or_cond4)   --->   "%tmp24 = or i1 %icmp3, %tmp_28_mid2" [canny/canny_edge.cpp:238]   --->   Operation 124 'or' 'tmp24' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 125 [1/1] (0.00ns) (grouped into LUT with out node or_cond4)   --->   "%tmp25 = or i1 %tmp_26_mid2, %tmp_34" [canny/canny_edge.cpp:238]   --->   Operation 125 'or' 'tmp25' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 126 [1/1] (0.97ns) (out node of the LUT)   --->   "%or_cond4 = or i1 %tmp25, %tmp24" [canny/canny_edge.cpp:238]   --->   Operation 126 'or' 'or_cond4' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 127 [1/1] (0.00ns)   --->   "%tmp_35 = zext i16 %win_val_1_1_load_2 to i32" [canny/canny_edge.cpp:242]   --->   Operation 127 'zext' 'tmp_35' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 128 [1/1] (2.47ns)   --->   "%tmp_36 = icmp slt i32 %tmp_35, %threshold_low_read" [canny/canny_edge.cpp:242]   --->   Operation 128 'icmp' 'tmp_36' <Predicate = true> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 129 [1/1] (0.00ns)   --->   "%tmp_37 = zext i16 %win_val_0_0_0_win_va to i32" [canny/canny_edge.cpp:246]   --->   Operation 129 'zext' 'tmp_37' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 130 [1/1] (0.00ns)   --->   "%tmp_38 = zext i16 %win_val_0_1_load_2 to i32" [canny/canny_edge.cpp:247]   --->   Operation 130 'zext' 'tmp_38' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 131 [1/1] (0.00ns)   --->   "%tmp_39 = zext i16 %win_val_0_1_2_load to i32" [canny/canny_edge.cpp:248]   --->   Operation 131 'zext' 'tmp_39' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 132 [1/1] (0.00ns)   --->   "%tmp_40 = zext i16 %win_val_1_0_0_win_va to i32" [canny/canny_edge.cpp:249]   --->   Operation 132 'zext' 'tmp_40' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 133 [1/1] (0.00ns)   --->   "%tmp_41 = zext i16 %win_val_1_1_2_load to i32" [canny/canny_edge.cpp:250]   --->   Operation 133 'zext' 'tmp_41' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 134 [1/1] (0.00ns)   --->   "%tmp_42 = zext i16 %win_val_2_0_0_win_va to i32" [canny/canny_edge.cpp:251]   --->   Operation 134 'zext' 'tmp_42' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 135 [1/1] (0.00ns)   --->   "%tmp_43 = zext i16 %win_val_2_1_load_2 to i32" [canny/canny_edge.cpp:252]   --->   Operation 135 'zext' 'tmp_43' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 136 [1/1] (0.00ns)   --->   "%tmp_44 = zext i16 %win_val_2_1_2_load to i32" [canny/canny_edge.cpp:253]   --->   Operation 136 'zext' 'tmp_44' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 137 [1/1] (0.00ns) (grouped into LUT with out node tmp27)   --->   "%sel_tmp6_demorgan = or i1 %or_cond4, %tmp_36" [canny/canny_edge.cpp:242]   --->   Operation 137 'or' 'sel_tmp6_demorgan' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 138 [1/1] (0.00ns) (grouped into LUT with out node tmp27)   --->   "%sel_tmp6 = xor i1 %sel_tmp6_demorgan, true" [canny/canny_edge.cpp:242]   --->   Operation 138 'xor' 'sel_tmp6' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 139 [1/1] (2.47ns)   --->   "%slt = icmp slt i32 %threshold_high_read, %tmp_35" [canny/canny_edge.cpp:245]   --->   Operation 139 'icmp' 'slt' <Predicate = true> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 140 [1/1] (0.00ns) (grouped into LUT with out node tmp27)   --->   "%rev = xor i1 %slt, true" [canny/canny_edge.cpp:245]   --->   Operation 140 'xor' 'rev' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 141 [1/1] (2.47ns)   --->   "%slt1 = icmp slt i32 %threshold_high_read, %tmp_37" [canny/canny_edge.cpp:247]   --->   Operation 141 'icmp' 'slt1' <Predicate = true> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 142 [1/1] (0.00ns) (grouped into LUT with out node tmp27)   --->   "%rev1 = xor i1 %slt1, true" [canny/canny_edge.cpp:247]   --->   Operation 142 'xor' 'rev1' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 143 [1/1] (2.47ns)   --->   "%slt2 = icmp slt i32 %threshold_high_read, %tmp_38" [canny/canny_edge.cpp:247]   --->   Operation 143 'icmp' 'slt2' <Predicate = true> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 144 [1/1] (0.00ns) (grouped into LUT with out node tmp27)   --->   "%rev2 = xor i1 %slt2, true" [canny/canny_edge.cpp:247]   --->   Operation 144 'xor' 'rev2' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 145 [1/1] (2.47ns)   --->   "%slt3 = icmp slt i32 %threshold_high_read, %tmp_39" [canny/canny_edge.cpp:248]   --->   Operation 145 'icmp' 'slt3' <Predicate = true> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 146 [1/1] (0.00ns) (grouped into LUT with out node tmp27)   --->   "%rev3 = xor i1 %slt3, true" [canny/canny_edge.cpp:248]   --->   Operation 146 'xor' 'rev3' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 147 [1/1] (2.47ns)   --->   "%slt4 = icmp slt i32 %threshold_high_read, %tmp_40" [canny/canny_edge.cpp:249]   --->   Operation 147 'icmp' 'slt4' <Predicate = true> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 148 [1/1] (2.47ns)   --->   "%slt5 = icmp slt i32 %threshold_high_read, %tmp_41" [canny/canny_edge.cpp:250]   --->   Operation 148 'icmp' 'slt5' <Predicate = true> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 149 [1/1] (2.47ns)   --->   "%slt6 = icmp slt i32 %threshold_high_read, %tmp_42" [canny/canny_edge.cpp:252]   --->   Operation 149 'icmp' 'slt6' <Predicate = true> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 150 [1/1] (2.47ns)   --->   "%slt7 = icmp slt i32 %threshold_high_read, %tmp_43" [canny/canny_edge.cpp:252]   --->   Operation 150 'icmp' 'slt7' <Predicate = true> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 151 [1/1] (2.47ns)   --->   "%slt8 = icmp slt i32 %threshold_high_read, %tmp_44" [canny/canny_edge.cpp:253]   --->   Operation 151 'icmp' 'slt8' <Predicate = true> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 152 [1/1] (0.00ns) (grouped into LUT with out node tmp27)   --->   "%tmp26 = and i1 %rev, %sel_tmp6" [canny/canny_edge.cpp:253]   --->   Operation 152 'and' 'tmp26' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 153 [1/1] (0.00ns) (grouped into LUT with out node tmp27)   --->   "%tmp28 = and i1 %rev2, %rev3" [canny/canny_edge.cpp:253]   --->   Operation 153 'and' 'tmp28' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 154 [1/1] (0.00ns) (grouped into LUT with out node tmp27)   --->   "%tmp29 = and i1 %tmp28, %rev1" [canny/canny_edge.cpp:253]   --->   Operation 154 'and' 'tmp29' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 155 [1/1] (0.97ns) (out node of the LUT)   --->   "%tmp27 = and i1 %tmp29, %tmp26" [canny/canny_edge.cpp:253]   --->   Operation 155 'and' 'tmp27' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 156 [1/1] (0.00ns)   --->   "store i16 %win_val_2_0_0_win_va, i16* %win_val_2_1" [canny/canny_edge.cpp:229]   --->   Operation 156 'store' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 157 [1/1] (0.00ns)   --->   "store i16 %win_val_1_0_0_win_va, i16* %win_val_1_1" [canny/canny_edge.cpp:229]   --->   Operation 157 'store' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 158 [1/1] (0.00ns)   --->   "store i16 %win_val_0_0_0_win_va, i16* %win_val_0_1" [canny/canny_edge.cpp:229]   --->   Operation 158 'store' <Predicate = true> <Delay = 0.00>
+
+State 11 <SV = 10> <Delay = 4.59>
+ST_11 : Operation 159 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp4)   --->   "%rev4 = xor i1 %slt4, true" [canny/canny_edge.cpp:249]   --->   Operation 159 'xor' 'rev4' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 160 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp4)   --->   "%rev5 = xor i1 %slt5, true" [canny/canny_edge.cpp:250]   --->   Operation 160 'xor' 'rev5' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 161 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp4)   --->   "%rev6 = xor i1 %slt6, true" [canny/canny_edge.cpp:252]   --->   Operation 161 'xor' 'rev6' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 162 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp4)   --->   "%rev7 = xor i1 %slt7, true" [canny/canny_edge.cpp:252]   --->   Operation 162 'xor' 'rev7' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 163 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp4)   --->   "%rev8 = xor i1 %slt8, true" [canny/canny_edge.cpp:253]   --->   Operation 163 'xor' 'rev8' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 164 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp4)   --->   "%tmp30 = and i1 %rev4, %rev5" [canny/canny_edge.cpp:253]   --->   Operation 164 'and' 'tmp30' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 165 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp4)   --->   "%tmp32 = and i1 %rev7, %rev8" [canny/canny_edge.cpp:253]   --->   Operation 165 'and' 'tmp32' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 166 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp4)   --->   "%tmp33 = and i1 %tmp32, %rev6" [canny/canny_edge.cpp:253]   --->   Operation 166 'and' 'tmp33' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 167 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp4)   --->   "%tmp31 = and i1 %tmp33, %tmp30" [canny/canny_edge.cpp:253]   --->   Operation 167 'and' 'tmp31' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 168 [1/1] (0.97ns) (out node of the LUT)   --->   "%sel_tmp4 = and i1 %tmp31, %tmp27" [canny/canny_edge.cpp:253]   --->   Operation 168 'and' 'sel_tmp4' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 169 [1/1] (0.00ns) (grouped into LUT with out node tmp_49)   --->   "%tmp34 = or i1 %or_cond4, %sel_tmp4" [canny/canny_edge.cpp:238]   --->   Operation 169 'or' 'tmp34' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 170 [1/1] (0.00ns) (grouped into LUT with out node tmp_49)   --->   "%tmp_55_demorgan = or i1 %tmp34, %tmp_36" [canny/canny_edge.cpp:238]   --->   Operation 170 'or' 'tmp_55_demorgan' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 171 [1/1] (0.00ns) (grouped into LUT with out node tmp_49)   --->   "%tmp_45 = xor i1 %tmp_55_demorgan, true" [canny/canny_edge.cpp:238]   --->   Operation 171 'xor' 'tmp_45' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 172 [1/1] (0.99ns) (out node of the LUT)   --->   "%tmp_49 = select i1 %tmp_45, i8 -1, i8 0" [canny/canny_edge.cpp:262]   --->   Operation 172 'select' 'tmp_49' <Predicate = true> <Delay = 0.99> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_11 : Operation 173 [1/1] (2.47ns)   --->   "%tmp_47 = icmp eq i32 %col_assign_mid2, 0" [canny/canny_edge.cpp:262]   --->   Operation 173 'icmp' 'tmp_47' <Predicate = true> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 174 [1/1] (0.97ns)   --->   "%or_cond5 = or i1 %tmp_47, %tmp_27_mid2" [canny/canny_edge.cpp:262]   --->   Operation 174 'or' 'or_cond5' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 175 [1/1] (0.00ns)   --->   "br i1 %or_cond5, label %._crit_edge368, label %3" [canny/canny_edge.cpp:262]   --->   Operation 175 'br' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 176 [1/1] (0.00ns)   --->   "%tmp_48 = call i32 (...)* @_ssdm_op_SpecRegionBegin([13 x i8]* @p_str51)" [/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:696->/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:717->canny/canny_edge.cpp:264]   --->   Operation 176 'specregionbegin' 'tmp_48' <Predicate = (!or_cond5)> <Delay = 0.00>
+ST_11 : Operation 177 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecProtocol(i32 0, [1 x i8]* @p_str1) nounwind" [/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:700->/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:717->canny/canny_edge.cpp:264]   --->   Operation 177 'specprotocol' <Predicate = (!or_cond5)> <Delay = 0.00>
+ST_11 : Operation 178 [1/1] (2.62ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i8P(i8* %dst_data_stream_V, i8 %tmp_49)" [/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:703->/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:717->canny/canny_edge.cpp:264]   --->   Operation 178 'write' <Predicate = (!or_cond5)> <Delay = 2.62> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 0> <FIFO>
+ST_11 : Operation 179 [1/1] (0.00ns)   --->   "%empty_15 = call i32 (...)* @_ssdm_op_SpecRegionEnd([13 x i8]* @p_str51, i32 %tmp_48)" [/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:705->/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:717->canny/canny_edge.cpp:264]   --->   Operation 179 'specregionend' 'empty_15' <Predicate = (!or_cond5)> <Delay = 0.00>
+ST_11 : Operation 180 [1/1] (0.00ns)   --->   "br label %._crit_edge368" [canny/canny_edge.cpp:265]   --->   Operation 180 'br' <Predicate = (!or_cond5)> <Delay = 0.00>
+ST_11 : Operation 181 [1/1] (2.55ns)   --->   "%j_V = add i32 %col_assign_mid2, 1" [canny/canny_edge.cpp:200]   --->   Operation 181 'add' 'j_V' <Predicate = true> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 182 [1/1] (0.00ns)   --->   "br label %1" [canny/canny_edge.cpp:200]   --->   Operation 182 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 6ns, clock uncertainty: 0.75ns.
+
+ <State 1>: 2.55ns
+The critical path consists of the following:
+	wire read on port 'src_cols_V' [22]  (0 ns)
+	'add' operation ('ret.V', canny/canny_edge.cpp:200) [31]  (2.55 ns)
+
+ <State 2>: 3.95ns
+The critical path consists of the following:
+	'mul' operation ('bound', canny/canny_edge.cpp:198) [36]  (3.95 ns)
+
+ <State 3>: 3.95ns
+The critical path consists of the following:
+	'mul' operation ('bound', canny/canny_edge.cpp:198) [36]  (3.95 ns)
+
+ <State 4>: 3.95ns
+The critical path consists of the following:
+	'mul' operation ('bound', canny/canny_edge.cpp:198) [36]  (3.95 ns)
+
+ <State 5>: 3.95ns
+The critical path consists of the following:
+	'mul' operation ('bound', canny/canny_edge.cpp:198) [36]  (3.95 ns)
+
+ <State 6>: 3.95ns
+The critical path consists of the following:
+	'mul' operation ('bound', canny/canny_edge.cpp:198) [36]  (3.95 ns)
+
+ <State 7>: 5.03ns
+The critical path consists of the following:
+	'phi' operation ('t.V', canny/canny_edge.cpp:200) with incoming values : ('t_V_mid2', canny/canny_edge.cpp:200) [40]  (0 ns)
+	'add' operation ('i_V', canny/canny_edge.cpp:198) [63]  (2.55 ns)
+	'icmp' operation ('tmp_28_mid1', canny/canny_edge.cpp:238) [73]  (2.48 ns)
+
+ <State 8>: 4.16ns
+The critical path consists of the following:
+	'select' operation ('col_assign_mid2', canny/canny_edge.cpp:200) [65]  (0.698 ns)
+	'icmp' operation ('tmp_29', canny/canny_edge.cpp:207) [77]  (2.47 ns)
+	'and' operation ('or_cond', canny/canny_edge.cpp:207) [78]  (0.993 ns)
+
+ <State 9>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('tmp1', canny/canny_edge.cpp:215) on array 'linebuff.val[1]', canny/canny_edge.cpp:186 [92]  (3.25 ns)
+
+ <State 10>: 4.44ns
+The critical path consists of the following:
+	'icmp' operation ('tmp_34', canny/canny_edge.cpp:238) [119]  (2.48 ns)
+	'or' operation ('tmp25', canny/canny_edge.cpp:238) [121]  (0 ns)
+	'or' operation ('or_cond4', canny/canny_edge.cpp:238) [122]  (0.978 ns)
+	'or' operation ('sel_tmp6_demorgan', canny/canny_edge.cpp:242) [133]  (0 ns)
+	'xor' operation ('sel_tmp6', canny/canny_edge.cpp:242) [134]  (0 ns)
+	'and' operation ('tmp26', canny/canny_edge.cpp:253) [153]  (0 ns)
+	'and' operation ('tmp27', canny/canny_edge.cpp:253) [156]  (0.978 ns)
+
+ <State 11>: 4.6ns
+The critical path consists of the following:
+	'xor' operation ('rev4', canny/canny_edge.cpp:249) [144]  (0 ns)
+	'and' operation ('tmp30', canny/canny_edge.cpp:253) [157]  (0 ns)
+	'and' operation ('tmp31', canny/canny_edge.cpp:253) [160]  (0 ns)
+	'and' operation ('sel_tmp4', canny/canny_edge.cpp:253) [161]  (0.978 ns)
+	'or' operation ('tmp34', canny/canny_edge.cpp:238) [162]  (0 ns)
+	'or' operation ('tmp_55_demorgan', canny/canny_edge.cpp:238) [163]  (0 ns)
+	'xor' operation ('tmp', canny/canny_edge.cpp:238) [164]  (0 ns)
+	'select' operation ('tmp', canny/canny_edge.cpp:262) [165]  (0.993 ns)
+	fifo write on port 'dst_data_stream_V' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:703->/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:717->canny/canny_edge.cpp:264) [175]  (2.62 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

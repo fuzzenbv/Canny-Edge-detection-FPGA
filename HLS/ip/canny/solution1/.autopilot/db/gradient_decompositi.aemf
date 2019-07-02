@@ -1,0 +1,1028 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1554719875000">
+  <ports id="1" name="gx_rows_V" type="PortType" originalName="gx.rows.V" bitwidth="32">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="2" name="gx_cols_V" type="PortType" originalName="gx.cols.V" bitwidth="32">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="3" name="gx_data_stream_V" type="PortType" originalName="gx.data_stream.V" coreName="FIFO_SRL" bitwidth="16" iftype="IfTypeRom">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="4" name="gy_data_stream_V" type="PortType" originalName="gy.data_stream.V" coreName="FIFO_SRL" bitwidth="16" iftype="IfTypeRom">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="5" name="gd_data_stream_V" type="PortType" originalName="gd.data_stream.V" coreName="FIFO_SRL" bitwidth="16" direction="DirOut" iftype="IfTypeRom">
+    <dataInputObjs>write</dataInputObjs>
+  </ports>
+  <edges id="106" source_obj="//@ports.1" sink_obj="//@blocks.0/@node_objs.0"/>
+  <edges id="108" source_obj="//@ports.0" sink_obj="//@blocks.0/@node_objs.1"/>
+  <edges id="109" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.0/@node_objs.2"/>
+  <edges id="112" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@blocks.1/@node_objs.0"/>
+  <edges id="113" source_obj="//@blocks.1/@node_objs.2" sink_obj="//@blocks.1/@node_objs.0" is_back_edge="1"/>
+  <edges id="114" edge_type="CtrlEdge" source_obj="//@blocks.4" sink_obj="//@blocks.1/@node_objs.0" is_back_edge="1"/>
+  <edges id="115" source_obj="//@blocks.1/@node_objs.0" sink_obj="//@blocks.1/@node_objs.1"/>
+  <edges id="116" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@blocks.1/@node_objs.1"/>
+  <edges id="117" source_obj="//@blocks.1/@node_objs.0" sink_obj="//@blocks.1/@node_objs.2"/>
+  <edges id="120" source_obj="//@blocks.1/@node_objs.1" sink_obj="//@blocks.1/@node_objs.3"/>
+  <edges id="121" edge_type="CtrlEdge" source_obj="//@blocks.2" sink_obj="//@blocks.1/@node_objs.3"/>
+  <edges id="122" edge_type="CtrlEdge" source_obj="//@blocks.5" sink_obj="//@blocks.1/@node_objs.3"/>
+  <edges id="123" edge_type="CtrlEdge" source_obj="//@blocks.3" sink_obj="//@blocks.2/@node_objs.0"/>
+  <edges id="125" edge_type="CtrlEdge" source_obj="//@blocks.2" sink_obj="//@blocks.3/@node_objs.0"/>
+  <edges id="126" source_obj="//@blocks.3/@node_objs.2" sink_obj="//@blocks.3/@node_objs.0" is_back_edge="1"/>
+  <edges id="127" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.3/@node_objs.0" is_back_edge="1"/>
+  <edges id="128" source_obj="//@blocks.3/@node_objs.0" sink_obj="//@blocks.3/@node_objs.1"/>
+  <edges id="129" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.3/@node_objs.1"/>
+  <edges id="130" source_obj="//@blocks.3/@node_objs.0" sink_obj="//@blocks.3/@node_objs.2"/>
+  <edges id="132" source_obj="//@blocks.3/@node_objs.1" sink_obj="//@blocks.3/@node_objs.3"/>
+  <edges id="133" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.3/@node_objs.3"/>
+  <edges id="134" edge_type="CtrlEdge" source_obj="//@blocks.4" sink_obj="//@blocks.3/@node_objs.3"/>
+  <edges id="137" source_obj="//@ports.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="139" source_obj="//@ports.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="142" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="145" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="155" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="156" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="158" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
+  <edges id="160" source_obj="//@regions.0/@basic_blocks.0/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.6"/>
+  <edges id="167" source_obj="//@regions.0/@basic_blocks.0/@node_objs.6" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.7"/>
+  <edges id="168" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.7"/>
+  <edges id="171" source_obj="//@regions.0/@basic_blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.8"/>
+  <edges id="172" source_obj="//@regions.0/@basic_blocks.0/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.8"/>
+  <edges id="173" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.9"/>
+  <edges id="181" source_obj="//@regions.0/@basic_blocks.0/@node_objs.9" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.11"/>
+  <edges id="182" source_obj="//@regions.0/@basic_blocks.0/@node_objs.10" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.11"/>
+  <edges id="183" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.12"/>
+  <edges id="187" source_obj="//@regions.0/@basic_blocks.0/@node_objs.12" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.13"/>
+  <edges id="188" source_obj="//@regions.0/@basic_blocks.0/@node_objs.11" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.14"/>
+  <edges id="189" source_obj="//@regions.0/@basic_blocks.0/@node_objs.13" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.14"/>
+  <edges id="190" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.15"/>
+  <edges id="192" source_obj="//@regions.0/@basic_blocks.0/@node_objs.9" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.16"/>
+  <edges id="193" source_obj="//@regions.0/@basic_blocks.0/@node_objs.15" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.16"/>
+  <edges id="194" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.17"/>
+  <edges id="195" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.17"/>
+  <edges id="199" source_obj="//@regions.0/@basic_blocks.0/@node_objs.16" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.18"/>
+  <edges id="209" source_obj="//@regions.0/@basic_blocks.0/@node_objs.19" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.20"/>
+  <edges id="217" source_obj="//@regions.0/@basic_blocks.0/@node_objs.21" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.22"/>
+  <edges id="228" source_obj="//@regions.0/@basic_blocks.0/@node_objs.23" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.24"/>
+  <edges id="229" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.25"/>
+  <edges id="231" source_obj="//@regions.0/@basic_blocks.0/@node_objs.25" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.26"/>
+  <edges id="232" source_obj="//@regions.0/@basic_blocks.0/@node_objs.15" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.26"/>
+  <edges id="233" source_obj="//@regions.0/@basic_blocks.0/@node_objs.24" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.27"/>
+  <edges id="234" source_obj="//@regions.0/@basic_blocks.0/@node_objs.26" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.27"/>
+  <edges id="235" source_obj="//@regions.0/@basic_blocks.0/@node_objs.21" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.28"/>
+  <edges id="241" source_obj="//@regions.0/@basic_blocks.0/@node_objs.29" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.30"/>
+  <edges id="243" source_obj="//@regions.0/@basic_blocks.0/@node_objs.30" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.31"/>
+  <edges id="247" source_obj="//@regions.0/@basic_blocks.0/@node_objs.8" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.32"/>
+  <edges id="248" source_obj="//@regions.0/@basic_blocks.0/@node_objs.14" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.32"/>
+  <edges id="249" source_obj="//@regions.0/@basic_blocks.0/@node_objs.32" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.33"/>
+  <edges id="251" source_obj="//@regions.0/@basic_blocks.0/@node_objs.31" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.33"/>
+  <edges id="252" source_obj="//@regions.0/@basic_blocks.0/@node_objs.8" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.34"/>
+  <edges id="254" source_obj="//@regions.0/@basic_blocks.0/@node_objs.18" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.35"/>
+  <edges id="255" source_obj="//@regions.0/@basic_blocks.0/@node_objs.34" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.35"/>
+  <edges id="256" source_obj="//@regions.0/@basic_blocks.0/@node_objs.35" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.36"/>
+  <edges id="257" source_obj="//@regions.0/@basic_blocks.0/@node_objs.22" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.36"/>
+  <edges id="258" source_obj="//@regions.0/@basic_blocks.0/@node_objs.33" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.36"/>
+  <edges id="259" source_obj="//@regions.0/@basic_blocks.0/@node_objs.8" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.37"/>
+  <edges id="260" source_obj="//@regions.0/@basic_blocks.0/@node_objs.18" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.37"/>
+  <edges id="261" source_obj="//@regions.0/@basic_blocks.0/@node_objs.37" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.38"/>
+  <edges id="263" source_obj="//@regions.0/@basic_blocks.0/@node_objs.27" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.39"/>
+  <edges id="264" source_obj="//@regions.0/@basic_blocks.0/@node_objs.38" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.39"/>
+  <edges id="265" source_obj="//@regions.0/@basic_blocks.0/@node_objs.39" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.40"/>
+  <edges id="266" source_obj="//@regions.0/@basic_blocks.0/@node_objs.28" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.40"/>
+  <edges id="267" source_obj="//@regions.0/@basic_blocks.0/@node_objs.36" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.40"/>
+  <edges id="276" source_obj="//@regions.0/@basic_blocks.0/@node_objs.42" sink_obj="//@ports.4"/>
+  <edges id="278" edge_type="CtrlEdge" source_obj="//@blocks.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.43"/>
+  <edges id="279" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.4/@node_objs.0"/>
+  <edges id="457" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@blocks.1"/>
+  <edges id="458" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.5"/>
+  <edges id="459" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.2"/>
+  <edges id="460" edge_type="CtrlEdge" source_obj="//@blocks.2" sink_obj="//@blocks.3"/>
+  <edges id="461" edge_type="CtrlEdge" source_obj="//@blocks.3" sink_obj="//@blocks.4"/>
+  <edges id="462" edge_type="CtrlEdge" source_obj="//@blocks.3" sink_obj="//@regions.0/@basic_blocks.0"/>
+  <edges id="463" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.3" is_back_edge="1"/>
+  <edges id="464" edge_type="CtrlEdge" source_obj="//@blocks.4" sink_obj="//@blocks.1" is_back_edge="1"/>
+  <edges id="-1" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="-1" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.13"/>
+  <edges id="-1" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.7"/>
+  <edges id="-1" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.24"/>
+  <edges id="-1" source_obj="//@regions.0/@basic_blocks.0/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.41"/>
+  <edges id="-1" source_obj="//@regions.0/@basic_blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.41"/>
+  <edges id="-1" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.10"/>
+  <edges id="-1" source_obj="//@regions.0/@basic_blocks.0/@node_objs.17" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.18"/>
+  <edges id="-1" source_obj="//@regions.0/@basic_blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.19"/>
+  <edges id="-1" source_obj="//@regions.0/@basic_blocks.0/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.21"/>
+  <edges id="-1" source_obj="//@regions.0/@basic_blocks.0/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.29"/>
+  <edges id="-1" source_obj="//@regions.0/@basic_blocks.0/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.19"/>
+  <edges id="-1" source_obj="//@regions.0/@basic_blocks.0/@node_objs.20" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.33"/>
+  <edges id="-1" source_obj="//@regions.0/@basic_blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.21"/>
+  <edges id="-1" source_obj="//@regions.0/@basic_blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.29"/>
+  <edges id="-1" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.23"/>
+  <edges id="-1" source_obj="//@regions.0/@basic_blocks.0/@node_objs.41" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.42"/>
+  <edges id="-1" source_obj="//@regions.0/@basic_blocks.0/@node_objs.40" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.42"/>
+  <blocks id="14" name="block_14" type="BlockType">
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>block_19</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="11" name="gx_cols_V_read" originalName="gx.cols.V" bitwidth="32" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+      <dataInputObjs>gx_cols_V</dataInputObjs>
+      <dataOutputObjs>icmp</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="12" name="gx_rows_V_read" originalName="gx.rows.V" bitwidth="32" opcode="read" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+      <dataInputObjs>gx_rows_V</dataInputObjs>
+      <dataOutputObjs>icmp</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="13" name="node_13" lineNumber="26" fileName="canny/canny_edge.cpp" fileDirectory=".." contextFuncName="gradient_decomposition" opcode="br" m_display="0" m_delay="1.76" m_topoIndex="3" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="26" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+      <controlInputObjs>block_19</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="canny/canny_edge.cpp">
+      <validLinenumbers>26</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="19" name="block_19" type="BlockType">
+    <controlInputObjs>block_14</controlInputObjs>
+    <controlInputObjs>block_101</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>block_103</controlOutputObjs>
+    <controlOutputObjs>block_23</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="15" name="t_V" originalName="i.V" bitwidth="32" opcode="phi" nodeLabel="1.0" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+      <dataInputObjs>add</dataInputObjs>
+      <dataOutputObjs>icmp</dataOutputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+      <controlInputObjs>block_14</controlInputObjs>
+      <controlInputObjs>block_101</controlInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="16" name="exitcond8" lineNumber="26" fileName="canny/canny_edge.cpp" fileDirectory=".." rtlName="exitcond8_fu_195_p2" contextFuncName="gradient_decomposition" bitwidth="1" opcode="icmp" nodeLabel="1.0" m_display="0" m_delay="2.47" m_topoIndex="5" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="26" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+      <dataInputObjs>phi</dataInputObjs>
+      <dataInputObjs>read</dataInputObjs>
+      <dataOutputObjs>br</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="17" name="i_V" lineNumber="26" originalName="i.V" fileName="canny/canny_edge.cpp" fileDirectory=".." rtlName="i_V_fu_200_p2" contextFuncName="gradient_decomposition" bitwidth="32" opcode="add" nodeLabel="1.0" m_display="0" m_delay="2.55" m_topoIndex="6" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="26" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+      <dataInputObjs>phi</dataInputObjs>
+      <dataOutputObjs>phi</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="18" name="node_18" lineNumber="26" fileName="canny/canny_edge.cpp" fileDirectory=".." contextFuncName="gradient_decomposition" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="26" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+      <dataInputObjs>icmp</dataInputObjs>
+      <controlInputObjs>block_23</controlInputObjs>
+      <controlInputObjs>block_103</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="canny/canny_edge.cpp">
+      <validLinenumbers>26</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="23" name="block_23" type="BlockType">
+    <controlInputObjs>block_19</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>block_28</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="22" name="node_22" lineNumber="28" fileName="canny/canny_edge.cpp" fileDirectory=".." contextFuncName="gradient_decomposition" opcode="br" nodeLabel="1.0" m_display="0" m_delay="1.76" m_topoIndex="8" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="28" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+      <controlInputObjs>block_28</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="canny/canny_edge.cpp">
+      <validLinenumbers>28</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="28" name="block_28" type="BlockType">
+    <controlInputObjs>block_23</controlInputObjs>
+    <controlInputObjs>_ifconv</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>block_101</controlOutputObjs>
+    <controlOutputObjs>_ifconv</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="24" name="t_V_3" originalName="j.V" bitwidth="32" opcode="phi" nodeLabel="2.0" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
+      <dataInputObjs>add</dataInputObjs>
+      <dataOutputObjs>icmp</dataOutputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+      <controlInputObjs>block_23</controlInputObjs>
+      <controlInputObjs>_ifconv</controlInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="25" name="exitcond" lineNumber="28" fileName="canny/canny_edge.cpp" fileDirectory=".." rtlName="exitcond_fu_206_p2" contextFuncName="gradient_decomposition" bitwidth="1" opcode="icmp" nodeLabel="2.0" m_display="0" m_delay="2.47" m_topoIndex="11" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="28" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+      <dataInputObjs>phi</dataInputObjs>
+      <dataInputObjs>read</dataInputObjs>
+      <dataOutputObjs>br</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="26" name="j_V" lineNumber="28" originalName="j.V" fileName="canny/canny_edge.cpp" fileDirectory=".." rtlName="j_V_fu_211_p2" contextFuncName="gradient_decomposition" bitwidth="32" opcode="add" nodeLabel="2.0" m_display="0" m_delay="2.55" m_topoIndex="12" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="28" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+      <dataInputObjs>phi</dataInputObjs>
+      <dataOutputObjs>phi</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="27" name="node_27" lineNumber="28" fileName="canny/canny_edge.cpp" fileDirectory=".." contextFuncName="gradient_decomposition" opcode="br" nodeLabel="2.0" m_display="0" m_topoIndex="13" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="28" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+      <dataInputObjs>icmp</dataInputObjs>
+      <controlInputObjs>_ifconv</controlInputObjs>
+      <controlInputObjs>block_101</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="canny/canny_edge.cpp">
+      <validLinenumbers>28</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="101" name="block_101" type="BlockType">
+    <controlInputObjs>block_28</controlInputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>block_19</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="100" name="node_100" lineNumber="26" fileName="canny/canny_edge.cpp" fileDirectory=".." contextFuncName="gradient_decomposition" opcode="br" nodeLabel="2.0" m_display="0" m_topoIndex="20" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="26" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+      <controlInputObjs>block_19</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="canny/canny_edge.cpp">
+      <validLinenumbers>26</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="103" name="block_103" type="BlockType">
+    <controlInputObjs>block_19</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="102" name="node_102" lineNumber="72" fileName="canny/canny_edge.cpp" fileDirectory=".." contextFuncName="gradient_decomposition" opcode="ret" nodeLabel="1.0" m_display="0" m_topoIndex="9" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="72" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+    </node_objs>
+    <fileValidLineNumbers fileName="canny/canny_edge.cpp">
+      <validLinenumbers>72</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <regions anchor_node="92" region_type="1" typeName="Protocol" id="357" RegionName="hls_label_8">
+    <basic_blocks id="98" name="_ifconv" type="BlockType">
+      <controlInputObjs>block_28</controlInputObjs>
+      <controlOutputObjs>phi</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>block_28</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="33" name="tmp_67" lineNumber="679" originalName="tmp" fileName="/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h" fileDirectory=".." contextFuncName="read" bitwidth="16" opcode="read" nodeLabel="2.0" m_display="0" m_delay="2.62" m_topoIndex="14" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h" linenumber="711" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="operator&amp;gt;&amp;gt;"/>
+        <inlineStackInfo fileName="/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h" linenumber="679" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="read"/>
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="35" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <dataInputObjs>gx_data_stream_V</dataInputObjs>
+        <dataOutputObjs>sub</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <dataOutputObjs>xor</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="37" name="tmp_68" lineNumber="679" originalName="tmp" fileName="/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h" fileDirectory=".." contextFuncName="read" bitwidth="16" opcode="read" nodeLabel="2.0" m_display="0" m_delay="2.62" m_topoIndex="15" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h" linenumber="711" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="operator&amp;gt;&amp;gt;"/>
+        <inlineStackInfo fileName="/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h" linenumber="679" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="read"/>
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="36" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <dataInputObjs>gy_data_stream_V</dataInputObjs>
+        <dataOutputObjs>sub</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <dataOutputObjs>xor</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="39" name="xs_V_3" lineNumber="188" originalName="xs.V" fileName="/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/hls_round_copysign_apfixed.h" fileDirectory="../../../../../../../wrk/2018.3/continuous/2018_12_06_2405991/src/products" rtlName="xs_V_3_fu_217_p2" contextFuncName="fabs_fixed&amp;lt;16&amp;gt;" bitwidth="16" opcode="sub" nodeLabel="2.0" m_display="0" m_delay="2.07" m_topoIndex="16" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="41" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <inlineStackInfo fileName="/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/hls_round_copysign_apfixed.h" linenumber="188" fileDirectory="/wrk/2018.3/continuous/2018_12_06_2405991/src/products" functionName="fabs_fixed&amp;lt;16&amp;gt;"/>
+        <inlineStackInfo fileName="/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c++/absint.cpp" linenumber="13" fileDirectory="/wrk/2018.3/continuous/2018_12_06_2405991/src/products" functionName="abs"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>bitset</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="40" name="p_Result_3" lineNumber="189" originalName="__Result__" fileName="/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/hls_round_copysign_apfixed.h" fileDirectory="../../../../../../../wrk/2018.3/continuous/2018_12_06_2405991/src/products" rtlName="p_Result_3_fu_245_p4" contextFuncName="fabs_fixed&amp;lt;16&amp;gt;" bitwidth="16" opcode="bitset" nodeLabel="3.0" m_display="0" m_topoIndex="21" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="41" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <inlineStackInfo fileName="/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/hls_round_copysign_apfixed.h" linenumber="189" fileDirectory="/wrk/2018.3/continuous/2018_12_06_2405991/src/products" functionName="fabs_fixed&amp;lt;16&amp;gt;"/>
+        <inlineStackInfo fileName="/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c++/absint.cpp" linenumber="13" fileDirectory="/wrk/2018.3/continuous/2018_12_06_2405991/src/products" functionName="abs"/>
+        <dataInputObjs>sub</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="42" name="abs_gx" lineNumber="190" originalName="abs_gx" fileName="/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/hls_round_copysign_apfixed.h" fileDirectory="../../../../../../../wrk/2018.3/continuous/2018_12_06_2405991/src/products" rtlName="abs_gx_fu_254_p3" contextFuncName="fabs_fixed&amp;lt;16&amp;gt;" bitwidth="16" opcode="select" nodeLabel="3.0" m_display="0" m_delay="0.8" m_topoIndex="22" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="41" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <inlineStackInfo fileName="/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/hls_round_copysign_apfixed.h" linenumber="190" fileDirectory="/wrk/2018.3/continuous/2018_12_06_2405991/src/products" functionName="fabs_fixed&amp;lt;16&amp;gt;"/>
+        <inlineStackInfo fileName="/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c++/absint.cpp" linenumber="13" fileDirectory="/wrk/2018.3/continuous/2018_12_06_2405991/src/products" functionName="abs"/>
+        <dataInputObjs>bitset</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="43" name="xs_V_4" lineNumber="188" originalName="xs.V" fileName="/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/hls_round_copysign_apfixed.h" fileDirectory="../../../../../../../wrk/2018.3/continuous/2018_12_06_2405991/src/products" rtlName="xs_V_4_fu_231_p2" contextFuncName="fabs_fixed&amp;lt;16&amp;gt;" bitwidth="16" opcode="sub" nodeLabel="2.0" m_display="0" m_delay="2.07" m_topoIndex="18" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="42" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <inlineStackInfo fileName="/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/hls_round_copysign_apfixed.h" linenumber="188" fileDirectory="/wrk/2018.3/continuous/2018_12_06_2405991/src/products" functionName="fabs_fixed&amp;lt;16&amp;gt;"/>
+        <inlineStackInfo fileName="/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c++/absint.cpp" linenumber="13" fileDirectory="/wrk/2018.3/continuous/2018_12_06_2405991/src/products" functionName="abs"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>bitset</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="44" name="p_Result_4" lineNumber="189" originalName="__Result__" fileName="/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/hls_round_copysign_apfixed.h" fileDirectory="../../../../../../../wrk/2018.3/continuous/2018_12_06_2405991/src/products" rtlName="p_Result_4_fu_260_p4" contextFuncName="fabs_fixed&amp;lt;16&amp;gt;" bitwidth="16" opcode="bitset" nodeLabel="3.0" m_display="0" m_topoIndex="23" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="42" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <inlineStackInfo fileName="/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/hls_round_copysign_apfixed.h" linenumber="189" fileDirectory="/wrk/2018.3/continuous/2018_12_06_2405991/src/products" functionName="fabs_fixed&amp;lt;16&amp;gt;"/>
+        <inlineStackInfo fileName="/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c++/absint.cpp" linenumber="13" fileDirectory="/wrk/2018.3/continuous/2018_12_06_2405991/src/products" functionName="abs"/>
+        <dataInputObjs>sub</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="46" name="abs_gy" lineNumber="190" originalName="abs_gy" fileName="/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/hls_round_copysign_apfixed.h" fileDirectory="../../../../../../../wrk/2018.3/continuous/2018_12_06_2405991/src/products" rtlName="abs_gy_fu_269_p3" contextFuncName="fabs_fixed&amp;lt;16&amp;gt;" bitwidth="16" opcode="select" nodeLabel="3.0" m_display="0" m_delay="0.8" m_topoIndex="24" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="42" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <inlineStackInfo fileName="/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/hls_round_copysign_apfixed.h" linenumber="190" fileDirectory="/wrk/2018.3/continuous/2018_12_06_2405991/src/products" functionName="fabs_fixed&amp;lt;16&amp;gt;"/>
+        <inlineStackInfo fileName="/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c++/absint.cpp" linenumber="13" fileDirectory="/wrk/2018.3/continuous/2018_12_06_2405991/src/products" functionName="abs"/>
+        <dataInputObjs>bitset</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="49" name="tmp_s" lineNumber="49" fileName="canny/canny_edge.cpp" fileDirectory=".." rtlName="tmp_s_fu_283_p2" contextFuncName="gradient_decomposition" bitwidth="1" opcode="icmp" nodeLabel="3.0" m_display="0" m_delay="2.42" m_topoIndex="27" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="49" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <dataOutputObjs>xor</dataOutputObjs>
+        <dataOutputObjs>or</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="50" name="tmp_53" lineNumber="49" fileName="canny/canny_edge.cpp" fileDirectory=".." rtlName="tmp_53_fu_289_p2" contextFuncName="gradient_decomposition" bitwidth="1" opcode="icmp" nodeLabel="3.0" m_display="0" m_delay="2.42" m_topoIndex="28" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="49" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="52" name="rev" lineNumber="49" fileName="canny/canny_edge.cpp" fileDirectory=".." rtlName="rev_fu_301_p2" contextFuncName="gradient_decomposition" bitwidth="1" opcode="xor" nodeLabel="3.0" m_display="0" m_topoIndex="30" m_clusterGroupNumber="1">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="49" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="53" name="or_cond" lineNumber="49" fileName="canny/canny_edge.cpp" fileDirectory=".." rtlName="or_cond_fu_307_p2" contextFuncName="gradient_decomposition" bitwidth="1" opcode="and" nodeLabel="3.0" m_display="0" m_topoIndex="31" m_clusterGroupNumber="1">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="49" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataInputObjs>xor</dataInputObjs>
+        <dataOutputObjs>or</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="54" name="tmp_56" lineNumber="49" fileName="canny/canny_edge.cpp" fileDirectory=".." rtlName="tmp_56_fu_313_p2" contextFuncName="gradient_decomposition" bitwidth="1" opcode="icmp" nodeLabel="3.0" m_display="0" m_delay="2.42" m_topoIndex="32" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="49" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="55" name="or_cond8" lineNumber="49" fileName="canny/canny_edge.cpp" fileDirectory=".." rtlName="or_cond8_fu_318_p2" contextFuncName="gradient_decomposition" bitwidth="1" opcode="and" nodeLabel="3.0" m_display="0" m_topoIndex="33" m_clusterGroupNumber="1">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="49" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>or</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="56" name="or_cond3" lineNumber="49" fileName="canny/canny_edge.cpp" fileDirectory=".." rtlName="or_cond3_fu_323_p2" contextFuncName="gradient_decomposition" bitwidth="1" opcode="or" nodeLabel="3.0" m_display="0" m_topoIndex="34" m_clusterGroupNumber="1">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="49" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <dataInputObjs>and</dataInputObjs>
+        <dataInputObjs>and</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="57" name="tmp_57" lineNumber="53" fileName="canny/canny_edge.cpp" fileDirectory=".." rtlName="tmp_57_fu_329_p2" contextFuncName="gradient_decomposition" bitwidth="1" opcode="icmp" nodeLabel="3.0" m_display="0" m_delay="2.42" m_topoIndex="35" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="53" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="58" name="or_cond6" lineNumber="53" fileName="canny/canny_edge.cpp" fileDirectory=".." rtlName="or_cond6_fu_334_p2" contextFuncName="gradient_decomposition" bitwidth="1" opcode="and" nodeLabel="3.0" m_display="0" m_topoIndex="36" m_clusterGroupNumber="2">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="53" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataOutputObjs>or</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="59" name="tmp_58" lineNumber="53" fileName="canny/canny_edge.cpp" fileDirectory=".." rtlName="tmp_58_fu_340_p2" contextFuncName="gradient_decomposition" bitwidth="16" opcode="and" nodeLabel="3.0" m_display="0" m_topoIndex="37" m_clusterGroupNumber="2">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="53" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>or</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="61" name="or_cond7" lineNumber="53" fileName="canny/canny_edge.cpp" fileDirectory=".." rtlName="or_cond7_fu_352_p2" contextFuncName="gradient_decomposition" bitwidth="1" opcode="or" nodeLabel="3.0" m_display="0" m_delay="0.99" m_topoIndex="39" m_clusterGroupNumber="2">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="53" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <dataInputObjs>and</dataInputObjs>
+        <dataInputObjs>and</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <dataOutputObjs>or</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="65" name="ult" lineNumber="50" fileName="canny/canny_edge.cpp" fileDirectory=".." rtlName="ult_fu_374_p2" contextFuncName="gradient_decomposition" bitwidth="1" opcode="icmp" nodeLabel="3.0" m_display="0" m_delay="2.43" m_topoIndex="43" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="50" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>xor</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="66" name="rev9" lineNumber="50" fileName="canny/canny_edge.cpp" fileDirectory=".." rtlName="rev9_fu_380_p2" contextFuncName="gradient_decomposition" bitwidth="1" opcode="xor" nodeLabel="3.0" m_display="0" m_topoIndex="44" m_clusterGroupNumber="3">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="50" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="69" name="tmp_62" lineNumber="54" fileName="canny/canny_edge.cpp" fileDirectory=".." rtlName="tmp_62_fu_398_p2" contextFuncName="gradient_decomposition" bitwidth="1" opcode="icmp" nodeLabel="3.0" m_display="0" m_delay="2.43" m_topoIndex="47" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="54" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="70" name="dir_g_1" lineNumber="54" fileName="canny/canny_edge.cpp" fileDirectory=".." rtlName="dir_g_1_fu_404_p3" contextFuncName="gradient_decomposition" bitwidth="2" opcode="select" nodeLabel="3.0" m_display="0" m_topoIndex="48" m_clusterGroupNumber="3">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="54" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="72" name="rev10" lineNumber="57" fileName="canny/canny_edge.cpp" fileDirectory=".." rtlName="rev10_fu_419_p2" contextFuncName="gradient_decomposition" bitwidth="1" opcode="xor" nodeLabel="3.0" m_display="0" m_topoIndex="50" m_clusterGroupNumber="4">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="57" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="73" name="or_cond9" lineNumber="57" fileName="canny/canny_edge.cpp" fileDirectory=".." rtlName="or_cond9_fu_425_p2" contextFuncName="gradient_decomposition" bitwidth="1" opcode="and" nodeLabel="3.0" m_display="0" m_topoIndex="51" m_clusterGroupNumber="4">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="57" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <dataInputObjs>xor</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>or</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="74" name="tmp_64" lineNumber="57" fileName="canny/canny_edge.cpp" fileDirectory=".." rtlName="tmp_64_fu_430_p2" contextFuncName="gradient_decomposition" bitwidth="1" opcode="icmp" nodeLabel="3.0" m_display="0" m_delay="2.42" m_topoIndex="52" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="57" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="75" name="or_cond1" lineNumber="57" fileName="canny/canny_edge.cpp" fileDirectory=".." rtlName="or_cond1_fu_435_p2" contextFuncName="gradient_decomposition" bitwidth="1" opcode="and" nodeLabel="3.0" m_display="0" m_topoIndex="53" m_clusterGroupNumber="4">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="57" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataOutputObjs>or</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="76" name="or_cond2" lineNumber="57" fileName="canny/canny_edge.cpp" fileDirectory=".." rtlName="or_cond2_fu_441_p2" contextFuncName="gradient_decomposition" bitwidth="1" opcode="or" nodeLabel="3.0" m_display="0" m_topoIndex="54" m_clusterGroupNumber="4">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="57" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <dataInputObjs>and</dataInputObjs>
+        <dataInputObjs>and</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="77" name="dir_g_2" lineNumber="58" fileName="canny/canny_edge.cpp" fileDirectory=".." rtlName="dir_g_2_fu_525_p3" contextFuncName="gradient_decomposition" bitwidth="2" opcode="select" nodeLabel="4.0" m_display="0" m_topoIndex="67" m_clusterGroupNumber="5">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="58" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="78" name="ult1" lineNumber="62" fileName="canny/canny_edge.cpp" fileDirectory=".." rtlName="ult1_fu_447_p2" contextFuncName="gradient_decomposition" bitwidth="1" opcode="icmp" nodeLabel="3.0" m_display="0" m_delay="2.43" m_topoIndex="55" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="62" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>xor</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="79" name="rev11" lineNumber="62" fileName="canny/canny_edge.cpp" fileDirectory=".." rtlName="rev11_fu_453_p2" contextFuncName="gradient_decomposition" bitwidth="1" opcode="xor" nodeLabel="3.0" m_display="0" m_topoIndex="56" m_clusterGroupNumber="3">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="62" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="80" name="dir_g_3_cast" lineNumber="62" fileName="canny/canny_edge.cpp" fileDirectory=".." rtlName="dir_g_3_cast_fu_459_p3" contextFuncName="gradient_decomposition" bitwidth="2" opcode="select" nodeLabel="3.0" m_display="0" m_topoIndex="57" m_clusterGroupNumber="3">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="62" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <dataInputObjs>xor</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="81" name="sel_tmp" lineNumber="49" fileName="canny/canny_edge.cpp" fileDirectory=".." rtlName="sel_tmp_fu_467_p2" contextFuncName="gradient_decomposition" bitwidth="1" opcode="and" nodeLabel="3.0" m_display="0" m_delay="0.97" m_topoIndex="58" m_clusterGroupNumber="1">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="49" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataInputObjs>or</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="82" name="sel_tmp1" lineNumber="62" fileName="canny/canny_edge.cpp" fileDirectory=".." rtlName="sel_tmp1_fu_473_p3" contextFuncName="gradient_decomposition" bitwidth="2" opcode="select" nodeLabel="3.0" m_display="0" m_topoIndex="59" m_clusterGroupNumber="3">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="62" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <dataInputObjs>and</dataInputObjs>
+        <dataInputObjs>select</dataInputObjs>
+        <dataInputObjs>xor</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="83" name="sel_tmp2" lineNumber="49" fileName="canny/canny_edge.cpp" fileDirectory=".." rtlName="sel_tmp2_fu_481_p2" contextFuncName="gradient_decomposition" bitwidth="1" opcode="xor" nodeLabel="3.0" m_display="0" m_topoIndex="60" m_clusterGroupNumber="3">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="49" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="84" name="sel_tmp3" lineNumber="53" fileName="canny/canny_edge.cpp" fileDirectory=".." rtlName="sel_tmp3_fu_487_p2" contextFuncName="gradient_decomposition" bitwidth="1" opcode="and" nodeLabel="3.0" m_display="0" m_topoIndex="61" m_clusterGroupNumber="3">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="53" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <dataInputObjs>or</dataInputObjs>
+        <dataInputObjs>xor</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="85" name="sel_tmp4" lineNumber="62" fileName="canny/canny_edge.cpp" fileDirectory=".." rtlName="sel_tmp4_fu_493_p3" contextFuncName="gradient_decomposition" bitwidth="2" opcode="select" nodeLabel="3.0" m_display="0" m_delay="0.99" m_topoIndex="62" m_clusterGroupNumber="3">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="62" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <dataInputObjs>and</dataInputObjs>
+        <dataInputObjs>select</dataInputObjs>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="86" name="sel_tmp7_demorgan" lineNumber="53" fileName="canny/canny_edge.cpp" fileDirectory=".." rtlName="sel_tmp7_demorgan_fu_501_p2" contextFuncName="gradient_decomposition" bitwidth="1" opcode="or" nodeLabel="3.0" m_display="0" m_topoIndex="63" m_clusterGroupNumber="4">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="53" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataInputObjs>or</dataInputObjs>
+        <dataOutputObjs>xor</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="87" name="sel_tmp7" lineNumber="53" fileName="canny/canny_edge.cpp" fileDirectory=".." rtlName="sel_tmp7_fu_507_p2" contextFuncName="gradient_decomposition" bitwidth="1" opcode="xor" nodeLabel="3.0" m_display="0" m_topoIndex="64" m_clusterGroupNumber="4">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="53" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <dataInputObjs>or</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="88" name="sel_tmp8" lineNumber="57" fileName="canny/canny_edge.cpp" fileDirectory=".." rtlName="sel_tmp8_fu_513_p2" contextFuncName="gradient_decomposition" bitwidth="1" opcode="and" nodeLabel="3.0" m_display="0" m_delay="0.97" m_topoIndex="65" m_clusterGroupNumber="4">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="57" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <dataInputObjs>or</dataInputObjs>
+        <dataInputObjs>xor</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="89" name="dir_g_6" lineNumber="62" fileName="canny/canny_edge.cpp" fileDirectory=".." rtlName="dir_g_6_fu_532_p3" contextFuncName="gradient_decomposition" bitwidth="2" opcode="select" nodeLabel="4.0" m_display="0" m_delay="0.99" m_topoIndex="68" m_clusterGroupNumber="5">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="62" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <dataInputObjs>and</dataInputObjs>
+        <dataInputObjs>select</dataInputObjs>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>write</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="90" name="abs_g1" lineNumber="66" fileName="canny/canny_edge.cpp" fileDirectory=".." rtlName="abs_g1_fu_519_p2" contextFuncName="gradient_decomposition" bitwidth="14" opcode="add" nodeLabel="3.0" m_display="0" m_delay="1.81" m_topoIndex="66" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="66" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>write</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="94" name="node_94" lineNumber="703" fileName="/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h" fileDirectory=".." contextFuncName="write" opcode="write" nodeLabel="4.0" m_display="0" m_delay="2.62" m_topoIndex="70" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h" linenumber="717" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="operator&amp;lt;&amp;lt;"/>
+        <inlineStackInfo fileName="/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h" linenumber="703" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="write"/>
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="69" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <dataInputObjs>add</dataInputObjs>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>gd_data_stream_V</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="97" name="node_97" lineNumber="28" fileName="canny/canny_edge.cpp" fileDirectory=".." contextFuncName="gradient_decomposition" opcode="br" nodeLabel="4.0" m_display="0" m_topoIndex="71" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="canny/canny_edge.cpp" linenumber="28" fileDirectory="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS" functionName="gradient_decomposition"/>
+        <controlInputObjs>block_28</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="canny/canny_edge.cpp">
+        <validLinenumbers>49</validLinenumbers>
+        <validLinenumbers>53</validLinenumbers>
+        <validLinenumbers>50</validLinenumbers>
+        <validLinenumbers>54</validLinenumbers>
+        <validLinenumbers>57</validLinenumbers>
+        <validLinenumbers>58</validLinenumbers>
+        <validLinenumbers>62</validLinenumbers>
+        <validLinenumbers>66</validLinenumbers>
+        <validLinenumbers>28</validLinenumbers>
+        <validLinenumbers>35</validLinenumbers>
+        <validLinenumbers>36</validLinenumbers>
+        <validLinenumbers>41</validLinenumbers>
+        <validLinenumbers>42</validLinenumbers>
+        <validLinenumbers>69</validLinenumbers>
+      </fileValidLineNumbers>
+      <fileValidLineNumbers fileName="/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c++/absint.cpp">
+        <validLinenumbers>13</validLinenumbers>
+      </fileValidLineNumbers>
+      <fileValidLineNumbers fileName="/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h">
+        <validLinenumbers>679</validLinenumbers>
+        <validLinenumbers>703</validLinenumbers>
+        <validLinenumbers>711</validLinenumbers>
+        <validLinenumbers>717</validLinenumbers>
+      </fileValidLineNumbers>
+      <fileValidLineNumbers fileName="/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/hls_round_copysign_apfixed.h">
+        <validLinenumbers>188</validLinenumbers>
+        <validLinenumbers>189</validLinenumbers>
+        <validLinenumbers>190</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+  </regions>
+  <ScheduleInfo time="0"/>
+  <ScheduleInfo time="1"/>
+  <ScheduleInfo time="2"/>
+  <ScheduleInfo time="3"/>
+  <ScheduleInfo time="4"/>
+  <regnodes realName="abs_g1_reg_627">
+    <nodeIds>90</nodeIds>
+  </regnodes>
+  <regnodes realName="sel_tmp4_reg_617">
+    <nodeIds>85</nodeIds>
+  </regnodes>
+  <regnodes realName="p_Result_s_reg_595">
+    <nodeIds>41</nodeIds>
+  </regnodes>
+  <regnodes realName="t_V_reg_173">
+    <nodeIds>15</nodeIds>
+  </regnodes>
+  <regnodes realName="t_V_3_reg_184">
+    <nodeIds>24</nodeIds>
+  </regnodes>
+  <regnodes realName="tmp_68_reg_581">
+    <nodeIds>37</nodeIds>
+  </regnodes>
+  <regnodes realName="p_Result_2_reg_606">
+    <nodeIds>45</nodeIds>
+  </regnodes>
+  <regnodes realName="tmp_62_reg_612">
+    <nodeIds>69</nodeIds>
+  </regnodes>
+  <regnodes realName="gx_cols_V_read_reg_546">
+    <nodeIds>11</nodeIds>
+  </regnodes>
+  <regnodes realName="xs_V_3_reg_590">
+    <nodeIds>39</nodeIds>
+  </regnodes>
+  <regnodes realName="sel_tmp8_reg_622">
+    <nodeIds>88</nodeIds>
+  </regnodes>
+  <regnodes realName="xs_V_4_reg_601">
+    <nodeIds>43</nodeIds>
+  </regnodes>
+  <regnodes realName="tmp_67_reg_572">
+    <nodeIds>33</nodeIds>
+  </regnodes>
+  <regnodes realName="gx_rows_V_read_reg_551">
+    <nodeIds>12</nodeIds>
+  </regnodes>
+  <regnodes realName="j_V_reg_567">
+    <nodeIds>26</nodeIds>
+  </regnodes>
+  <regnodes realName="i_V_reg_559">
+    <nodeIds>17</nodeIds>
+  </regnodes>
+  <expressionNodes realName="tmp_55_fu_294">
+    <nodeIds>51</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_61_fu_390">
+    <nodeIds>68</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_64_fu_430">
+    <nodeIds>74</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="exitcond8_fu_195">
+    <nodeIds>16</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="element_gd_fu_538">
+    <nodeIds>91</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="or_cond8_fu_318">
+    <nodeIds>55</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="sel_tmp4_fu_493">
+    <nodeIds>85</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="dir_g_cast_fu_386">
+    <nodeIds>67</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_62_fu_398">
+    <nodeIds>69</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="or_cond7_fu_352">
+    <nodeIds>61</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="or_cond1_fu_435">
+    <nodeIds>75</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="sel_tmp3_fu_487">
+    <nodeIds>84</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_s_fu_283">
+    <nodeIds>49</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="p_Result_4_fu_260">
+    <nodeIds>44</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="sel_tmp_fu_467">
+    <nodeIds>81</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="xs_V_3_fu_217">
+    <nodeIds>39</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="or_cond9_fu_425">
+    <nodeIds>73</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="exitcond_fu_206">
+    <nodeIds>25</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="p_Result_3_fu_245">
+    <nodeIds>40</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="i_V_fu_200">
+    <nodeIds>17</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_57_fu_329">
+    <nodeIds>57</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_58_fu_340">
+    <nodeIds>59</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="sel_tmp2_fu_481">
+    <nodeIds>83</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="j_V_fu_211">
+    <nodeIds>26</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="or_cond2_fu_441">
+    <nodeIds>76</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_53_fu_289">
+    <nodeIds>50</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="ult_fu_374">
+    <nodeIds>65</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="dir_g_6_fu_532">
+    <nodeIds>89</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="abs_g1_fu_519">
+    <nodeIds>90</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_103_cast_fu_358">
+    <nodeIds>62</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="abs_gx_fu_254">
+    <nodeIds>42</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="sel_tmp8_fu_513">
+    <nodeIds>88</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="rev_fu_301">
+    <nodeIds>52</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="dir_g_3_cast_fu_459">
+    <nodeIds>80</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_fu_275">
+    <nodeIds>47</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="t_V_3_phi_fu_188">
+    <nodeIds>24</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="p_Result_2_fu_237">
+    <nodeIds>45</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_104_cast_fu_362">
+    <nodeIds>63</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_54_fu_279">
+    <nodeIds>48</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_63_fu_412">
+    <nodeIds>71</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="or_cond6_fu_334">
+    <nodeIds>58</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_56_fu_313">
+    <nodeIds>54</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="abs_gy_fu_269">
+    <nodeIds>46</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="sel_tmp7_fu_507">
+    <nodeIds>87</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_60_fu_366">
+    <nodeIds>64</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="rev10_fu_419">
+    <nodeIds>72</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="or_cond_fu_307">
+    <nodeIds>53</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="dir_g_2_fu_525">
+    <nodeIds>77</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="dir_g_1_fu_404">
+    <nodeIds>70</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="rev11_fu_453">
+    <nodeIds>79</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="xs_V_4_fu_231">
+    <nodeIds>43</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="ult1_fu_447">
+    <nodeIds>78</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="t_V_phi_fu_177">
+    <nodeIds>15</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_59_fu_344">
+    <nodeIds>60</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="or_cond3_fu_323">
+    <nodeIds>56</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="sel_tmp1_fu_473">
+    <nodeIds>82</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="p_Result_s_fu_223">
+    <nodeIds>41</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="sel_tmp7_demorgan_fu_501">
+    <nodeIds>86</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="rev9_fu_380">
+    <nodeIds>66</nodeIds>
+  </expressionNodes>
+  <ioNodes realName="gx_rows_V_read_read_fu_148">
+    <nodeIds>12</nodeIds>
+  </ioNodes>
+  <ioNodes realName="tmp_67_read_fu_154">
+    <nodeIds>33</nodeIds>
+  </ioNodes>
+  <ioNodes realName="tmp_68_read_fu_160">
+    <nodeIds>37</nodeIds>
+  </ioNodes>
+  <ioNodes realName="StgValue_93_write_fu_166">
+    <nodeIds>94</nodeIds>
+  </ioNodes>
+  <ioNodes realName="gx_cols_V_read_read_fu_142">
+    <nodeIds>11</nodeIds>
+  </ioNodes>
+  <ioPorts name="gd_data_stream_V">
+    <contents name="write">
+      <nodeIds>94</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="gx_cols_V">
+    <contents name="read">
+      <nodeIds>11</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="gx_data_stream_V">
+    <contents name="read">
+      <nodeIds>33</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="gx_rows_V">
+    <contents name="read">
+      <nodeIds>12</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="gy_data_stream_V">
+    <contents name="read">
+      <nodeIds>37</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="6" stage="1" latency="1"/>
+      <operations id="7" stage="1" latency="1"/>
+      <operations id="8" stage="1" latency="1"/>
+      <operations id="9" stage="1" latency="1"/>
+      <operations id="10" stage="1" latency="1"/>
+      <operations id="11" stage="1" latency="1"/>
+      <operations id="12" stage="1" latency="1"/>
+      <operations id="13" stage="1" latency="1"/>
+    </states>
+    <states id="2">
+      <operations id="15" stage="1" latency="1"/>
+      <operations id="16" stage="1" latency="1"/>
+      <operations id="17" stage="1" latency="1"/>
+      <operations id="18" stage="1" latency="1"/>
+      <operations id="20" stage="1" latency="1"/>
+      <operations id="21" stage="1" latency="1"/>
+      <operations id="22" stage="1" latency="1"/>
+      <operations id="102" stage="1" latency="1"/>
+    </states>
+    <states id="3">
+      <operations id="24" stage="1" latency="1"/>
+      <operations id="25" stage="1" latency="1"/>
+      <operations id="26" stage="1" latency="1"/>
+      <operations id="27" stage="1" latency="1"/>
+      <operations id="31" stage="1" latency="1"/>
+      <operations id="32" stage="1" latency="1"/>
+      <operations id="33" stage="1" latency="1"/>
+      <operations id="34" stage="1" latency="1"/>
+      <operations id="35" stage="1" latency="1"/>
+      <operations id="36" stage="1" latency="1"/>
+      <operations id="37" stage="1" latency="1"/>
+      <operations id="38" stage="1" latency="1"/>
+      <operations id="39" stage="1" latency="1"/>
+      <operations id="41" stage="1" latency="1"/>
+      <operations id="43" stage="1" latency="1"/>
+      <operations id="45" stage="1" latency="1"/>
+      <operations id="99" stage="1" latency="1"/>
+      <operations id="100" stage="1" latency="1"/>
+    </states>
+    <states id="4">
+      <operations id="40" stage="1" latency="1"/>
+      <operations id="42" stage="1" latency="1"/>
+      <operations id="44" stage="1" latency="1"/>
+      <operations id="46" stage="1" latency="1"/>
+      <operations id="47" stage="1" latency="1"/>
+      <operations id="48" stage="1" latency="1"/>
+      <operations id="49" stage="1" latency="1"/>
+      <operations id="50" stage="1" latency="1"/>
+      <operations id="51" stage="1" latency="1"/>
+      <operations id="52" stage="1" latency="1"/>
+      <operations id="53" stage="1" latency="1"/>
+      <operations id="54" stage="1" latency="1"/>
+      <operations id="55" stage="1" latency="1"/>
+      <operations id="56" stage="1" latency="1"/>
+      <operations id="57" stage="1" latency="1"/>
+      <operations id="58" stage="1" latency="1"/>
+      <operations id="59" stage="1" latency="1"/>
+      <operations id="60" stage="1" latency="1"/>
+      <operations id="61" stage="1" latency="1"/>
+      <operations id="62" stage="1" latency="1"/>
+      <operations id="63" stage="1" latency="1"/>
+      <operations id="64" stage="1" latency="1"/>
+      <operations id="65" stage="1" latency="1"/>
+      <operations id="66" stage="1" latency="1"/>
+      <operations id="67" stage="1" latency="1"/>
+      <operations id="68" stage="1" latency="1"/>
+      <operations id="69" stage="1" latency="1"/>
+      <operations id="70" stage="1" latency="1"/>
+      <operations id="71" stage="1" latency="1"/>
+      <operations id="72" stage="1" latency="1"/>
+      <operations id="73" stage="1" latency="1"/>
+      <operations id="74" stage="1" latency="1"/>
+      <operations id="75" stage="1" latency="1"/>
+      <operations id="76" stage="1" latency="1"/>
+      <operations id="78" stage="1" latency="1"/>
+      <operations id="79" stage="1" latency="1"/>
+      <operations id="80" stage="1" latency="1"/>
+      <operations id="81" stage="1" latency="1"/>
+      <operations id="82" stage="1" latency="1"/>
+      <operations id="83" stage="1" latency="1"/>
+      <operations id="84" stage="1" latency="1"/>
+      <operations id="85" stage="1" latency="1"/>
+      <operations id="86" stage="1" latency="1"/>
+      <operations id="87" stage="1" latency="1"/>
+      <operations id="88" stage="1" latency="1"/>
+      <operations id="90" stage="1" latency="1"/>
+    </states>
+    <states id="5">
+      <operations id="29" stage="1" latency="1"/>
+      <operations id="30" stage="1" latency="1"/>
+      <operations id="77" stage="1" latency="1"/>
+      <operations id="89" stage="1" latency="1"/>
+      <operations id="91" stage="1" latency="1"/>
+      <operations id="92" stage="1" latency="1"/>
+      <operations id="93" stage="1" latency="1"/>
+      <operations id="94" stage="1" latency="1"/>
+      <operations id="95" stage="1" latency="1"/>
+      <operations id="96" stage="1" latency="1"/>
+      <operations id="97" stage="1" latency="1"/>
+    </states>
+    <transitions inState="1" outState="2">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="2" outState="3">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="3" outState="4">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="4" outState="5">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="5" outState="3">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="3" outState="2">
+      <condition id="-1"/>
+    </transitions>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="gradient_decompositi" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="1" mMaxLatency="6222961">
+      <subRegions>2</subRegions>
+      <subRegions>3</subRegions>
+      <subRegions>7</subRegions>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="2" mTag="Entry" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>14</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="3" mTag="Loop 1" mII="-1" mDepth="-1" mMaxTripCount="1080" mMaxLatency="6222960" mType="1">
+      <subRegions>4</subRegions>
+      <subRegions>5</subRegions>
+      <subRegions>6</subRegions>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="4" mTag="Region 1" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>19</basicBlocks>
+      <basicBlocks>23</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="5" mTag="Loop 1.1" mII="-1" mDepth="-1" mMaxTripCount="1920" mMaxLatency="5760" mType="1">
+      <basicBlocks>28</basicBlocks>
+      <basicBlocks>98</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="6" mTag="Region 2" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>101</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="7" mTag="Return" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>103</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

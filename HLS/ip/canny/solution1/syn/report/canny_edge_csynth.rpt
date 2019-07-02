@@ -1,0 +1,202 @@
+
+
+================================================================
+== Vivado HLS Report for 'canny_edge'
+================================================================
+* Date:           Mon Apr  8 12:37:56 2019
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        canny
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   6.00|     5.250|        0.75|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+----------+-----+----------+----------+
+    |     Latency    |    Interval    | Pipeline |
+    | min |    max   | min |    max   |   Type   |
+    +-----+----------+-----+----------+----------+
+    |  234|  10368021|  233|  10368007| dataflow |
+    +-----+----------+-----+----------+----------+
+
+    + Detail: 
+        * Instance: 
+        +-------------------------+-----------------------+-----+----------+-----+----------+---------+
+        |                         |                       |     Latency    |    Interval    | Pipeline|
+        |         Instance        |         Module        | min |    max   | min |    max   |   Type  |
+        +-------------------------+-----------------------+-----+----------+-----+----------+---------+
+        |hysteresis_U0            |hysteresis             |   10|  10368006|   10|  10368006|   none  |
+        |Sobel_U0                 |Sobel                  |  232|   2093672|  232|   2093672|   none  |
+        |Sobel_1_U0               |Sobel_1                |  232|   2093672|  232|   2093672|   none  |
+        |nonmax_suppression_U0    |nonmax_suppression     |    1|   2079001|    1|   2079001|   none  |
+        |gradient_decompositi_U0  |gradient_decompositi   |    1|   6222961|    1|   6222961|   none  |
+        |Loop_2_proc_U0           |Loop_2_proc            |    1|   2592001|    1|   2592001|   none  |
+        |Loop_1_proc_U0           |Loop_1_proc            |    1|   2073601|    1|   2073601|   none  |
+        |Duplicate_U0             |Duplicate              |    1|   2076841|    1|   2076841|   none  |
+        |Block_Mat_exit27932_U0   |Block_Mat_exit27932_s  |    3|         3|    3|         3|   none  |
+        +-------------------------+-----------------------+-----+----------+-----+----------+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|     36|
+|FIFO             |        0|      -|      51|    257|
+|Instance         |       14|     17|    3805|   5752|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|     36|
+|Register         |        -|      -|       6|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |       14|     17|    3862|   6081|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        5|      7|       3|     11|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    +--------------------------------+------------------------------+---------+-------+-----+------+
+    |            Instance            |            Module            | BRAM_18K| DSP48E|  FF |  LUT |
+    +--------------------------------+------------------------------+---------+-------+-----+------+
+    |Block_Mat_exit27932_U0          |Block_Mat_exit27932_s         |        0|      1|    5|    47|
+    |Duplicate_U0                    |Duplicate                     |        0|      0|   42|   167|
+    |Loop_1_proc_U0                  |Loop_1_proc                   |        0|      0|  157|   207|
+    |Loop_2_proc_U0                  |Loop_2_proc                   |        0|      0|  157|   167|
+    |Sobel_U0                        |Sobel                         |        3|      6|  852|  1200|
+    |Sobel_1_U0                      |Sobel_1                       |        3|      6|  851|  1191|
+    |canny_edge_CONTROL_BUS_s_axi_U  |canny_edge_CONTROL_BUS_s_axi  |        0|      0|  188|   296|
+    |gradient_decompositi_U0         |gradient_decompositi          |        0|      0|  219|   496|
+    |hysteresis_U0                   |hysteresis                    |        4|      4|  764|  1108|
+    |nonmax_suppression_U0           |nonmax_suppression            |        4|      0|  570|   873|
+    +--------------------------------+------------------------------+---------+-------+-----+------+
+    |Total                           |                              |       14|     17| 3805|  5752|
+    +--------------------------------+------------------------------+---------+-------+-----+------+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    +-------------------------+---------+---+----+------+-----+---------+
+    |           Name          | BRAM_18K| FF| LUT| Depth| Bits| Size:D*B|
+    +-------------------------+---------+---+----+------+-----+---------+
+    |canny_edges_data_str_U   |        0|  5|  20|     2|    8|       16|
+    |grad_gd_data_stream_s_U  |        0|  5|  28|     2|   16|       32|
+    |packets_cast_loc_c35_U   |        0|  6|  33|     7|   20|      140|
+    |packets_cast_loc_c_U     |        0|  5|  32|     2|   20|       40|
+    |sobel_gx_data_stream_U   |        0|  5|  28|     2|   16|       32|
+    |sobel_gy_data_stream_U   |        0|  5|  28|     2|   16|       32|
+    |src1_data_stream_0_s_U   |        0|  5|  20|     2|    8|       16|
+    |src2_data_stream_0_s_U   |        0|  5|  20|     2|    8|       16|
+    |src_bw_data_stream_0_U   |        0|  5|  20|     2|    8|       16|
+    |suppressed_data_stre_U   |        0|  5|  28|     2|   16|       32|
+    +-------------------------+---------+---+----+------+-----+---------+
+    |Total                    |        0| 51| 257|    25|  136|      372|
+    +-------------------------+---------+---+----+------+-----+---------+
+
+    * Expression: 
+    +-----------------------------------------+----------+-------+---+----+------------+------------+
+    |              Variable Name              | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------------------------------+----------+-------+---+----+------------+------------+
+    |Block_Mat_exit27932_U0_ap_ready_count    |     +    |      0|  0|  10|           2|           1|
+    |Loop_1_proc_U0_ap_ready_count            |     +    |      0|  0|  10|           2|           1|
+    |Block_Mat_exit27932_U0_ap_start          |    and   |      0|  0|   2|           1|           1|
+    |Duplicate_U0_start_full_n                |    and   |      0|  0|   2|           1|           1|
+    |Loop_1_proc_U0_ap_start                  |    and   |      0|  0|   2|           1|           1|
+    |Loop_1_proc_U0_start_full_n              |    and   |      0|  0|   2|           1|           1|
+    |ap_idle                                  |    and   |      0|  0|   2|           1|           1|
+    |ap_sync_ready                            |    and   |      0|  0|   2|           1|           1|
+    |ap_sync_Block_Mat_exit27932_U0_ap_ready  |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_Loop_1_proc_U0_ap_ready          |    or    |      0|  0|   2|           1|           1|
+    +-----------------------------------------+----------+-------+---+----+------------+------------+
+    |Total                                    |          |      0|  0|  36|          12|          10|
+    +-----------------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +---------------------------------------------+----+-----------+-----+-----------+
+    |                     Name                    | LUT| Input Size| Bits| Total Bits|
+    +---------------------------------------------+----+-----------+-----+-----------+
+    |Block_Mat_exit27932_U0_ap_ready_count        |   9|          2|    2|          4|
+    |Loop_1_proc_U0_ap_ready_count                |   9|          2|    2|          4|
+    |ap_sync_reg_Block_Mat_exit27932_U0_ap_ready  |   9|          2|    1|          2|
+    |ap_sync_reg_Loop_1_proc_U0_ap_ready          |   9|          2|    1|          2|
+    +---------------------------------------------+----+-----------+-----+-----------+
+    |Total                                        |  36|          8|    6|         12|
+    +---------------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +---------------------------------------------+---+----+-----+-----------+
+    |                     Name                    | FF| LUT| Bits| Const Bits|
+    +---------------------------------------------+---+----+-----+-----------+
+    |Block_Mat_exit27932_U0_ap_ready_count        |  2|   0|    2|          0|
+    |Loop_1_proc_U0_ap_ready_count                |  2|   0|    2|          0|
+    |ap_sync_reg_Block_Mat_exit27932_U0_ap_ready  |  1|   0|    1|          0|
+    |ap_sync_reg_Loop_1_proc_U0_ap_ready          |  1|   0|    1|          0|
+    +---------------------------------------------+---+----+-----+-----------+
+    |Total                                        |  6|   0|    6|          0|
+    +---------------------------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------------------+-----+-----+------------+---------------+--------------+
+|         RTL Ports         | Dir | Bits|  Protocol  | Source Object |    C Type    |
++---------------------------+-----+-----+------------+---------------+--------------+
+|s_axi_CONTROL_BUS_AWVALID  |  in |    1|    s_axi   |  CONTROL_BUS  |  return void |
+|s_axi_CONTROL_BUS_AWREADY  | out |    1|    s_axi   |  CONTROL_BUS  |  return void |
+|s_axi_CONTROL_BUS_AWADDR   |  in |    6|    s_axi   |  CONTROL_BUS  |  return void |
+|s_axi_CONTROL_BUS_WVALID   |  in |    1|    s_axi   |  CONTROL_BUS  |  return void |
+|s_axi_CONTROL_BUS_WREADY   | out |    1|    s_axi   |  CONTROL_BUS  |  return void |
+|s_axi_CONTROL_BUS_WDATA    |  in |   32|    s_axi   |  CONTROL_BUS  |  return void |
+|s_axi_CONTROL_BUS_WSTRB    |  in |    4|    s_axi   |  CONTROL_BUS  |  return void |
+|s_axi_CONTROL_BUS_ARVALID  |  in |    1|    s_axi   |  CONTROL_BUS  |  return void |
+|s_axi_CONTROL_BUS_ARREADY  | out |    1|    s_axi   |  CONTROL_BUS  |  return void |
+|s_axi_CONTROL_BUS_ARADDR   |  in |    6|    s_axi   |  CONTROL_BUS  |  return void |
+|s_axi_CONTROL_BUS_RVALID   | out |    1|    s_axi   |  CONTROL_BUS  |  return void |
+|s_axi_CONTROL_BUS_RREADY   |  in |    1|    s_axi   |  CONTROL_BUS  |  return void |
+|s_axi_CONTROL_BUS_RDATA    | out |   32|    s_axi   |  CONTROL_BUS  |  return void |
+|s_axi_CONTROL_BUS_RRESP    | out |    2|    s_axi   |  CONTROL_BUS  |  return void |
+|s_axi_CONTROL_BUS_BVALID   | out |    1|    s_axi   |  CONTROL_BUS  |  return void |
+|s_axi_CONTROL_BUS_BREADY   |  in |    1|    s_axi   |  CONTROL_BUS  |  return void |
+|s_axi_CONTROL_BUS_BRESP    | out |    2|    s_axi   |  CONTROL_BUS  |  return void |
+|ap_clk                     |  in |    1| ap_ctrl_hs |   canny_edge  | return value |
+|ap_rst_n                   |  in |    1| ap_ctrl_hs |   canny_edge  | return value |
+|interrupt                  | out |    1| ap_ctrl_hs |   canny_edge  | return value |
+|AXI_LITE_clk               |  in |    1| ap_ctrl_hs |   canny_edge  | return value |
+|ap_rst_n_AXI_LITE_clk      |  in |    1| ap_ctrl_hs |   canny_edge  | return value |
+|INPUT_data_V_TDATA         |  in |   32|    axis    |  INPUT_data_V |    pointer   |
+|INPUT_data_V_TVALID        |  in |    1|    axis    |  INPUT_data_V |    pointer   |
+|INPUT_data_V_TREADY        | out |    1|    axis    |  INPUT_data_V |    pointer   |
+|OUTPUT_data_V_TDATA        | out |   32|    axis    | OUTPUT_data_V |    pointer   |
+|OUTPUT_data_V_TVALID       | out |    1|    axis    | OUTPUT_data_V |    pointer   |
+|OUTPUT_data_V_TREADY       |  in |    1|    axis    | OUTPUT_data_V |    pointer   |
++---------------------------+-----+-----+------------+---------------+--------------+
+

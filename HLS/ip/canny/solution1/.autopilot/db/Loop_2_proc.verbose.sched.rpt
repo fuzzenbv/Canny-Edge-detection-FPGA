@@ -1,0 +1,186 @@
+
+
+================================================================
+== Vivado HLS Report for 'Loop_2_proc'
+================================================================
+* Date:           Mon Apr  8 12:37:51 2019
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        canny
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   6.00|     2.625|        0.75|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+---------+-----+---------+---------+
+    |    Latency    |    Interval   | Pipeline|
+    | min |   max   | min |   max   |   Type  |
+    +-----+---------+-----+---------+---------+
+    |    1|  2592001|    1|  2592001|   none  |
+    +-----+---------+-----+---------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+---------+----------+-----------+-----------+------------+----------+
+        |          |    Latency    | Iteration|  Initiation Interval  |    Trip    |          |
+        | Loop Name| min |   max   |  Latency |  achieved |   target  |    Count   | Pipelined|
+        +----------+-----+---------+----------+-----------+-----------+------------+----------+
+        |- Loop 1  |    0|  2592000|         5|          -|          -| 0 ~ 518400 |    no    |
+        +----------+-----+---------+----------+-----------+-----------+------------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 6
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (tmp_116_i_i)
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	2  / true
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.62>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %out_stream_data_V, [5 x i8]* @p_str7, i32 1, i32 1, [5 x i8]* @p_str8, i32 0, i32 0, [7 x i8]* @p_str10, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"   --->   Operation 7 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %canny_edges_data_stream_0_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str222, i32 0, i32 0, [1 x i8]* @p_str223, [1 x i8]* @p_str224, [1 x i8]* @p_str225, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str226, [1 x i8]* @p_str227)"   --->   Operation 8 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i20* %packets_cast_loc, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str261, i32 0, i32 0, [1 x i8]* @p_str262, [1 x i8]* @p_str263, [1 x i8]* @p_str264, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str265, [11 x i8]* @ScalarProp_str)"   --->   Operation 9 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (2.62ns)   --->   "%packets_cast_loc_rea = call i20 @_ssdm_op_Read.ap_fifo.i20P(i20* %packets_cast_loc)"   --->   Operation 10 'read' 'packets_cast_loc_rea' <Predicate = true> <Delay = 2.62> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 0> <FIFO>
+ST_1 : Operation 11 [1/1] (1.76ns)   --->   "br label %0" [canny/canny_edge.cpp:331]   --->   Operation 11 'br' <Predicate = true> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 2.62>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%p_0169_rec_i_i = phi i19 [ 0, %entry ], [ %r, %1 ]"   --->   Operation 12 'phi' 'p_0169_rec_i_i' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%r1_cast_i_i = zext i19 %p_0169_rec_i_i to i20" [canny/canny_edge.cpp:331]   --->   Operation 13 'zext' 'r1_cast_i_i' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 14 [1/1] (2.44ns)   --->   "%tmp_116_i_i = icmp slt i20 %r1_cast_i_i, %packets_cast_loc_rea" [canny/canny_edge.cpp:331]   --->   Operation 14 'icmp' 'tmp_116_i_i' <Predicate = true> <Delay = 2.44> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopTripCount(i64 0, i64 518400, i64 0)"   --->   Operation 15 'speclooptripcount' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 16 [1/1] (2.16ns)   --->   "%r = add i19 %p_0169_rec_i_i, 1" [canny/canny_edge.cpp:338]   --->   Operation 16 'add' 'r' <Predicate = true> <Delay = 2.16> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.16> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "br i1 %tmp_116_i_i, label %1, label %.exit" [canny/canny_edge.cpp:331]   --->   Operation 17 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%tmp_125_i_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([13 x i8]* @p_str19)" [/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:672->canny/canny_edge.cpp:333]   --->   Operation 18 'specregionbegin' 'tmp_125_i_i' <Predicate = (tmp_116_i_i)> <Delay = 0.00>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecProtocol(i32 0, [1 x i8]* @p_str1) nounwind" [/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:676->canny/canny_edge.cpp:333]   --->   Operation 19 'specprotocol' <Predicate = (tmp_116_i_i)> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (2.62ns)   --->   "%tmp = call i8 @_ssdm_op_Read.ap_fifo.volatile.i8P(i8* %canny_edges_data_stream_0_V)" [/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:679->canny/canny_edge.cpp:333]   --->   Operation 20 'read' 'tmp' <Predicate = (tmp_116_i_i)> <Delay = 2.62> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 0> <FIFO>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecRegionEnd([13 x i8]* @p_str19, i32 %tmp_125_i_i)" [/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:681->canny/canny_edge.cpp:333]   --->   Operation 21 'specregionend' 'empty' <Predicate = (tmp_116_i_i)> <Delay = 0.00>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "ret void"   --->   Operation 22 'ret' <Predicate = (!tmp_116_i_i)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 2.62>
+ST_3 : Operation 23 [1/1] (0.00ns)   --->   "%tmp_126_i_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([13 x i8]* @p_str19)" [/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:672->canny/canny_edge.cpp:334]   --->   Operation 23 'specregionbegin' 'tmp_126_i_i' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 24 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecProtocol(i32 0, [1 x i8]* @p_str1) nounwind" [/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:676->canny/canny_edge.cpp:334]   --->   Operation 24 'specprotocol' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 25 [1/1] (2.62ns)   --->   "%tmp_69 = call i8 @_ssdm_op_Read.ap_fifo.volatile.i8P(i8* %canny_edges_data_stream_0_V)" [/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:679->canny/canny_edge.cpp:334]   --->   Operation 25 'read' 'tmp_69' <Predicate = true> <Delay = 2.62> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 0> <FIFO>
+ST_3 : Operation 26 [1/1] (0.00ns)   --->   "%empty_70 = call i32 (...)* @_ssdm_op_SpecRegionEnd([13 x i8]* @p_str19, i32 %tmp_126_i_i)" [/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:681->canny/canny_edge.cpp:334]   --->   Operation 26 'specregionend' 'empty_70' <Predicate = true> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 2.62>
+ST_4 : Operation 27 [1/1] (0.00ns)   --->   "%tmp_127_i_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([13 x i8]* @p_str19)" [/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:672->canny/canny_edge.cpp:335]   --->   Operation 27 'specregionbegin' 'tmp_127_i_i' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 28 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecProtocol(i32 0, [1 x i8]* @p_str1) nounwind" [/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:676->canny/canny_edge.cpp:335]   --->   Operation 28 'specprotocol' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 29 [1/1] (2.62ns)   --->   "%tmp_70 = call i8 @_ssdm_op_Read.ap_fifo.volatile.i8P(i8* %canny_edges_data_stream_0_V)" [/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:679->canny/canny_edge.cpp:335]   --->   Operation 29 'read' 'tmp_70' <Predicate = true> <Delay = 2.62> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 0> <FIFO>
+ST_4 : Operation 30 [1/1] (0.00ns)   --->   "%empty_71 = call i32 (...)* @_ssdm_op_SpecRegionEnd([13 x i8]* @p_str19, i32 %tmp_127_i_i)" [/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:681->canny/canny_edge.cpp:335]   --->   Operation 30 'specregionend' 'empty_71' <Predicate = true> <Delay = 0.00>
+
+State 5 <SV = 4> <Delay = 2.62>
+ST_5 : Operation 31 [1/1] (0.00ns)   --->   "%tmp_128_i_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([13 x i8]* @p_str19)" [/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:672->canny/canny_edge.cpp:336]   --->   Operation 31 'specregionbegin' 'tmp_128_i_i' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 32 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecProtocol(i32 0, [1 x i8]* @p_str1) nounwind" [/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:676->canny/canny_edge.cpp:336]   --->   Operation 32 'specprotocol' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 33 [1/1] (2.62ns)   --->   "%tmp_71 = call i8 @_ssdm_op_Read.ap_fifo.volatile.i8P(i8* %canny_edges_data_stream_0_V)" [/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:679->canny/canny_edge.cpp:336]   --->   Operation 33 'read' 'tmp_71' <Predicate = true> <Delay = 2.62> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 0> <FIFO>
+ST_5 : Operation 34 [1/1] (0.00ns)   --->   "%empty_72 = call i32 (...)* @_ssdm_op_SpecRegionEnd([13 x i8]* @p_str19, i32 %tmp_128_i_i)" [/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:681->canny/canny_edge.cpp:336]   --->   Operation 34 'specregionend' 'empty_72' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 35 [1/1] (0.00ns)   --->   "%p_Result_s = call i32 @_ssdm_op_BitConcatenate.i32.i8.i8.i8.i8(i8 %tmp_71, i8 %tmp_70, i8 %tmp_69, i8 %tmp)" [canny/canny_edge.cpp:336]   --->   Operation 35 'bitconcatenate' 'p_Result_s' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 36 [2/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.i32P(i32* %out_stream_data_V, i32 %p_Result_s)" [canny/canny_edge.cpp:337]   --->   Operation 36 'write' <Predicate = true> <Delay = 0.00> <Core = "AXI4Stream">   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 6 <SV = 5> <Delay = 0.00>
+ST_6 : Operation 37 [1/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.i32P(i32* %out_stream_data_V, i32 %p_Result_s)" [canny/canny_edge.cpp:337]   --->   Operation 37 'write' <Predicate = true> <Delay = 0.00> <Core = "AXI4Stream">   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_6 : Operation 38 [1/1] (0.00ns)   --->   "br label %0" [canny/canny_edge.cpp:331]   --->   Operation 38 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 6ns, clock uncertainty: 0.75ns.
+
+ <State 1>: 2.62ns
+The critical path consists of the following:
+	fifo read on port 'packets_cast_loc' [7]  (2.62 ns)
+
+ <State 2>: 2.62ns
+The critical path consists of the following:
+	fifo read on port 'canny_edges_data_stream_0_V' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:679->canny/canny_edge.cpp:333) [19]  (2.62 ns)
+
+ <State 3>: 2.62ns
+The critical path consists of the following:
+	fifo read on port 'canny_edges_data_stream_0_V' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:679->canny/canny_edge.cpp:334) [23]  (2.62 ns)
+
+ <State 4>: 2.62ns
+The critical path consists of the following:
+	fifo read on port 'canny_edges_data_stream_0_V' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:679->canny/canny_edge.cpp:335) [27]  (2.62 ns)
+
+ <State 5>: 2.62ns
+The critical path consists of the following:
+	fifo read on port 'canny_edges_data_stream_0_V' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:679->canny/canny_edge.cpp:336) [31]  (2.62 ns)
+
+ <State 6>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

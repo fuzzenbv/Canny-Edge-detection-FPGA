@@ -1,0 +1,1416 @@
+INFO-FLOW: Workspace /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1 opened at Mon Apr 08 12:36:49 CEST 2019
+Execute     config_clock -quiet -name default -period 6 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 6ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/zynq/zynq 
+Execute       source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/common/xilinx.lib 
+Execute         source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/interface/plb46.lib 
+Execute           source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/interface/fsl.lib 
+Execute           source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/interface/axi4.lib 
+Execute           source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/interface/maxi.lib 
+Execute           source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/interface/saxilite.lib 
+Execute         source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/common/dsp48.lib 
+Execute         source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/ip/xfir.lib 
+Execute         source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/ip/xfft.lib 
+Execute       source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/common/xilinx_old.lib 
+Execute       source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/common/xilinx_vivado.lib 
+Execute       source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
+Execute         source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       get_default_platform 
+Execute       config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Execute       config_chip_info -quiet -speed medium 
+Execute       source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
+Execute         source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
+Execute     source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/zynq/zynq.gen 
+Execute       source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/common/virtex.gen 
+Execute         source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/common/xilinx.gen 
+Execute           source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/interface/plb46.gen 
+Execute           source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/interface/fsl.gen 
+Execute           source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/interface/axi4.gen 
+Execute           source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/interface/saxilite.gen 
+Execute             source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/interface/maxi.gen 
+Execute           source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/ip/util.gen 
+Execute           source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/ip/xfft.gen 
+Execute           source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.12 sec.
+Execute         source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.12 sec.
+Command     ap_source done; 0.12 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv7.lib 
+Execute         source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/common/xilinx_hp.lib 
+Execute       source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv.hlp 
+Execute         source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
+Execute           source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
+Execute           source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
+Execute             source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/zynq/zynq_hp.hlp 
+Execute     source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute     set_part xc7z020clg400-1 
+Execute       add_library xilinx/zynq/zynq:xc7z020:clg400:-1 
+Execute         get_default_platform 
+Execute         license_isbetapart xc7z020 
+Command         license_isbetapart done; error code: 1; 
+Execute         get_default_platform 
+Execute         config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Execute         config_chip_info -quiet -speed slow 
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-1'
+Execute       get_default_platform 
+Execute     get_default_platform 
+Execute     config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Execute     config_chip_info -quiet -speed slow 
+Execute     config_export -format=ip_catalog 
+Execute     config_export -rtl=verilog 
+Command   open_solution done; 0.2 sec.
+Execute   set_part xc7z020clg400-1 -tool vivado 
+Execute     add_library xilinx/zynq/zynq:xc7z020:clg400:-1 
+Execute       get_default_platform 
+Execute       license_isbetapart xc7z020 
+Command       license_isbetapart done; error code: 1; 
+Execute       get_default_platform 
+Execute       config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Execute       config_chip_info -quiet -speed slow 
+Execute     add_library xilinx/zynq/zynq_fpv6 
+Execute       get_default_platform 
+Execute     get_default_platform 
+Execute   create_clock -period 6 -name default 
+Execute   config_export -format ip_catalog -rtl verilog 
+Execute   csynth_design 
+Execute     get_config_compile -effort 
+Execute     get_config_compile -enable_clang39 
+Execute     get_config_compile -g 
+Execute     get_config_compile -lm 
+Execute     get_config_compile -ng 
+Execute     get_config_compile -opt_fp 
+Execute     get_config_compile -skip_cdt 
+Execute     get_config_compile -skip_syncheck 
+Execute     get_config_compile -skip_transform 
+Execute     config_compile -blackbox  
+Execute     get_config_compile -keep_printf 
+Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -lm=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
+Execute       get_config_schedule -relax_ii_for_timing 
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+Execute       get_config_schedule -suppress_dependence_error_break 
+INFO: [HLS 200-10] Analyzing design file 'canny/canny_edge.cpp' ... 
+INFO-FLOW: Compiling one TU...
+Execute       is_m_axi_addr64 
+INFO-FLOW: Handling canny/canny_edge.cpp as C++
+Execute       get_default_platform 
+Execute       is_encrypted canny/canny_edge.cpp 
+Execute       get_default_platform 
+INFO-FLOW: Running: GCC PP
+INFO-FLOW: Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "/home/cwalk/Xilinx2018/Vivado/2018.3/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "canny/canny_edge.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot" -I "/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.pp.0.cpp" 
+INFO-FLOW: exec /home/cwalk/Xilinx2018/Vivado/2018.3/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /home/cwalk/Xilinx2018/Vivado/2018.3/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E canny/canny_edge.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot -I /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.pp.0.cpp
+Command       clang done; 1.46 sec.
+Execute       tidy_31 xilinx-xfmat-array-geometry /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.pp.0.cpp std=gnu++98 
+INFO-FLOW: exec /home/cwalk/Xilinx2018/Vivado/2018.3/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-xfmat-array-geometry -quiet -fix /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 4.89 sec.
+INFO-FLOW: Syntax Checking before pre-processing...
+Execute       clang -syntaxcheck -src /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.pp.0.cpp  -fno-limit-debug-info -gcc-toolchain "/home/cwalk/Xilinx2018/Vivado/2018.3/lnx64/tools/gcc" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot" -I "/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.pp.0.cpp"  -o "/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/useless.bc"  
+INFO-FLOW: exec /home/cwalk/Xilinx2018/Vivado/2018.3/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /home/cwalk/Xilinx2018/Vivado/2018.3/lnx64/tools/gcc -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot -I /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.pp.0.cpp -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/useless.bc
+Command       clang done; 4.48 sec.
+INFO-FLOW: Done: GCC PP time: 10.8 seconds per iteration
+Execute       list_core -type functional_unit 
+Execute       tidy_31 xilinx-systemc-detector /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.pp.0.cpp std=gnu++98 -directive=/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec /home/cwalk/Xilinx2018/Vivado/2018.3/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-systemc-detector -import-directive=/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/.systemc_flag -quiet -fix-errors /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 4.3 sec.
+INFO-FLOW: Running: tidy-3.1 CDT preprocess
+Execute       tidy_31 xilinx-directive2pragma /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.pp.0.cpp std=gnu++98 -directive=/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/all.directive.json 
+INFO-FLOW: exec /home/cwalk/Xilinx2018/Vivado/2018.3/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-directive2pragma -import-directive=/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/all.directive.json -quiet -fix-errors /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 4.26 sec.
+Execute       get_config_dataflow -strict_mode 
+Execute       ap_eval exec -ignorestderr /home/cwalk/Xilinx2018/Vivado/2018.3/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/xilinx-dataflow-lawyer.canny_edge.pp.0.cpp.diag.yml /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 -fstrict-dataflow > /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/xilinx-dataflow-lawyer.canny_edge.pp.0.cpp.out.log 2> /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/xilinx-dataflow-lawyer.canny_edge.pp.0.cpp.err.log 
+Command       ap_eval done; 4.13 sec.
+WARNING: [HLS 214-114] Since the only kind of statements allowed in a dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region: canny/canny_edge.cpp:306:2
+Execute       send_msg_by_id WARNING @200-471@%s%s 1 canny/canny_edge.cpp 
+WARNING: [HLS 200-471] Dataflow form checks found 1 issue(s) in file canny/canny_edge.cpp
+Execute       tidy_31 -errorcheck xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.pp.0.cpp std=gnu++98 
+Execute         ap_eval exec -ignorestderr /home/cwalk/Xilinx2018/Vivado/2018.3/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -export-fixes=/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/tidy-3.1.canny_edge.pp.0.cpp.diag.yml -header-filter=.* -checks=-*,xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry -quiet -fix-errors /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/tidy-3.1.canny_edge.pp.0.cpp.out.log 2> /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/tidy-3.1.canny_edge.pp.0.cpp.err.log 
+Command         ap_eval done; 7.54 sec.
+Execute         ap_eval exec -ignorestderr /home/cwalk/Xilinx2018/Vivado/2018.3/lnx64/tools/clang-3.9-csynth/bin/xilinx-legacy-rewriter /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/xilinx-legacy-rewriter.canny_edge.pp.0.cpp.out.log 2> /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/xilinx-legacy-rewriter.canny_edge.pp.0.cpp.err.log 
+Command         ap_eval done; 5.95 sec.
+Command       tidy_31 done; 13.95 sec.
+INFO-FLOW: Done: tidy-3.1 CDT preprocess time: 22.4 seconds per iteration
+INFO-FLOW: Pragma Handling...
+Execute       tidy_31 xilinx-ssdm-intrinsics-arguments /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.pragma.1.cpp std=gnu++98 
+INFO-FLOW: exec /home/cwalk/Xilinx2018/Vivado/2018.3/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-ssdm-intrinsics-arguments -quiet -fix-errors /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.pragma.1.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 7.09 sec.
+Execute       get_default_platform 
+INFO-FLOW: Processing labels
+Execute       clang -src /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.pragma.2.cpp  -fno-limit-debug-info -gcc-toolchain /home/cwalk/Xilinx2018/Vivado/2018.3/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot" -I "/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.bc" 
+INFO-FLOW: exec /home/cwalk/Xilinx2018/Vivado/2018.3/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /home/cwalk/Xilinx2018/Vivado/2018.3/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.pragma.2.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot -I /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.bc
+Command       clang done; 4.75 sec.
+INFO-FLOW: Linking Debug ...
+Execute       llvm-ld /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.g.bc -hls-opt -except-internalize canny_edge -L/home/cwalk/Xilinx2018/Vivado/2018.3/lnx64/lib -lhlsm -lhlsmc++ -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/a.g 
+Command       llvm-ld done; 1.19 sec.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:50 ; elapsed = 00:00:52 . Memory (MB): peak = 440.465 ; gain = 0.137 ; free physical = 550 ; free virtual = 3395
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:50 ; elapsed = 00:00:52 . Memory (MB): peak = 440.465 ; gain = 0.137 ; free physical = 550 ; free virtual = 3395
+Execute       get_config_sdx -target 
+Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
+Execute         cleanup_all_models 
+INFO: [HLS 200-10] Starting code transformations ...
+Execute         transform -promote-dbg-pointer /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/a.pp.bc -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/a.pp.0.bc -f 
+Command         transform done; 0.17 sec.
+Execute         llvm-ld /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/a.pp.0.bc -disable-opt -L/home/cwalk/Xilinx2018/Vivado/2018.3/lnx64/lib -lfloatconversion -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/a.g.0 
+Command         llvm-ld done; 1.14 sec.
+INFO-FLOW: Running Standard Transforms...
+Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -lower-blackbox -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -prune-eh -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top canny_edge -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/a.g.0.bc -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:701) in function 'hls::Mat<1080, 1920, 0>::write(hls::Scalar<1, unsigned char>)' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:677) in function 'hls::Mat<1080, 1920, 0>::read()' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:677) in function 'hls::Mat<1080, 1920, 2>::read()' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:701) in function 'hls::Mat<1080, 1920, 2>::write(hls::Scalar<1, unsigned short>)' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:677) in function 'hls::Mat<1080, 1920, 3>::read()' completely with a factor of 1.
+INFO: [XFORM 203-603] Inlining function 'hls::Mat<1080, 1920, 0>::init' into 'hls::Mat<1080, 1920, 0>::Mat.1' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:642).
+INFO: [XFORM 203-603] Inlining function 'hls::Mat<1080, 1920, 3>::init' into 'hls::Mat<1080, 1920, 3>::Mat.1' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:642).
+INFO: [XFORM 203-603] Inlining function 'hls::Mat<1080, 1920, 2>::init' into 'hls::Mat<1080, 1920, 2>::Mat.1' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:642).
+INFO: [XFORM 203-603] Inlining function 'hls::Mat<1080, 1920, 0>::write' into 'canny_edge' (canny/canny_edge.cpp:311).
+INFO: [XFORM 203-603] Inlining function 'hls::Mat<1080, 1920, 0>::write' into 'canny_edge' (canny/canny_edge.cpp:310).
+INFO: [XFORM 203-603] Inlining function 'hls::Mat<1080, 1920, 0>::write' into 'canny_edge' (canny/canny_edge.cpp:309).
+INFO: [XFORM 203-603] Inlining function 'hls::Mat<1080, 1920, 0>::write' into 'canny_edge' (canny/canny_edge.cpp:308).
+INFO: [XFORM 203-603] Inlining function 'hls::Mat<1080, 1920, 0>::write' into 'hls::Mat<1080, 1920, 0>::operator<<' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:717).
+INFO: [XFORM 203-603] Inlining function 'hls::Mat<1080, 1920, 0>::read' into 'hls::Mat<1080, 1920, 0>::operator>>' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:711).
+INFO: [XFORM 203-603] Inlining function 'hls::Mat<1080, 1920, 0>::read' into 'canny_edge' (canny/canny_edge.cpp:336).
+INFO: [XFORM 203-603] Inlining function 'hls::Mat<1080, 1920, 0>::read' into 'canny_edge' (canny/canny_edge.cpp:335).
+INFO: [XFORM 203-603] Inlining function 'hls::Mat<1080, 1920, 0>::read' into 'canny_edge' (canny/canny_edge.cpp:334).
+INFO: [XFORM 203-603] Inlining function 'hls::Mat<1080, 1920, 0>::read' into 'canny_edge' (canny/canny_edge.cpp:333).
+INFO: [XFORM 203-603] Inlining function 'hls::Mat<1080, 1920, 0>::operator>>' into 'hls::Duplicate<1080, 1920, 0, 0>' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_arithm.h:1561).
+INFO: [XFORM 203-603] Inlining function 'hls::Mat<1080, 1920, 0>::operator<<' into 'hls::Duplicate<1080, 1920, 0, 0>' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_arithm.h:1563).
+INFO: [XFORM 203-603] Inlining function 'hls::Mat<1080, 1920, 0>::operator<<' into 'hls::Duplicate<1080, 1920, 0, 0>' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_arithm.h:1562).
+INFO: [XFORM 203-603] Inlining function 'hls::Mat<1080, 1920, 0>::operator<<' into 'hysteresis' (canny/canny_edge.cpp:264).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<1, 3, ap_int<8> >::getval' into 'hls::Window<1, 3, ap_int<8> >::operator()' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_mem.h:501).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<1, 3, ap_int<8> >::operator()' into 'hls::Sobel_kernel<0, 1, 3, ap_int<8> >' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:2591).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<1, 3, ap_int<8> >::operator()' into 'hls::Sobel_kernel<0, 1, 3, ap_int<8> >' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:2599).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<1, 3, ap_int<8> >::operator()' into 'hls::Sobel_kernel<1, 0, 3, ap_int<8> >' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:2591).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<1, 3, ap_int<8> >::operator()' into 'hls::Sobel_kernel<1, 0, 3, ap_int<8> >' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:2599).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 1, ap_int<8> >::getval' into 'hls::Window<3, 1, ap_int<8> >::operator()' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_mem.h:501).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 1, ap_int<8> >::operator()' into 'hls::Sobel_kernel<0, 1, 3, ap_int<8> >' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:2593).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 1, ap_int<8> >::operator()' into 'hls::Sobel_kernel<0, 1, 3, ap_int<8> >' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:2599).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 1, ap_int<8> >::operator()' into 'hls::Sobel_kernel<1, 0, 3, ap_int<8> >' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:2593).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 1, ap_int<8> >::operator()' into 'hls::Sobel_kernel<1, 0, 3, ap_int<8> >' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:2599).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, ap_int<8> >::getval' into 'hls::Window<3, 3, ap_int<8> >::operator()' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_mem.h:501).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, ap_int<8> >::operator()' into 'hls::Sobel_kernel<1, 0, 3, ap_int<8> >' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:2599).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, ap_int<8> >::operator()' into 'hls::Sobel_kernel<0, 1, 3, ap_int<8> >' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:2599).
+INFO: [XFORM 203-603] Inlining function 'hls::normalizeAnchor<int, int>' into 'hls::filter_opr<hls::filter2d_kernel, hls::BORDER_DEFAULT>::filter<0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:424).
+INFO: [XFORM 203-603] Inlining function 'hls::filter_opr<hls::filter2d_kernel, hls::BORDER_DEFAULT>::get_parameters<3, 3, int>' into 'hls::filter_opr<hls::filter2d_kernel, hls::BORDER_DEFAULT>::filter<0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:434).
+INFO: [XFORM 203-603] Inlining function 'hls::borderInterpolate' into 'hls::filter_opr<hls::filter2d_kernel, hls::BORDER_DEFAULT>::filter<0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:452).
+INFO: [XFORM 203-603] Inlining function 'hls::borderInterpolate' into 'hls::filter_opr<hls::filter2d_kernel, hls::BORDER_DEFAULT>::filter<0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:470).
+INFO: [XFORM 203-603] Inlining function 'hls::borderInterpolate' into 'hls::filter_opr<hls::filter2d_kernel, hls::BORDER_DEFAULT>::filter<0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:506).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, unsigned char>::getval' into 'hls::Window<3, 3, unsigned char>::operator()' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_mem.h:501).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, unsigned char>::operator()' into 'hls::filter_opr<hls::filter2d_kernel, hls::BORDER_DEFAULT>::filter<0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:507).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, unsigned char>::operator()' into 'hls::filter_opr<hls::filter2d_kernel, hls::BORDER_DEFAULT>::filter<0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:503).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, unsigned char>::operator()' into 'hls::filter_opr<hls::filter2d_kernel, hls::BORDER_DEFAULT>::filter<0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:484).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, unsigned char>::operator()' into 'hls::filter_opr<hls::filter2d_kernel, hls::BORDER_DEFAULT>::filter<0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:481).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, unsigned char>::operator()' into 'hls::filter_opr<hls::filter2d_kernel, hls::BORDER_DEFAULT>::filter<0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:481).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, unsigned char>::operator()' into 'hls::filter_opr<hls::filter2d_kernel, hls::BORDER_DEFAULT>::filter<0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:458).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 1, unsigned char>::getval' into 'hls::Window<3, 1, unsigned char>::operator()' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_mem.h:501).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 1, unsigned char>::operator()' into 'hls::filter_opr<hls::filter2d_kernel, hls::BORDER_DEFAULT>::filter<0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:458).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 1, unsigned char>::operator()' into 'hls::filter_opr<hls::filter2d_kernel, hls::BORDER_DEFAULT>::filter<0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:460).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 1, unsigned char>::operator()' into 'hls::filter_opr<hls::filter2d_kernel, hls::BORDER_DEFAULT>::filter<0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:484).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 1, unsigned char>::operator()' into 'hls::filter_opr<hls::filter2d_kernel, hls::BORDER_DEFAULT>::filter<0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:503).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 1, unsigned char>::operator()' into 'hls::filter_opr<hls::filter2d_kernel, hls::BORDER_DEFAULT>::filter<0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:507).
+INFO: [XFORM 203-603] Inlining function 'hls::LineBuffer<6, 1920, unsigned char, 0>::getval' into 'hls::LineBuffer<6, 1920, unsigned char, 0>::operator()' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_mem.h:843).
+INFO: [XFORM 203-603] Inlining function 'hls::LineBuffer<6, 1920, unsigned char, 0>::operator()' into 'hls::filter_opr<hls::filter2d_kernel, hls::BORDER_DEFAULT>::filter<0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:493).
+INFO: [XFORM 203-603] Inlining function 'hls::LineBuffer<6, 1920, unsigned char, 0>::operator()' into 'hls::filter_opr<hls::filter2d_kernel, hls::BORDER_DEFAULT>::filter<0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:489).
+INFO: [XFORM 203-603] Inlining function 'hls::LineBuffer<6, 1920, unsigned char, 0>::operator()' into 'hls::filter_opr<hls::filter2d_kernel, hls::BORDER_DEFAULT>::filter<0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:489).
+INFO: [XFORM 203-603] Inlining function 'hls::LineBuffer<6, 1920, unsigned char, 0>::operator()' into 'hls::filter_opr<hls::filter2d_kernel, hls::BORDER_DEFAULT>::filter<0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:472).
+INFO: [XFORM 203-603] Inlining function 'hls::LineBuffer<6, 1920, unsigned char, 0>::operator()' into 'hls::filter_opr<hls::filter2d_kernel, hls::BORDER_DEFAULT>::filter<0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:460).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, unsigned char>::shift_pixels_right' into 'hls::Window<3, 3, unsigned char>::shift_right' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_mem.h:543).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, unsigned char>::shift_right' into 'hls::filter_opr<hls::filter2d_kernel, hls::BORDER_DEFAULT>::filter<0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:499).
+INFO: [XFORM 203-603] Inlining function 'hls::filter2d_kernel::apply<unsigned char, ap_fixed<20, 20, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_int<8>, 3, 3>' into 'hls::filter2d_kernel::apply<unsigned char, short, ap_int<8>, 3, 3>' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:303).
+INFO: [XFORM 203-603] Inlining function 'hls::filter2d_kernel::apply<unsigned char, short, ap_int<8>, 3, 3>' into 'hls::filter_opr<hls::filter2d_kernel, hls::BORDER_DEFAULT>::filter<0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:514).
+INFO: [XFORM 203-603] Inlining function 'hls::filter_opr<hls::filter2d_kernel, hls::BORDER_DEFAULT>::filter<0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' into 'hls::Filter2D<hls::BORDER_DEFAULT, 0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:1289).
+INFO: [XFORM 203-603] Inlining function 'hls::Mat<1080, 1920, 3>::read' into 'hls::Mat<1080, 1920, 3>::operator>>' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:711).
+INFO: [XFORM 203-603] Inlining function 'hls::Mat<1080, 1920, 3>::operator>>' into 'gradient_decomposition' (canny/canny_edge.cpp:36).
+INFO: [XFORM 203-603] Inlining function 'hls::Mat<1080, 1920, 3>::operator>>' into 'gradient_decomposition' (canny/canny_edge.cpp:35).
+INFO: [XFORM 203-603] Inlining function 'hls::Mat<1080, 1920, 2>::write' into 'hls::Mat<1080, 1920, 2>::operator<<' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:717).
+INFO: [XFORM 203-603] Inlining function 'hls::Mat<1080, 1920, 2>::operator<<' into 'nonmax_suppression' (canny/canny_edge.cpp:173).
+INFO: [XFORM 203-603] Inlining function 'hls::Mat<1080, 1920, 2>::operator<<' into 'gradient_decomposition' (canny/canny_edge.cpp:69).
+INFO: [XFORM 203-603] Inlining function 'hls::Mat<1080, 1920, 2>::read' into 'hls::Mat<1080, 1920, 2>::operator>>' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:711).
+INFO: [XFORM 203-603] Inlining function 'hls::Mat<1080, 1920, 2>::operator>>' into 'hysteresis' (canny/canny_edge.cpp:208).
+INFO: [XFORM 203-603] Inlining function 'hls::Mat<1080, 1920, 2>::operator>>' into 'nonmax_suppression' (canny/canny_edge.cpp:103).
+INFO: [XFORM 203-603] Inlining function 'hls::LineBuffer<2, 1920, unsigned short, 0>::getval' into 'hysteresis' (canny/canny_edge.cpp:216).
+INFO: [XFORM 203-603] Inlining function 'hls::LineBuffer<2, 1920, unsigned short, 0>::getval' into 'hysteresis' (canny/canny_edge.cpp:215).
+INFO: [XFORM 203-603] Inlining function 'hls::LineBuffer<2, 1920, unsigned short, 0>::getval' into 'nonmax_suppression' (canny/canny_edge.cpp:111).
+INFO: [XFORM 203-603] Inlining function 'hls::LineBuffer<2, 1920, unsigned short, 0>::getval' into 'nonmax_suppression' (canny/canny_edge.cpp:110).
+INFO: [XFORM 203-603] Inlining function 'hls::LineBuffer<2, 1920, unsigned short, 0>::insert_top_row' into 'hls::LineBuffer<2, 1920, unsigned short, 0>::insert_bottom' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_mem.h:873).
+INFO: [XFORM 203-603] Inlining function 'hls::LineBuffer<2, 1920, unsigned short, 0>::insert_bottom' into 'hysteresis' (canny/canny_edge.cpp:222).
+INFO: [XFORM 203-603] Inlining function 'hls::LineBuffer<2, 1920, unsigned short, 0>::insert_bottom' into 'nonmax_suppression' (canny/canny_edge.cpp:117).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, unsigned short>::shift_pixels_right' into 'hls::Window<3, 3, unsigned short>::shift_right' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_mem.h:543).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, unsigned short>::shift_right' into 'hysteresis' (canny/canny_edge.cpp:226).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, unsigned short>::shift_right' into 'nonmax_suppression' (canny/canny_edge.cpp:121).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, unsigned short>::insert_pixel' into 'hls::Window<3, 3, unsigned short>::insert' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_mem.h:573).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, unsigned short>::insert' into 'nonmax_suppression' (canny/canny_edge.cpp:125).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, unsigned short>::insert' into 'nonmax_suppression' (canny/canny_edge.cpp:126).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, unsigned short>::insert' into 'nonmax_suppression' (canny/canny_edge.cpp:127).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, unsigned short>::insert' into 'hysteresis' (canny/canny_edge.cpp:230).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, unsigned short>::insert' into 'hysteresis' (canny/canny_edge.cpp:231).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, unsigned short>::insert' into 'hysteresis' (canny/canny_edge.cpp:232).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, unsigned short>::getval' into 'hysteresis' (canny/canny_edge.cpp:253).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, unsigned short>::getval' into 'hysteresis' (canny/canny_edge.cpp:252).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, unsigned short>::getval' into 'hysteresis' (canny/canny_edge.cpp:251).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, unsigned short>::getval' into 'hysteresis' (canny/canny_edge.cpp:250).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, unsigned short>::getval' into 'hysteresis' (canny/canny_edge.cpp:249).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, unsigned short>::getval' into 'hysteresis' (canny/canny_edge.cpp:248).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, unsigned short>::getval' into 'hysteresis' (canny/canny_edge.cpp:247).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, unsigned short>::getval' into 'hysteresis' (canny/canny_edge.cpp:246).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, unsigned short>::getval' into 'hysteresis' (canny/canny_edge.cpp:245).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, unsigned short>::getval' into 'hysteresis' (canny/canny_edge.cpp:242).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, unsigned short>::getval' into 'nonmax_suppression' (canny/canny_edge.cpp:158).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, unsigned short>::getval' into 'nonmax_suppression' (canny/canny_edge.cpp:157).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, unsigned short>::getval' into 'nonmax_suppression' (canny/canny_edge.cpp:153).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, unsigned short>::getval' into 'nonmax_suppression' (canny/canny_edge.cpp:152).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, unsigned short>::getval' into 'nonmax_suppression' (canny/canny_edge.cpp:148).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, unsigned short>::getval' into 'nonmax_suppression' (canny/canny_edge.cpp:147).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, unsigned short>::getval' into 'nonmax_suppression' (canny/canny_edge.cpp:143).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, unsigned short>::getval' into 'nonmax_suppression' (canny/canny_edge.cpp:142).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, unsigned short>::getval' into 'nonmax_suppression' (canny/canny_edge.cpp:132).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<3, 3, unsigned short>::getval' into 'nonmax_suppression' (canny/canny_edge.cpp:131).
+Command         transform done; 0.88 sec.
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:52 ; elapsed = 00:00:54 . Memory (MB): peak = 571.059 ; gain = 130.730 ; free physical = 480 ; free virtual = 3336
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO-FLOW: Checking Synthesizability 1/2..
+Execute         transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -pag -array-normalize -instcombine -dce -warn-fifo-pointer -array-seg-normalize -instcombine -dce -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce -check-dspbuiltin /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/a.g.1.bc -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/a.g.2.prechk.bc -f 
+INFO: [XFORM 203-602] Inlining function 'hls::sr_cast_class<ap_int<16> >::operator()<20, 20, (ap_q_mode)5, (ap_o_mode)3>' into 'hls::sr_cast<short, ap_fixed<20, 20, (ap_q_mode)5, (ap_o_mode)3, 0> >' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_types.h:500) automatically.
+INFO: [XFORM 203-602] Inlining function 'hls::sr_cast<short, ap_fixed<20, 20, (ap_q_mode)5, (ap_o_mode)3, 0> >' into 'hls::Filter2D<hls::BORDER_DEFAULT, 0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:304->/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:514->/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:1289) automatically.
+INFO: [XFORM 203-602] Inlining function 'hls::Sobel<1, 0, 3, hls::BORDER_DEFAULT, 0, 3, 1080, 1920, 1080, 1920>' into 'hls::Sobel<1, 0, 3, 0, 3, 1080, 1920, 1080, 1920>' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:2627) automatically.
+INFO: [XFORM 203-602] Inlining function 'hls::Sobel<0, 1, 3, hls::BORDER_DEFAULT, 0, 3, 1080, 1920, 1080, 1920>' into 'hls::Sobel<0, 1, 3, 0, 3, 1080, 1920, 1080, 1920>' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:2627) automatically.
+INFO: [XFORM 203-602] Inlining function 'fabs_fixed<16>' into 'hls::abs' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c++/absint.cpp:13) automatically.
+INFO: [XFORM 203-602] Inlining function 'hls::abs' into 'gradient_decomposition' (canny/canny_edge.cpp:41) automatically.
+Command         transform done; 0.63 sec.
+INFO-FLOW: Checking Synthesizability 2/2..
+Execute         transform -syn-check /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/a.g.2.prechk.bc -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
+Command         transform done; 0.19 sec.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:53 ; elapsed = 00:00:55 . Memory (MB): peak = 636.770 ; gain = 196.441 ; free physical = 435 ; free virtual = 3296
+INFO-FLOW: Compiler optimizing ...
+INFO-FLOW: Share syncheck's 1.bc for syn flow: copy /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/a.g.1.bc to /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/a.o.1.bc
+INFO-FLOW: Presyn 1...
+Execute         transform -hls -tmp /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db -interface-port-rename -type-info -function-uniquify -directive-preproc -mem2reg -dse -dce -disaggr -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -auto-rom-infer -dce -function-uniquify -resource-proc -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -ptrArgReplace -mem2reg -instcombine -dce -array-seg-normalize -deadargelim -instcombine -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -constprop -instcombine -dce -ptrArgReplace -mem2reg -instcombine -simplifycfg -dce -auto-par -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -instcombine -dce -global-constprop -deadargelim -mem2reg -instcombine -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -constprop -instcombine -dce -ptrArgReplace -mem2reg -instcombine -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -instcombine -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -inst-simplify -dce -norm-name -function-inline -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -deadargelim -annotate-dataflow-channels -scalar-propagation -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -norm-name /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/a.o.1.bc -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/a.o.1.tmp.bc -f 
+WARNING: [XFORM 203-1103] Ignored data pack directive on non-struct variable 'suppressed.data_stream.V' (canny/canny_edge.cpp:292).
+WARNING: [XFORM 203-1103] Ignored data pack directive on non-struct variable 'canny_edges.data_stream.V' (canny/canny_edge.cpp:294).
+WARNING: [XFORM 203-1103] Ignored data pack directive on non-struct variable 'src1.data_stream.V' (canny/canny_edge.cpp:287).
+WARNING: [XFORM 203-1103] Ignored data pack directive on non-struct variable 'src2.data_stream.V' (canny/canny_edge.cpp:288).
+WARNING: [XFORM 203-1103] Ignored data pack directive on non-struct variable 'grad_gd.data_stream.V' (canny/canny_edge.cpp:291).
+WARNING: [XFORM 203-1103] Ignored data pack directive on non-struct variable 'src_bw.data_stream.V' (canny/canny_edge.cpp:285).
+WARNING: [XFORM 203-1103] Ignored data pack directive on non-struct variable 'src_bw.data_stream.V.1' (canny/canny_edge.cpp:285).
+WARNING: [XFORM 203-1103] Ignored data pack directive on non-struct variable 'src_bw.data_stream.V.2' (canny/canny_edge.cpp:285).
+WARNING: [XFORM 203-1103] Ignored data pack directive on non-struct variable 'src_bw.data_stream.V.3' (canny/canny_edge.cpp:285).
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1.1' (canny/canny_edge.cpp:95) in function 'nonmax_suppression' for pipelining.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'Loop-1' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:398) in function 'hls::Filter2D<hls::BORDER_DEFAULT, 0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'Loop-2' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:400) in function 'hls::Filter2D<hls::BORDER_DEFAULT, 0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'Loop-3' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:403) in function 'hls::Filter2D<hls::BORDER_DEFAULT, 0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'Loop-4' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:405) in function 'hls::Filter2D<hls::BORDER_DEFAULT, 0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'loop_width' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:444) in function 'hls::Filter2D<hls::BORDER_DEFAULT, 0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' for pipelining.
+WARNING: [XFORM 203-561] Updating loop lower bound from 0 to 1 for loop 'Loop-0-0' (canny/canny_edge.cpp:201:1) in function 'hysteresis'.
+WARNING: [XFORM 203-561] Updating loop lower bound from 0 to 1 for loop 'Loop-0' (canny/canny_edge.cpp:199:1) in function 'hysteresis'.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_mem.h:161) in function 'nonmax_suppression' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1.1' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_mem.h:163) in function 'nonmax_suppression' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_mem.h:161) in function 'hysteresis' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1.1' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_mem.h:163) in function 'hysteresis' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:398) in function 'hls::Filter2D<hls::BORDER_DEFAULT, 0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' completely with a factor of 0.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:400) in function 'hls::Filter2D<hls::BORDER_DEFAULT, 0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' completely with a factor of 0.
+INFO: [HLS 200-489] Unrolling loop 'Loop-3' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:403) in function 'hls::Filter2D<hls::BORDER_DEFAULT, 0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' completely with a factor of 0.
+INFO: [HLS 200-489] Unrolling loop 'Loop-4' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:405) in function 'hls::Filter2D<hls::BORDER_DEFAULT, 0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' completely with a factor of 0.
+INFO: [HLS 200-489] Unrolling loop 'Loop-5.1.1' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:456) in function 'hls::Filter2D<hls::BORDER_DEFAULT, 0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-5.1.2' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:469) in function 'hls::Filter2D<hls::BORDER_DEFAULT, 0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' completely with a factor of 6.
+INFO: [HLS 200-489] Unrolling loop 'Loop-5.1.3' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:478) in function 'hls::Filter2D<hls::BORDER_DEFAULT, 0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-5.1.3.1' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:479) in function 'hls::Filter2D<hls::BORDER_DEFAULT, 0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Loop-5.1.4' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:487) in function 'hls::Filter2D<hls::BORDER_DEFAULT, 0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' completely with a factor of 5.
+INFO: [HLS 200-489] Unrolling loop 'Loop-5.1.5' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_mem.h:161) in function 'hls::Filter2D<hls::BORDER_DEFAULT, 0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-5.1.5.1' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_mem.h:163) in function 'hls::Filter2D<hls::BORDER_DEFAULT, 0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Loop-5.1.6' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:501) in function 'hls::Filter2D<hls::BORDER_DEFAULT, 0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'loop_height' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:285) in function 'hls::Filter2D<hls::BORDER_DEFAULT, 0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'loop_width' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:286) in function 'hls::Filter2D<hls::BORDER_DEFAULT, 0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' completely with a factor of 3.
+INFO: [XFORM 203-102] Automatically partitioning streamed array 'grad_gd.data_stream.V' (canny/canny_edge.cpp:291) .
+INFO: [XFORM 203-102] Automatically partitioning streamed array 'suppressed.data_stream.V' (canny/canny_edge.cpp:292) .
+INFO: [XFORM 203-102] Automatically partitioning streamed array 'canny_edges.data_stream.V' (canny/canny_edge.cpp:294) .
+INFO: [XFORM 203-102] Automatically partitioning streamed array 'src1.data_stream.V' (canny/canny_edge.cpp:287) .
+INFO: [XFORM 203-102] Automatically partitioning streamed array 'sobel_gx.data_stream.V' (canny/canny_edge.cpp:289) .
+INFO: [XFORM 203-102] Automatically partitioning streamed array 'src2.data_stream.V' (canny/canny_edge.cpp:288) .
+INFO: [XFORM 203-102] Automatically partitioning streamed array 'sobel_gy.data_stream.V' (canny/canny_edge.cpp:290) .
+INFO: [XFORM 203-102] Automatically partitioning streamed array 'src_bw.data_stream.V' (canny/canny_edge.cpp:285) .
+INFO: [XFORM 203-101] Partitioning array 'lbuffer.val' (canny/canny_edge.cpp:78) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'win.val' (canny/canny_edge.cpp:80) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'pixel_gd.val' (canny/canny_edge.cpp:82) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'out_pixel.val' (canny/canny_edge.cpp:83) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'scl.val' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:670) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'linebuff.val' (canny/canny_edge.cpp:186) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'win.val' (canny/canny_edge.cpp:188) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'pixel_gd.val' (canny/canny_edge.cpp:190) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'out_pixel.val' (canny/canny_edge.cpp:191) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'scl.val' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:670) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'kernel.val.V'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'kernel.val.V60'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'src_kernel_win.val' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:398) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'k_buf.val' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:400) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'right_border_buf.val' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:403) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'col_buf.val' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:405) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 's.val' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_arithm.h:1556) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'scl.val' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:670) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'pixel_gx.val' (canny/canny_edge.cpp:12) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'pixel_gy.val' (canny/canny_edge.cpp:13) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'element_pixel.val' (canny/canny_edge.cpp:14) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'scl.val' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:670) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'scl.val.1' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:670) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'this.assign.27'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'this.assign.28'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'this.assign.29'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'this.assign.30'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'scl.val' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:670) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'scl.val.2' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:670) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'scl.val.3' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:670) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'scl.val.4' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_core.h:670) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'grad_gd.data_stream.V' (canny/canny_edge.cpp:291) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'suppressed.data_stream.V' (canny/canny_edge.cpp:292) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'canny_edges.data_stream.V' (canny/canny_edge.cpp:294) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'src1.data_stream.V' (canny/canny_edge.cpp:287) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'sobel_gx.data_stream.V' (canny/canny_edge.cpp:289) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'src2.data_stream.V' (canny/canny_edge.cpp:288) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'sobel_gy.data_stream.V' (canny/canny_edge.cpp:290) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'src_bw.data_stream.V' (canny/canny_edge.cpp:285) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'win.val' (canny/canny_edge.cpp:80) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'win.val' (canny/canny_edge.cpp:188) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'kernel.val.V'  in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'kernel.val.V60'  in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'src_kernel_win.val' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:398) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'k_buf.val' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:400) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'right_border_buf.val' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:403) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'col_buf.val' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:405) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'src_kernel_win.val' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:398) in dimension 3 completely.
+INFO: [XFORM 203-101] Partitioning array 'right_border_buf.val' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:403) in dimension 3 completely.
+INFO: [XFORM 203-101] Partitioning array 'col_buf.val' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:405) in dimension 3 completely.
+INFO: [XFORM 203-602] Inlining function 'hls::sr_cast_class<ap_int<16> >::operator()<20, 20, (ap_q_mode)5, (ap_o_mode)3>' into 'hls::sr_cast<short, ap_fixed<20, 20, (ap_q_mode)5, (ap_o_mode)3, 0> >' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_types.h:500) automatically.
+INFO: [XFORM 203-602] Inlining function 'hls::sr_cast<short, ap_fixed<20, 20, (ap_q_mode)5, (ap_o_mode)3, 0> >' into 'hls::Filter2D<hls::BORDER_DEFAULT, 0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:304->/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:514->/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:1289) automatically.
+INFO: [XFORM 203-602] Inlining function 'hls::Sobel<1, 0, 3, hls::BORDER_DEFAULT, 0, 3, 1080, 1920, 1080, 1920>' into 'hls::Sobel<1, 0, 3, 0, 3, 1080, 1920, 1080, 1920>' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:2627) automatically.
+INFO: [XFORM 203-602] Inlining function 'hls::Sobel<0, 1, 3, hls::BORDER_DEFAULT, 0, 3, 1080, 1920, 1080, 1920>' into 'hls::Sobel<0, 1, 3, 0, 3, 1080, 1920, 1080, 1920>' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:2627) automatically.
+INFO: [XFORM 203-602] Inlining function 'fabs_fixed<16>' into 'hls::abs' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c++/absint.cpp:13) automatically.
+INFO: [XFORM 203-602] Inlining function 'hls::abs' into 'gradient_decomposition' (canny/canny_edge.cpp:41) automatically.
+WARNING: [XFORM 203-561] Updating loop upper bound from 1083 to 1082 for loop 'loop_height' in function 'hls::Filter2D<hls::BORDER_DEFAULT, 0, 3, ap_int<8>, int, 1080, 1920, 3, 3>'.
+WARNING: [XFORM 203-561] Updating loop lower bound from 9 to 10 for loop 'loop_height' in function 'hls::Filter2D<hls::BORDER_DEFAULT, 0, 3, ap_int<8>, int, 1080, 1920, 3, 3>'.
+INFO: [XFORM 203-721] Changing loop 'Loop_1_proc' (canny/canny_edge.cpp:306) to a process function for dataflow in function 'canny_edge'.
+INFO: [XFORM 203-721] Changing loop 'Loop_2_proc' (canny/canny_edge.cpp:331) to a process function for dataflow in function 'canny_edge'.
+INFO: [XFORM 203-712] Applying dataflow to function 'canny_edge', detected/extracted 9 process function(s): 
+	 'Block_Mat.exit27932_proc'
+	 'Loop_1_proc'
+	 'hls::Duplicate<1080, 1920, 0, 0>'
+	 'hls::Sobel<1, 0, 3, 0, 3, 1080, 1920, 1080, 1920>'
+	 'hls::Sobel<0, 1, 3, 0, 3, 1080, 1920, 1080, 1920>'
+	 'gradient_decomposition'
+	 'nonmax_suppression'
+	 'hysteresis'
+	 'Loop_2_proc'.
+Command         transform done; 1.75 sec.
+INFO-FLOW: Presyn 2...
+Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -norm-name /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/a.o.1.tmp.bc -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_mem.h:165:17) to (canny/canny_edge.cpp:171:9) in function 'nonmax_suppression'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_mem.h:165:17) to (canny/canny_edge.cpp:262:9) in function 'hysteresis'... converting 11 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:444:57) to (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:465:21) in function 'hls::Filter2D<hls::BORDER_DEFAULT, 0, 3, ap_int<8>, int, 1080, 1920, 3, 3>'... converting 13 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_mem.h:165:17) to (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:512:24) in function 'hls::Filter2D<hls::BORDER_DEFAULT, 0, 3, ap_int<8>, int, 1080, 1920, 3, 3>'... converting 13 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:289:24) to (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:516:21) in function 'hls::Filter2D<hls::BORDER_DEFAULT, 0, 3, ap_int<8>, int, 1080, 1920, 3, 3>'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (canny/canny_edge.cpp:28:42) to (canny/canny_edge.cpp:28:35) in function 'gradient_decomposition'... converting 9 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'nonmax_suppression' (canny/canny_edge.cpp:74)...3 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'hysteresis' (canny/canny_edge.cpp:180)...12 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'hls::Filter2D<hls::BORDER_DEFAULT, 0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:1279)...7 expression(s) balanced.
+Command         transform done; 0.75 sec.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:56 ; elapsed = 00:00:57 . Memory (MB): peak = 636.957 ; gain = 196.629 ; free physical = 361 ; free virtual = 3229
+INFO-FLOW: Building ssdm...
+Execute         transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -instcombine -dce -reset-lda -loop-simplify -indvars -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -axi4-lower -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -loop-rewind -pointer-simplify -dce -cfgopt -dce -bitwidth -loop-bound -loop-dep -read-loop-dep -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -cdfg-build /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/a.o.2.bc -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (canny/canny_edge.cpp:198:29) in function 'hysteresis'.
+WARNING: [XFORM 203-631] Renaming function 'hls::Sobel<1, 0, 3, 0, 3, 1080, 1920, 1080, 1920>' to 'Sobel' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:2619:1)
+WARNING: [XFORM 203-631] Renaming function 'hls::Sobel<0, 1, 3, 0, 3, 1080, 1920, 1080, 1920>' to 'Sobel.1' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:2619:1)
+WARNING: [XFORM 203-631] Renaming function 'hls::Filter2D<hls::BORDER_DEFAULT, 0, 3, ap_int<8>, int, 1080, 1920, 3, 3>' to 'Filter2D' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:113:33)
+WARNING: [XFORM 203-631] Renaming function 'hls::Duplicate<1080, 1920, 0, 0>' to 'Duplicate' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_arithm.h:672:50)
+WARNING: [XFORM 203-631] Renaming function 'gradient_decomposition' to 'gradient_decompositi' (canny/canny_edge.cpp:26:35)
+WARNING: [XFORM 203-631] Renaming function 'Block_Mat.exit27932_proc' to 'Block_Mat.exit27932_' (canny/canny_edge.cpp:296:22)
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'lbuffer.val[1]' (canny/canny_edge.cpp:78).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'lbuffer.val[0]' (canny/canny_edge.cpp:78).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'lbuffer.val[1]' (canny/canny_edge.cpp:78).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'lbuffer.val[0]' (canny/canny_edge.cpp:78).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'lbuffer.val[1]' (canny/canny_edge.cpp:78).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'lbuffer.val[0]' (canny/canny_edge.cpp:78).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuff.val[0]' (canny/canny_edge.cpp:186).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuff.val[1]' (canny/canny_edge.cpp:186).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'linebuff.val[0]' (canny/canny_edge.cpp:186).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'linebuff.val[1]' (canny/canny_edge.cpp:186).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'k_buf[0].val[3]' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:400).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'k_buf[0].val[4]' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:400).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'k_buf[0].val[5]' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:400).
+Command         transform done; 1.28 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:57 ; elapsed = 00:00:58 . Memory (MB): peak = 762.332 ; gain = 322.004 ; free physical = 259 ; free virtual = 3130
+INFO-FLOW: Finish building internal data model.
+Command       opt_and_import_c done; 6.82 sec.
+Command     elaborate done; 57.82 sec.
+Execute     autosyn -from_csynth_design=1 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO-FLOW: Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'canny_edge' ...
+Execute       ap_set_top_model canny_edge 
+WARNING: [SYN 201-103] Legalizing function name 'Block_Mat.exit27932_' to 'Block_Mat_exit27932_s'.
+WARNING: [SYN 201-103] Legalizing function name 'Sobel.1' to 'Sobel_1'.
+Execute       get_model_list canny_edge -filter all-wo-channel -topdown 
+Execute       preproc_iomode -model canny_edge 
+Execute       preproc_iomode -model Loop_2_proc 
+Execute       preproc_iomode -model hysteresis 
+Execute       preproc_iomode -model nonmax_suppression 
+Execute       preproc_iomode -model gradient_decompositi 
+Execute       preproc_iomode -model Sobel.1 
+Execute       preproc_iomode -model Sobel 
+Execute       preproc_iomode -model Filter2D 
+Execute       preproc_iomode -model Duplicate 
+Execute       preproc_iomode -model Loop_1_proc 
+Execute       preproc_iomode -model Block_Mat.exit27932_ 
+Execute       get_model_list canny_edge -filter all-wo-channel 
+INFO-FLOW: Model list for configure: Block_Mat.exit27932_ Loop_1_proc Duplicate Filter2D Sobel Sobel.1 gradient_decompositi nonmax_suppression hysteresis Loop_2_proc canny_edge
+INFO-FLOW: Configuring Module : Block_Mat.exit27932_ ...
+Execute       set_default_model Block_Mat.exit27932_ 
+Execute       apply_spec_resource_limit Block_Mat.exit27932_ 
+INFO-FLOW: Configuring Module : Loop_1_proc ...
+Execute       set_default_model Loop_1_proc 
+Execute       apply_spec_resource_limit Loop_1_proc 
+INFO-FLOW: Configuring Module : Duplicate ...
+Execute       set_default_model Duplicate 
+Execute       apply_spec_resource_limit Duplicate 
+INFO-FLOW: Configuring Module : Filter2D ...
+Execute       set_default_model Filter2D 
+Execute       apply_spec_resource_limit Filter2D 
+INFO-FLOW: Configuring Module : Sobel ...
+Execute       set_default_model Sobel 
+Execute       apply_spec_resource_limit Sobel 
+INFO-FLOW: Configuring Module : Sobel.1 ...
+Execute       set_default_model Sobel.1 
+Execute       apply_spec_resource_limit Sobel.1 
+INFO-FLOW: Configuring Module : gradient_decompositi ...
+Execute       set_default_model gradient_decompositi 
+Execute       apply_spec_resource_limit gradient_decompositi 
+INFO-FLOW: Configuring Module : nonmax_suppression ...
+Execute       set_default_model nonmax_suppression 
+Execute       apply_spec_resource_limit nonmax_suppression 
+INFO-FLOW: Configuring Module : hysteresis ...
+Execute       set_default_model hysteresis 
+Execute       apply_spec_resource_limit hysteresis 
+INFO-FLOW: Configuring Module : Loop_2_proc ...
+Execute       set_default_model Loop_2_proc 
+Execute       apply_spec_resource_limit Loop_2_proc 
+INFO-FLOW: Configuring Module : canny_edge ...
+Execute       set_default_model canny_edge 
+Execute       apply_spec_resource_limit canny_edge 
+INFO-FLOW: Model list for preprocess: Block_Mat.exit27932_ Loop_1_proc Duplicate Filter2D Sobel Sobel.1 gradient_decompositi nonmax_suppression hysteresis Loop_2_proc canny_edge
+INFO-FLOW: Preprocessing Module: Block_Mat.exit27932_ ...
+Execute       set_default_model Block_Mat.exit27932_ 
+Execute       cdfg_preprocess -model Block_Mat.exit27932_ 
+Execute       rtl_gen_preprocess Block_Mat.exit27932_ 
+INFO-FLOW: Preprocessing Module: Loop_1_proc ...
+Execute       set_default_model Loop_1_proc 
+Execute       cdfg_preprocess -model Loop_1_proc 
+Execute       rtl_gen_preprocess Loop_1_proc 
+INFO-FLOW: Preprocessing Module: Duplicate ...
+Execute       set_default_model Duplicate 
+Execute       cdfg_preprocess -model Duplicate 
+Execute       rtl_gen_preprocess Duplicate 
+INFO-FLOW: Preprocessing Module: Filter2D ...
+Execute       set_default_model Filter2D 
+Execute       cdfg_preprocess -model Filter2D 
+Execute       rtl_gen_preprocess Filter2D 
+INFO-FLOW: Preprocessing Module: Sobel ...
+Execute       set_default_model Sobel 
+Execute       cdfg_preprocess -model Sobel 
+Execute       rtl_gen_preprocess Sobel 
+INFO-FLOW: Preprocessing Module: Sobel.1 ...
+Execute       set_default_model Sobel.1 
+Execute       cdfg_preprocess -model Sobel.1 
+Execute       rtl_gen_preprocess Sobel.1 
+INFO-FLOW: Preprocessing Module: gradient_decompositi ...
+Execute       set_default_model gradient_decompositi 
+Execute       cdfg_preprocess -model gradient_decompositi 
+Execute       rtl_gen_preprocess gradient_decompositi 
+INFO-FLOW: Preprocessing Module: nonmax_suppression ...
+Execute       set_default_model nonmax_suppression 
+Execute       cdfg_preprocess -model nonmax_suppression 
+Execute       rtl_gen_preprocess nonmax_suppression 
+INFO-FLOW: Preprocessing Module: hysteresis ...
+Execute       set_default_model hysteresis 
+Execute       cdfg_preprocess -model hysteresis 
+Execute       rtl_gen_preprocess hysteresis 
+INFO-FLOW: Preprocessing Module: Loop_2_proc ...
+Execute       set_default_model Loop_2_proc 
+Execute       cdfg_preprocess -model Loop_2_proc 
+Execute       rtl_gen_preprocess Loop_2_proc 
+INFO-FLOW: Preprocessing Module: canny_edge ...
+Execute       set_default_model canny_edge 
+Execute       cdfg_preprocess -model canny_edge 
+Execute       rtl_gen_preprocess canny_edge 
+INFO-FLOW: Model list for synthesis: Block_Mat.exit27932_ Loop_1_proc Duplicate Filter2D Sobel Sobel.1 gradient_decompositi nonmax_suppression hysteresis Loop_2_proc canny_edge
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Block_Mat_exit27932_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model Block_Mat.exit27932_ 
+Execute       schedule -model Block_Mat.exit27932_ 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 58.4 seconds; current allocated memory: 319.976 MB.
+Execute       report -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Block_Mat_exit27932_s.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Block_Mat_exit27932_s.sched.adb -f 
+INFO-FLOW: Finish scheduling Block_Mat.exit27932_.
+Execute       set_default_model Block_Mat.exit27932_ 
+Execute       bind -model Block_Mat.exit27932_ 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=Block_Mat.exit27932_
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.02 seconds; current allocated memory: 320.060 MB.
+Execute       report -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Block_Mat_exit27932_s.verbose.bind.rpt -verbose -f 
+Execute       db_write -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Block_Mat_exit27932_s.bind.adb -f 
+INFO-FLOW: Finish binding Block_Mat.exit27932_.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Loop_1_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model Loop_1_proc 
+Execute       schedule -model Loop_1_proc 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.15 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.17 seconds; current allocated memory: 320.181 MB.
+Execute       report -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Loop_1_proc.verbose.sched.rpt -verbose -f 
+INFO: [HLS 200-434] Only 0 loops out of a total 1 loops have been pipelined in this design.
+Execute       db_write -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Loop_1_proc.sched.adb -f 
+INFO-FLOW: Finish scheduling Loop_1_proc.
+Execute       set_default_model Loop_1_proc 
+Execute       bind -model Loop_1_proc 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=Loop_1_proc
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.03 seconds; current allocated memory: 320.353 MB.
+Execute       report -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Loop_1_proc.verbose.bind.rpt -verbose -f 
+Execute       db_write -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Loop_1_proc.bind.adb -f 
+INFO-FLOW: Finish binding Loop_1_proc.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Duplicate' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model Duplicate 
+Execute       schedule -model Duplicate 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'loop_width'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.12 seconds; current allocated memory: 320.505 MB.
+Execute       report -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Duplicate.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Duplicate.sched.adb -f 
+INFO-FLOW: Finish scheduling Duplicate.
+Execute       set_default_model Duplicate 
+Execute       bind -model Duplicate 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=Duplicate
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.05 seconds; current allocated memory: 320.707 MB.
+Execute       report -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Duplicate.verbose.bind.rpt -verbose -f 
+Execute       db_write -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Duplicate.bind.adb -f 
+INFO-FLOW: Finish binding Duplicate.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Filter2D' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model Filter2D 
+Execute       schedule -model Filter2D 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'loop_width'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 10.
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.24 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.27 seconds; current allocated memory: 321.728 MB.
+Execute       report -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Filter2D.verbose.sched.rpt -verbose -f 
+Command       report done; 0.12 sec.
+Execute       db_write -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Filter2D.sched.adb -f 
+INFO-FLOW: Finish scheduling Filter2D.
+Execute       set_default_model Filter2D 
+Execute       bind -model Filter2D 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=Filter2D
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.24 seconds; current allocated memory: 322.786 MB.
+Execute       report -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Filter2D.verbose.bind.rpt -verbose -f 
+Command       report done; 0.25 sec.
+Execute       db_write -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Filter2D.bind.adb -f 
+INFO-FLOW: Finish binding Filter2D.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model Sobel 
+Execute       schedule -model Sobel 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.3 seconds; current allocated memory: 322.957 MB.
+Execute       report -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Sobel.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Sobel.sched.adb -f 
+INFO-FLOW: Finish scheduling Sobel.
+Execute       set_default_model Sobel 
+Execute       bind -model Sobel 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=Sobel
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.07 seconds; current allocated memory: 323.067 MB.
+Execute       report -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Sobel.verbose.bind.rpt -verbose -f 
+Command       report done; 0.16 sec.
+Execute       db_write -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Sobel.bind.adb -f 
+INFO-FLOW: Finish binding Sobel.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Sobel_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model Sobel.1 
+Execute       schedule -model Sobel.1 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.19 seconds; current allocated memory: 323.196 MB.
+Execute       report -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Sobel_1.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Sobel_1.sched.adb -f 
+INFO-FLOW: Finish scheduling Sobel.1.
+Execute       set_default_model Sobel.1 
+Execute       bind -model Sobel.1 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=Sobel.1
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.07 seconds; current allocated memory: 323.334 MB.
+Execute       report -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Sobel_1.verbose.bind.rpt -verbose -f 
+Command       report done; 0.16 sec.
+Execute       db_write -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Sobel_1.bind.adb -f 
+INFO-FLOW: Finish binding Sobel.1.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'gradient_decompositi' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model gradient_decompositi 
+Execute       schedule -model gradient_decompositi 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.27 seconds; current allocated memory: 323.659 MB.
+Execute       report -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/gradient_decompositi.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/gradient_decompositi.sched.adb -f 
+INFO-FLOW: Finish scheduling gradient_decompositi.
+Execute       set_default_model gradient_decompositi 
+Execute       bind -model gradient_decompositi 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=gradient_decompositi
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.07 seconds; current allocated memory: 324.070 MB.
+Execute       report -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/gradient_decompositi.verbose.bind.rpt -verbose -f 
+Execute       db_write -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/gradient_decompositi.bind.adb -f 
+INFO-FLOW: Finish binding gradient_decompositi.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'nonmax_suppression' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model nonmax_suppression 
+Execute       schedule -model nonmax_suppression 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1.1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 4.
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.12 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.22 seconds; current allocated memory: 324.508 MB.
+Execute       report -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/nonmax_suppression.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/nonmax_suppression.sched.adb -f 
+INFO-FLOW: Finish scheduling nonmax_suppression.
+Execute       set_default_model nonmax_suppression 
+Execute       bind -model nonmax_suppression 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=nonmax_suppression
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.11 seconds; current allocated memory: 325.056 MB.
+Execute       report -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/nonmax_suppression.verbose.bind.rpt -verbose -f 
+Execute       db_write -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/nonmax_suppression.bind.adb -f 
+INFO-FLOW: Finish binding nonmax_suppression.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'hysteresis' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model hysteresis 
+Execute       schedule -model hysteresis 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.16 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.28 seconds; current allocated memory: 325.674 MB.
+Execute       report -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/hysteresis.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/hysteresis.sched.adb -f 
+INFO-FLOW: Finish scheduling hysteresis.
+Execute       set_default_model hysteresis 
+Execute       bind -model hysteresis 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=hysteresis
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.13 seconds; current allocated memory: 326.296 MB.
+Execute       report -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/hysteresis.verbose.bind.rpt -verbose -f 
+Command       report done; 0.16 sec.
+Execute       db_write -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/hysteresis.bind.adb -f 
+INFO-FLOW: Finish binding hysteresis.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Loop_2_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model Loop_2_proc 
+Execute       schedule -model Loop_2_proc 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.13 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.32 seconds; current allocated memory: 326.524 MB.
+Execute       report -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Loop_2_proc.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Loop_2_proc.sched.adb -f 
+INFO-FLOW: Finish scheduling Loop_2_proc.
+Execute       set_default_model Loop_2_proc 
+Execute       bind -model Loop_2_proc 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=Loop_2_proc
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.03 seconds; current allocated memory: 326.661 MB.
+Execute       report -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Loop_2_proc.verbose.bind.rpt -verbose -f 
+Execute       db_write -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Loop_2_proc.bind.adb -f 
+INFO-FLOW: Finish binding Loop_2_proc.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'canny_edge' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model canny_edge 
+Execute       schedule -model canny_edge 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.04 seconds; current allocated memory: 326.821 MB.
+Execute       report -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.sched.adb -f 
+INFO-FLOW: Finish scheduling canny_edge.
+Execute       set_default_model canny_edge 
+Execute       bind -model canny_edge 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=canny_edge
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 1.24 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.26 seconds; current allocated memory: 327.885 MB.
+Execute       report -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.verbose.bind.rpt -verbose -f 
+Command       report done; 0.62 sec.
+Execute       db_write -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.bind.adb -f 
+INFO-FLOW: Finish binding canny_edge.
+Execute       get_model_list canny_edge -filter all-wo-channel 
+INFO-FLOW: Preprocessing for RTLGen ...
+Execute       rtl_gen_preprocess Block_Mat.exit27932_ 
+Execute       rtl_gen_preprocess Loop_1_proc 
+Execute       rtl_gen_preprocess Duplicate 
+Execute       rtl_gen_preprocess Filter2D 
+Execute       rtl_gen_preprocess Sobel 
+Execute       rtl_gen_preprocess Sobel.1 
+Execute       rtl_gen_preprocess gradient_decompositi 
+Execute       rtl_gen_preprocess nonmax_suppression 
+Execute       rtl_gen_preprocess hysteresis 
+Execute       rtl_gen_preprocess Loop_2_proc 
+Execute       rtl_gen_preprocess canny_edge 
+INFO-FLOW: Model list for RTL generation: Block_Mat.exit27932_ Loop_1_proc Duplicate Filter2D Sobel Sobel.1 gradient_decompositi nonmax_suppression hysteresis Loop_2_proc canny_edge
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Block_Mat_exit27932_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model Block_Mat.exit27932_ -vendor xilinx -mg_file /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Block_Mat_exit27932_s.compgen.tcl 
+INFO: [RTGEN 206-100] Generating core module 'canny_edge_mul_mul_9ns_20s_20_3_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Block_Mat_exit27932_s'.
+INFO: [HLS 200-111]  Elapsed time: 0.65 seconds; current allocated memory: 328.420 MB.
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.rtl_wrap.cfg.tcl 
+Execute       gen_rtl Block_Mat.exit27932_ -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/systemc/Block_Mat_exit27932_s -synmodules Block_Mat.exit27932_ Loop_1_proc Duplicate Filter2D Sobel Sobel.1 gradient_decompositi nonmax_suppression hysteresis Loop_2_proc canny_edge 
+Execute       gen_rtl Block_Mat.exit27932_ -style xilinx -f -lang vhdl -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/vhdl/Block_Mat_exit27932_s 
+Execute       gen_rtl Block_Mat.exit27932_ -style xilinx -f -lang vlog -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/verilog/Block_Mat_exit27932_s 
+Execute       gen_tb_info Block_Mat.exit27932_ -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Block_Mat_exit27932_s -p /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db 
+Execute       report -model Block_Mat.exit27932_ -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/report/Block_Mat_exit27932_s_csynth.rpt -f 
+Execute       report -model Block_Mat.exit27932_ -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/report/Block_Mat_exit27932_s_csynth.xml -f -x 
+Execute       report -model Block_Mat.exit27932_ -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Block_Mat_exit27932_s.verbose.rpt -verbose -f 
+Execute       db_write -model Block_Mat.exit27932_ -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Block_Mat_exit27932_s.adb -f 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Loop_1_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model Loop_1_proc -vendor xilinx -mg_file /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Loop_1_proc.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Loop_1_proc'.
+INFO: [HLS 200-111]  Elapsed time: 0.05 seconds; current allocated memory: 329.008 MB.
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.rtl_wrap.cfg.tcl 
+Execute       gen_rtl Loop_1_proc -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/systemc/Loop_1_proc -synmodules Block_Mat.exit27932_ Loop_1_proc Duplicate Filter2D Sobel Sobel.1 gradient_decompositi nonmax_suppression hysteresis Loop_2_proc canny_edge 
+Execute       gen_rtl Loop_1_proc -style xilinx -f -lang vhdl -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/vhdl/Loop_1_proc 
+Execute       gen_rtl Loop_1_proc -style xilinx -f -lang vlog -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/verilog/Loop_1_proc 
+Execute       gen_tb_info Loop_1_proc -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Loop_1_proc -p /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db 
+Execute       report -model Loop_1_proc -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/report/Loop_1_proc_csynth.rpt -f 
+Execute       report -model Loop_1_proc -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/report/Loop_1_proc_csynth.xml -f -x 
+Execute       report -model Loop_1_proc -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Loop_1_proc.verbose.rpt -verbose -f 
+Execute       db_write -model Loop_1_proc -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Loop_1_proc.adb -f 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Duplicate' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model Duplicate -vendor xilinx -mg_file /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Duplicate.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Duplicate'.
+INFO: [HLS 200-111]  Elapsed time: 0.08 seconds; current allocated memory: 329.711 MB.
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.rtl_wrap.cfg.tcl 
+Execute       gen_rtl Duplicate -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/systemc/Duplicate -synmodules Block_Mat.exit27932_ Loop_1_proc Duplicate Filter2D Sobel Sobel.1 gradient_decompositi nonmax_suppression hysteresis Loop_2_proc canny_edge 
+Execute       gen_rtl Duplicate -style xilinx -f -lang vhdl -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/vhdl/Duplicate 
+Execute       gen_rtl Duplicate -style xilinx -f -lang vlog -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/verilog/Duplicate 
+Execute       gen_tb_info Duplicate -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Duplicate -p /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db 
+Execute       report -model Duplicate -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/report/Duplicate_csynth.rpt -f 
+Execute       report -model Duplicate -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/report/Duplicate_csynth.xml -f -x 
+Execute       report -model Duplicate -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Duplicate.verbose.rpt -verbose -f 
+Execute       db_write -model Duplicate -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Duplicate.adb -f 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Filter2D' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model Filter2D -vendor xilinx -mg_file /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Filter2D.compgen.tcl 
+INFO: [RTGEN 206-100] Generating core module 'canny_edge_mac_muladd_2s_8ns_11s_11_3_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'canny_edge_mac_muladd_2s_8ns_8ns_10_3_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'canny_edge_mac_muladd_2s_8ns_9s_11_3_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'canny_edge_mac_muladd_3ns_8ns_10s_11_3_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'canny_edge_mac_muladd_3s_8ns_11s_12_3_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'canny_edge_mac_muladd_4ns_8ns_12s_12_3_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'canny_edge_mux_32_8_1_1': 6 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Filter2D'.
+Command       create_rtl_model done; 0.12 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.23 seconds; current allocated memory: 332.084 MB.
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.rtl_wrap.cfg.tcl 
+Execute       gen_rtl Filter2D -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/systemc/Filter2D -synmodules Block_Mat.exit27932_ Loop_1_proc Duplicate Filter2D Sobel Sobel.1 gradient_decompositi nonmax_suppression hysteresis Loop_2_proc canny_edge 
+Execute       gen_rtl Filter2D -style xilinx -f -lang vhdl -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/vhdl/Filter2D 
+Execute       gen_rtl Filter2D -style xilinx -f -lang vlog -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/verilog/Filter2D 
+Execute       gen_tb_info Filter2D -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Filter2D -p /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db 
+Execute       report -model Filter2D -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/report/Filter2D_csynth.rpt -f 
+Execute       report -model Filter2D -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/report/Filter2D_csynth.xml -f -x 
+Execute       report -model Filter2D -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Filter2D.verbose.rpt -verbose -f 
+Command       report done; 0.34 sec.
+Execute       db_write -model Filter2D -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Filter2D.adb -f 
+Command       db_write done; 0.15 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model Sobel -vendor xilinx -mg_file /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Sobel.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Sobel'.
+INFO: [HLS 200-111]  Elapsed time: 0.77 seconds; current allocated memory: 336.768 MB.
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.rtl_wrap.cfg.tcl 
+Execute       gen_rtl Sobel -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/systemc/Sobel -synmodules Block_Mat.exit27932_ Loop_1_proc Duplicate Filter2D Sobel Sobel.1 gradient_decompositi nonmax_suppression hysteresis Loop_2_proc canny_edge 
+Execute       gen_rtl Sobel -style xilinx -f -lang vhdl -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/vhdl/Sobel 
+Execute       gen_rtl Sobel -style xilinx -f -lang vlog -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/verilog/Sobel 
+Execute       gen_tb_info Sobel -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Sobel -p /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db 
+Execute       report -model Sobel -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/report/Sobel_csynth.rpt -f 
+Execute       report -model Sobel -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/report/Sobel_csynth.xml -f -x 
+Execute       report -model Sobel -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Sobel.verbose.rpt -verbose -f 
+Command       report done; 0.17 sec.
+Execute       db_write -model Sobel -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Sobel.adb -f 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Sobel_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model Sobel.1 -vendor xilinx -mg_file /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Sobel_1.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Sobel_1'.
+INFO: [HLS 200-111]  Elapsed time: 0.23 seconds; current allocated memory: 337.228 MB.
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.rtl_wrap.cfg.tcl 
+Execute       gen_rtl Sobel.1 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/systemc/Sobel_1 -synmodules Block_Mat.exit27932_ Loop_1_proc Duplicate Filter2D Sobel Sobel.1 gradient_decompositi nonmax_suppression hysteresis Loop_2_proc canny_edge 
+Execute       gen_rtl Sobel.1 -style xilinx -f -lang vhdl -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/vhdl/Sobel_1 
+Execute       gen_rtl Sobel.1 -style xilinx -f -lang vlog -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/verilog/Sobel_1 
+Execute       gen_tb_info Sobel.1 -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Sobel_1 -p /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db 
+Execute       report -model Sobel.1 -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/report/Sobel_1_csynth.rpt -f 
+Execute       report -model Sobel.1 -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/report/Sobel_1_csynth.xml -f -x 
+Execute       report -model Sobel.1 -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Sobel_1.verbose.rpt -verbose -f 
+Command       report done; 0.17 sec.
+Execute       db_write -model Sobel.1 -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Sobel_1.adb -f 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'gradient_decompositi' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model gradient_decompositi -vendor xilinx -mg_file /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/gradient_decompositi.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'gradient_decompositi'.
+INFO: [HLS 200-111]  Elapsed time: 0.24 seconds; current allocated memory: 338.023 MB.
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.rtl_wrap.cfg.tcl 
+Execute       gen_rtl gradient_decompositi -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/systemc/gradient_decompositi -synmodules Block_Mat.exit27932_ Loop_1_proc Duplicate Filter2D Sobel Sobel.1 gradient_decompositi nonmax_suppression hysteresis Loop_2_proc canny_edge 
+Execute       gen_rtl gradient_decompositi -style xilinx -f -lang vhdl -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/vhdl/gradient_decompositi 
+Execute       gen_rtl gradient_decompositi -style xilinx -f -lang vlog -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/verilog/gradient_decompositi 
+Execute       gen_tb_info gradient_decompositi -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/gradient_decompositi -p /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db 
+Execute       report -model gradient_decompositi -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/report/gradient_decompositi_csynth.rpt -f 
+Execute       report -model gradient_decompositi -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/report/gradient_decompositi_csynth.xml -f -x 
+Execute       report -model gradient_decompositi -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/gradient_decompositi.verbose.rpt -verbose -f 
+Execute       db_write -model gradient_decompositi -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/gradient_decompositi.adb -f 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'nonmax_suppression' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model nonmax_suppression -vendor xilinx -mg_file /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/nonmax_suppression.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'nonmax_suppression'.
+INFO: [HLS 200-111]  Elapsed time: 0.32 seconds; current allocated memory: 340.254 MB.
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.rtl_wrap.cfg.tcl 
+Execute       gen_rtl nonmax_suppression -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/systemc/nonmax_suppression -synmodules Block_Mat.exit27932_ Loop_1_proc Duplicate Filter2D Sobel Sobel.1 gradient_decompositi nonmax_suppression hysteresis Loop_2_proc canny_edge 
+Execute       gen_rtl nonmax_suppression -style xilinx -f -lang vhdl -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/vhdl/nonmax_suppression 
+Execute       gen_rtl nonmax_suppression -style xilinx -f -lang vlog -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/verilog/nonmax_suppression 
+Execute       gen_tb_info nonmax_suppression -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/nonmax_suppression -p /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db 
+Execute       report -model nonmax_suppression -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/report/nonmax_suppression_csynth.rpt -f 
+Execute       report -model nonmax_suppression -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/report/nonmax_suppression_csynth.xml -f -x 
+Execute       report -model nonmax_suppression -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/nonmax_suppression.verbose.rpt -verbose -f 
+Command       report done; 0.13 sec.
+Execute       db_write -model nonmax_suppression -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/nonmax_suppression.adb -f 
+Command       db_write done; 0.11 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'hysteresis' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model hysteresis -vendor xilinx -mg_file /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/hysteresis.compgen.tcl 
+INFO: [RTGEN 206-100] Generating core module 'canny_edge_mul_33ns_33ns_65_5_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'hysteresis'.
+INFO: [HLS 200-111]  Elapsed time: 0.41 seconds; current allocated memory: 343.259 MB.
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.rtl_wrap.cfg.tcl 
+Execute       gen_rtl hysteresis -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/systemc/hysteresis -synmodules Block_Mat.exit27932_ Loop_1_proc Duplicate Filter2D Sobel Sobel.1 gradient_decompositi nonmax_suppression hysteresis Loop_2_proc canny_edge 
+Execute       gen_rtl hysteresis -style xilinx -f -lang vhdl -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/vhdl/hysteresis 
+Execute       gen_rtl hysteresis -style xilinx -f -lang vlog -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/verilog/hysteresis 
+Execute       gen_tb_info hysteresis -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/hysteresis -p /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db 
+Execute       report -model hysteresis -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/report/hysteresis_csynth.rpt -f 
+Execute       report -model hysteresis -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/report/hysteresis_csynth.xml -f -x 
+Execute       report -model hysteresis -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/hysteresis.verbose.rpt -verbose -f 
+Command       report done; 0.2 sec.
+Execute       db_write -model hysteresis -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/hysteresis.adb -f 
+Command       db_write done; 0.15 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Loop_2_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model Loop_2_proc -vendor xilinx -mg_file /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Loop_2_proc.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Loop_2_proc'.
+INFO: [HLS 200-111]  Elapsed time: 0.54 seconds; current allocated memory: 346.226 MB.
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.rtl_wrap.cfg.tcl 
+Execute       gen_rtl Loop_2_proc -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/systemc/Loop_2_proc -synmodules Block_Mat.exit27932_ Loop_1_proc Duplicate Filter2D Sobel Sobel.1 gradient_decompositi nonmax_suppression hysteresis Loop_2_proc canny_edge 
+Execute       gen_rtl Loop_2_proc -style xilinx -f -lang vhdl -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/vhdl/Loop_2_proc 
+Execute       gen_rtl Loop_2_proc -style xilinx -f -lang vlog -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/verilog/Loop_2_proc 
+Execute       gen_tb_info Loop_2_proc -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Loop_2_proc -p /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db 
+Execute       report -model Loop_2_proc -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/report/Loop_2_proc_csynth.rpt -f 
+Execute       report -model Loop_2_proc -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/report/Loop_2_proc_csynth.xml -f -x 
+Execute       report -model Loop_2_proc -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Loop_2_proc.verbose.rpt -verbose -f 
+Execute       db_write -model Loop_2_proc -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Loop_2_proc.adb -f 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'canny_edge' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model canny_edge -vendor xilinx -mg_file /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.compgen.tcl 
+INFO: [RTGEN 206-500] Setting interface mode on port 'canny_edge/INPUT_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'canny_edge/OUTPUT_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'canny_edge/rows_V' to 's_axilite & ap_stable'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'canny_edge/cols_V' to 's_axilite & ap_stable'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'canny_edge/threshold1' to 's_axilite & ap_stable'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'canny_edge/threshold2' to 's_axilite & ap_stable'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'canny_edge' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'rows_V', 'cols_V', 'threshold1', 'threshold2' and 'return' to AXI-Lite port CONTROL_BUS.
+INFO: [RTGEN 206-100] Generated clock port 'AXI_LITE_clk' for AXI-Lite bundle 'CONTROL_BUS'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'canny_edge'.
+INFO: [HLS 200-111]  Elapsed time: 0.19 seconds; current allocated memory: 347.676 MB.
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.rtl_wrap.cfg.tcl 
+Execute       gen_rtl canny_edge -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/systemc/canny_edge -synmodules Block_Mat.exit27932_ Loop_1_proc Duplicate Filter2D Sobel Sobel.1 gradient_decompositi nonmax_suppression hysteresis Loop_2_proc canny_edge 
+Execute       gen_rtl canny_edge -istop -style xilinx -f -lang vhdl -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/vhdl/canny_edge 
+Execute       gen_rtl canny_edge -istop -style xilinx -f -lang vlog -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/verilog/canny_edge 
+Execute       export_constraint_db -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.constraint.tcl -f -tool general 
+Execute       report -model canny_edge -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.design.xml -verbose -f -dv 
+Command       report done; 0.42 sec.
+Execute       report -model canny_edge -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.sdaccel.xml -verbose -f -sdaccel 
+Execute       gen_tb_info canny_edge -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge -p /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db 
+Execute       report -model canny_edge -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/report/canny_edge_csynth.rpt -f 
+Execute       report -model canny_edge -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/syn/report/canny_edge_csynth.xml -f -x 
+Execute       report -model canny_edge -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.verbose.rpt -verbose -f 
+Command       report done; 0.63 sec.
+Execute       db_write -model canny_edge -o /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.adb -f 
+Command       db_write done; 0.12 sec.
+Execute       sc_get_clocks canny_edge 
+Execute       get_config_export -vivado_clock 
+Execute       sc_get_portdomain canny_edge 
+INFO-FLOW: Model list for RTL component generation: Block_Mat.exit27932_ Loop_1_proc Duplicate Filter2D Sobel Sobel.1 gradient_decompositi nonmax_suppression hysteresis Loop_2_proc canny_edge
+INFO-FLOW: Handling components in module [Block_Mat_exit27932_s] ... 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Block_Mat_exit27932_s.compgen.tcl 
+INFO-FLOW: Found component canny_edge_mul_mul_9ns_20s_20_3_1.
+INFO-FLOW: Append model canny_edge_mul_mul_9ns_20s_20_3_1
+INFO-FLOW: Handling components in module [Loop_1_proc] ... 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Loop_1_proc.compgen.tcl 
+INFO-FLOW: Handling components in module [Duplicate] ... 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Duplicate.compgen.tcl 
+INFO-FLOW: Handling components in module [Filter2D] ... 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Filter2D.compgen.tcl 
+INFO-FLOW: Found component canny_edge_mux_32_8_1_1.
+INFO-FLOW: Append model canny_edge_mux_32_8_1_1
+INFO-FLOW: Found component canny_edge_mac_muladd_2s_8ns_9s_11_3_1.
+INFO-FLOW: Append model canny_edge_mac_muladd_2s_8ns_9s_11_3_1
+INFO-FLOW: Found component canny_edge_mac_muladd_2s_8ns_11s_11_3_1.
+INFO-FLOW: Append model canny_edge_mac_muladd_2s_8ns_11s_11_3_1
+INFO-FLOW: Found component canny_edge_mac_muladd_3s_8ns_11s_12_3_1.
+INFO-FLOW: Append model canny_edge_mac_muladd_3s_8ns_11s_12_3_1
+INFO-FLOW: Found component canny_edge_mac_muladd_2s_8ns_8ns_10_3_1.
+INFO-FLOW: Append model canny_edge_mac_muladd_2s_8ns_8ns_10_3_1
+INFO-FLOW: Found component canny_edge_mac_muladd_4ns_8ns_12s_12_3_1.
+INFO-FLOW: Append model canny_edge_mac_muladd_4ns_8ns_12s_12_3_1
+INFO-FLOW: Found component canny_edge_mac_muladd_3ns_8ns_10s_11_3_1.
+INFO-FLOW: Append model canny_edge_mac_muladd_3ns_8ns_10s_11_3_1
+INFO-FLOW: Found component Filter2D_k_buf_0_val_3.
+INFO-FLOW: Append model Filter2D_k_buf_0_val_3
+INFO-FLOW: Handling components in module [Sobel] ... 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Sobel.compgen.tcl 
+INFO-FLOW: Handling components in module [Sobel_1] ... 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Sobel_1.compgen.tcl 
+INFO-FLOW: Handling components in module [gradient_decompositi] ... 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/gradient_decompositi.compgen.tcl 
+INFO-FLOW: Handling components in module [nonmax_suppression] ... 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/nonmax_suppression.compgen.tcl 
+INFO-FLOW: Found component nonmax_suppression_lbuffer_val_0.
+INFO-FLOW: Append model nonmax_suppression_lbuffer_val_0
+INFO-FLOW: Handling components in module [hysteresis] ... 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/hysteresis.compgen.tcl 
+INFO-FLOW: Found component canny_edge_mul_33ns_33ns_65_5_1.
+INFO-FLOW: Append model canny_edge_mul_33ns_33ns_65_5_1
+INFO-FLOW: Found component hysteresis_linebuff_val_0.
+INFO-FLOW: Append model hysteresis_linebuff_val_0
+INFO-FLOW: Handling components in module [Loop_2_proc] ... 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Loop_2_proc.compgen.tcl 
+INFO-FLOW: Handling components in module [canny_edge] ... 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.compgen.tcl 
+INFO-FLOW: Found component fifo_w20_d2_A.
+INFO-FLOW: Append model fifo_w20_d2_A
+INFO-FLOW: Found component fifo_w8_d2_A.
+INFO-FLOW: Append model fifo_w8_d2_A
+INFO-FLOW: Found component fifo_w20_d7_A.
+INFO-FLOW: Append model fifo_w20_d7_A
+INFO-FLOW: Found component fifo_w8_d2_A.
+INFO-FLOW: Append model fifo_w8_d2_A
+INFO-FLOW: Found component fifo_w8_d2_A.
+INFO-FLOW: Append model fifo_w8_d2_A
+INFO-FLOW: Found component fifo_w16_d2_A.
+INFO-FLOW: Append model fifo_w16_d2_A
+INFO-FLOW: Found component fifo_w16_d2_A.
+INFO-FLOW: Append model fifo_w16_d2_A
+INFO-FLOW: Found component fifo_w16_d2_A.
+INFO-FLOW: Append model fifo_w16_d2_A
+INFO-FLOW: Found component fifo_w16_d2_A.
+INFO-FLOW: Append model fifo_w16_d2_A
+INFO-FLOW: Found component fifo_w8_d2_A.
+INFO-FLOW: Append model fifo_w8_d2_A
+INFO-FLOW: Found component start_for_Duplicate_U0.
+INFO-FLOW: Append model start_for_Duplicate_U0
+INFO-FLOW: Found component start_for_Loop_2_proc_U0.
+INFO-FLOW: Append model start_for_Loop_2_proc_U0
+INFO-FLOW: Found component start_for_Sobel_U0.
+INFO-FLOW: Append model start_for_Sobel_U0
+INFO-FLOW: Found component start_for_Sobel_1_U0.
+INFO-FLOW: Append model start_for_Sobel_1_U0
+INFO-FLOW: Found component start_for_gradient_decompositi_U0.
+INFO-FLOW: Append model start_for_gradient_decompositi_U0
+INFO-FLOW: Found component start_for_nonmax_suppression_U0.
+INFO-FLOW: Append model start_for_nonmax_suppression_U0
+INFO-FLOW: Found component start_for_hysteresis_U0.
+INFO-FLOW: Append model start_for_hysteresis_U0
+INFO-FLOW: Found component canny_edge_CONTROL_BUS_s_axi.
+INFO-FLOW: Append model canny_edge_CONTROL_BUS_s_axi
+INFO-FLOW: Append model Block_Mat_exit27932_s
+INFO-FLOW: Append model Loop_1_proc
+INFO-FLOW: Append model Duplicate
+INFO-FLOW: Append model Filter2D
+INFO-FLOW: Append model Sobel
+INFO-FLOW: Append model Sobel_1
+INFO-FLOW: Append model gradient_decompositi
+INFO-FLOW: Append model nonmax_suppression
+INFO-FLOW: Append model hysteresis
+INFO-FLOW: Append model Loop_2_proc
+INFO-FLOW: Append model canny_edge
+INFO-FLOW: Generating RTL model list ...
+INFO-FLOW: All models in this session: canny_edge_mul_mul_9ns_20s_20_3_1 canny_edge_mux_32_8_1_1 canny_edge_mac_muladd_2s_8ns_9s_11_3_1 canny_edge_mac_muladd_2s_8ns_11s_11_3_1 canny_edge_mac_muladd_3s_8ns_11s_12_3_1 canny_edge_mac_muladd_2s_8ns_8ns_10_3_1 canny_edge_mac_muladd_4ns_8ns_12s_12_3_1 canny_edge_mac_muladd_3ns_8ns_10s_11_3_1 Filter2D_k_buf_0_val_3 nonmax_suppression_lbuffer_val_0 canny_edge_mul_33ns_33ns_65_5_1 hysteresis_linebuff_val_0 fifo_w20_d2_A fifo_w8_d2_A fifo_w20_d7_A fifo_w8_d2_A fifo_w8_d2_A fifo_w16_d2_A fifo_w16_d2_A fifo_w16_d2_A fifo_w16_d2_A fifo_w8_d2_A start_for_Duplicate_U0 start_for_Loop_2_proc_U0 start_for_Sobel_U0 start_for_Sobel_1_U0 start_for_gradient_decompositi_U0 start_for_nonmax_suppression_U0 start_for_hysteresis_U0 canny_edge_CONTROL_BUS_s_axi Block_Mat_exit27932_s Loop_1_proc Duplicate Filter2D Sobel Sobel_1 gradient_decompositi nonmax_suppression hysteresis Loop_2_proc canny_edge
+INFO-FLOW: To file: write model canny_edge_mul_mul_9ns_20s_20_3_1
+INFO-FLOW: To file: write model canny_edge_mux_32_8_1_1
+INFO-FLOW: To file: write model canny_edge_mac_muladd_2s_8ns_9s_11_3_1
+INFO-FLOW: To file: write model canny_edge_mac_muladd_2s_8ns_11s_11_3_1
+INFO-FLOW: To file: write model canny_edge_mac_muladd_3s_8ns_11s_12_3_1
+INFO-FLOW: To file: write model canny_edge_mac_muladd_2s_8ns_8ns_10_3_1
+INFO-FLOW: To file: write model canny_edge_mac_muladd_4ns_8ns_12s_12_3_1
+INFO-FLOW: To file: write model canny_edge_mac_muladd_3ns_8ns_10s_11_3_1
+INFO-FLOW: To file: write model Filter2D_k_buf_0_val_3
+INFO-FLOW: To file: write model nonmax_suppression_lbuffer_val_0
+INFO-FLOW: To file: write model canny_edge_mul_33ns_33ns_65_5_1
+INFO-FLOW: To file: write model hysteresis_linebuff_val_0
+INFO-FLOW: To file: write model fifo_w20_d2_A
+INFO-FLOW: To file: write model fifo_w8_d2_A
+INFO-FLOW: To file: write model fifo_w20_d7_A
+INFO-FLOW: To file: write model fifo_w8_d2_A
+INFO-FLOW: To file: write model fifo_w8_d2_A
+INFO-FLOW: To file: write model fifo_w16_d2_A
+INFO-FLOW: To file: write model fifo_w16_d2_A
+INFO-FLOW: To file: write model fifo_w16_d2_A
+INFO-FLOW: To file: write model fifo_w16_d2_A
+INFO-FLOW: To file: write model fifo_w8_d2_A
+INFO-FLOW: To file: write model start_for_Duplicate_U0
+INFO-FLOW: To file: write model start_for_Loop_2_proc_U0
+INFO-FLOW: To file: write model start_for_Sobel_U0
+INFO-FLOW: To file: write model start_for_Sobel_1_U0
+INFO-FLOW: To file: write model start_for_gradient_decompositi_U0
+INFO-FLOW: To file: write model start_for_nonmax_suppression_U0
+INFO-FLOW: To file: write model start_for_hysteresis_U0
+INFO-FLOW: To file: write model canny_edge_CONTROL_BUS_s_axi
+INFO-FLOW: To file: write model Block_Mat_exit27932_s
+INFO-FLOW: To file: write model Loop_1_proc
+INFO-FLOW: To file: write model Duplicate
+INFO-FLOW: To file: write model Filter2D
+INFO-FLOW: To file: write model Sobel
+INFO-FLOW: To file: write model Sobel_1
+INFO-FLOW: To file: write model gradient_decompositi
+INFO-FLOW: To file: write model nonmax_suppression
+INFO-FLOW: To file: write model hysteresis
+INFO-FLOW: To file: write model Loop_2_proc
+INFO-FLOW: To file: write model canny_edge
+INFO-FLOW: Finished generating RTL model list.
+
+
+INFO-FLOW: RTL Generation done.
+INFO-FLOW: CAS Generation done.
+INFO-FLOW: CBC Generation done.
+INFO-FLOW: DBG:CMD: auto_generate_csynth_design
+INFO-FLOW: DBG:CMD:     auto_generate --sim-model -phase csynth_design -d /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/global.setting.tcl
+Execute       source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/generic/autopilot/common.gen 
+Execute         source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/generic/autopilot/op.gen 
+Execute       source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/generic/autopilot/interface.gen 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/zynq/zynq.gen 
+Execute         source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/common/virtex.gen 
+Execute           source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/common/xilinx.gen 
+Execute             source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/interface/plb46.gen 
+Execute             source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/interface/fsl.gen 
+Execute             source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/interface/axi4.gen 
+Execute             source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/interface/saxilite.gen 
+Execute               source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/interface/maxi.gen 
+Execute             source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute             source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute             source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.gen 
+Execute             source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/ip/util.gen 
+Execute             source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/ip/xfft.gen 
+Execute             source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/ip/xfir.gen 
+Command           ap_source done; 0.12 sec.
+Execute           source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/common/dsp48.gen 
+Command         ap_source done; 0.12 sec.
+Command       ap_source done; 0.12 sec.
+Execute       source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute         source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv6.gen 
+INFO-FLOW: DBG:CMD:   using AESL_AUTOCG::g_clock_period=6.000 (was NA)
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=1 export=0 expOnly=0 dstVlogDir=syn/verilog
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Block_Mat_exit27932_s.compgen.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Loop_1_proc.compgen.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Duplicate.compgen.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Filter2D.compgen.tcl 
+INFO: [RTMG 210-278] Implementing memory 'Filter2D_k_buf_0_val_3_ram (RAM)' using block RAMs.
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Sobel.compgen.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Sobel_1.compgen.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/gradient_decompositi.compgen.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/nonmax_suppression.compgen.tcl 
+INFO: [RTMG 210-278] Implementing memory 'nonmax_suppression_lbuffer_val_0_ram (RAM)' using block RAMs.
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/hysteresis.compgen.tcl 
+INFO: [RTMG 210-282] Generating pipelined core: 'canny_edge_mul_33ns_33ns_65_5_1_MulnS_0'
+INFO: [RTMG 210-278] Implementing memory 'hysteresis_linebuff_val_0_ram (RAM)' using block RAMs.
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Loop_2_proc.compgen.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.compgen.tcl 
+INFO: [RTMG 210-285] Implementing FIFO 'packets_cast_loc_c_U(fifo_w20_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'src_bw_data_stream_0_U(fifo_w8_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'packets_cast_loc_c35_U(fifo_w20_d7_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'src1_data_stream_0_s_U(fifo_w8_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'src2_data_stream_0_s_U(fifo_w8_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'sobel_gx_data_stream_U(fifo_w16_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'sobel_gy_data_stream_U(fifo_w16_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'grad_gd_data_stream_s_U(fifo_w16_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'suppressed_data_stre_U(fifo_w16_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'canny_edges_data_str_U(fifo_w8_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_Duplicate_U0_U(start_for_Duplicate_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_Loop_2_proc_U0_U(start_for_Loop_2_proc_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_Sobel_U0_U(start_for_Sobel_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_Sobel_1_U0_U(start_for_Sobel_1_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_gradient_decompositi_U0_U(start_for_gradient_decompositi_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_nonmax_suppression_U0_U(start_for_nonmax_suppression_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_hysteresis_U0_U(start_for_hysteresis_U0)' using Shift Registers.
+Execute         source ./CONTROL_BUS.slave.tcl 
+Execute         is_m_axi_addr64 
+Command       ap_source done; 0.18 sec.
+INFO-FLOW: DBG:CMD:     auto_generate -export -impltomg_flag -rtl both -tool Vivado -pcore_version 1.00.a -phase csynth_design -d /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/global.setting.tcl
+Execute       source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/generic/autopilot/common.gen 
+Execute         source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/generic/autopilot/op.gen 
+Execute       source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/generic/autopilot/interface.gen 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/zynq/zynq.gen 
+Execute         source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/common/virtex.gen 
+Execute           source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/common/xilinx.gen 
+Execute             source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/interface/plb46.gen 
+Execute             source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/interface/fsl.gen 
+Execute             source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/interface/axi4.gen 
+Execute             source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/interface/saxilite.gen 
+Execute               source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/interface/maxi.gen 
+Execute             source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute             source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute             source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.gen 
+Execute             source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/ip/util.gen 
+Execute             source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/ip/xfft.gen 
+Execute             source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/ip/xfir.gen 
+Command           ap_source done; 0.12 sec.
+Execute           source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/common/dsp48.gen 
+Command         ap_source done; 0.12 sec.
+Command       ap_source done; 0.12 sec.
+Execute       source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute         source /home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv6.gen 
+INFO-FLOW: DBG:CMD:       initCTypeInfo top_module=canny_edge xml_exists=0
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.rtl_wrap.cfg.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.rtl_wrap.cfg.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.rtl_wrap.cfg.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.tbgen.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       export_impl_rtl
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.verilog
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Block_Mat_exit27932_s.compgen.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Loop_1_proc.compgen.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Duplicate.compgen.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Filter2D.compgen.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Sobel.compgen.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Sobel_1.compgen.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/gradient_decompositi.compgen.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/nonmax_suppression.compgen.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/hysteresis.compgen.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Loop_2_proc.compgen.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.compgen.tcl 
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=1 expOnly=1 dstVlogDir=impl/.pcores/verilog
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Block_Mat_exit27932_s.compgen.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Loop_1_proc.compgen.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Duplicate.compgen.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Filter2D.compgen.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Sobel.compgen.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Sobel_1.compgen.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/gradient_decompositi.compgen.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/nonmax_suppression.compgen.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/hysteresis.compgen.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Loop_2_proc.compgen.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.compgen.tcl 
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.pcores/verilog_sim
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Block_Mat_exit27932_s.compgen.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Loop_1_proc.compgen.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Duplicate.compgen.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Filter2D.compgen.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Sobel.compgen.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Sobel_1.compgen.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/gradient_decompositi.compgen.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/nonmax_suppression.compgen.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/hysteresis.compgen.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/Loop_2_proc.compgen.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.compgen.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.constraint.tcl 
+Execute       get_config_export -vivado_clock 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       hasPcoreIpAdapter=false #gSsdmPorts=4
+INFO-FLOW: DBG:CMD: Skipping loadAnalyze_DB, #g_database=6
+INFO-FLOW: DBG:CMD:       generate_json is_phase_csynth=1 g_has_adaptors=false generate_bd_files=1 #modelList=41 #gSsdmPorts=4
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.tbgen.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/global.setting.tcl 
+Execute       get_config_sdx -target 
+Execute       get_config_export -xo 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/canny_edge.constraint.tcl 
+Execute       sc_get_clocks canny_edge 
+Execute       source /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/global.setting.tcl 
+Execute       get_config_sdx -target 
+Execute       get_config_sdx -profile 
+Execute       ::config_rtl 
+INFO-FLOW: DBG:CMD: add_json_sdx_info kernel file does not exist: /home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/.autopilot/db/kernel.internal.xml
+INFO-FLOW: DBG:CMD:       delete-temp-dirs (skipped for debug)
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:05 ; elapsed = 00:01:09 . Memory (MB): peak = 762.332 ; gain = 322.004 ; free physical = 214 ; free virtual = 3099
+INFO: [SYSC 207-301] Generating SystemC RTL for canny_edge.
+INFO: [VHDL 208-304] Generating VHDL RTL for canny_edge.
+INFO: [VLOG 209-307] Generating Verilog RTL for canny_edge.
+Command     autosyn done; 10.42 sec.
+Execute     get_part 
+Execute     get_config_export -sdx_tcl 
+Command   csynth_design done; 68.24 sec.
+Command ap_source done; 68.5 sec.
+Execute cleanup_all 

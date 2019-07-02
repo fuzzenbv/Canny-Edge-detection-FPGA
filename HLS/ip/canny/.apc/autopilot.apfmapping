@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="canny_edge.h" path="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/canny_edge.h"/>
+    <originFiles name="canny_edge.cpp" path="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/canny_edge.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="test1.cpp" path="/home/cwalk/PYNQ-Projects/cv2PYNQ-The-project-behind-the-library/ip/HLS/canny/solution1/test1.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

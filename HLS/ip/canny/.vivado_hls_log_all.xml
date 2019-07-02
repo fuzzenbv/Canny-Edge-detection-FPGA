@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'Sobel.1' to 'Sobel_1'." projectName="canny" solutionName="solution1" date="2019-04-08T12:37:48.084+0200" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'Block_Mat.exit27932_' to 'Block_Mat_exit27932_s'." projectName="canny" solutionName="solution1" date="2019-04-08T12:37:48.070+0200" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'k_buf[0].val[5]' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:400)." projectName="canny" solutionName="solution1" date="2019-04-08T12:37:48.058+0200" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'k_buf[0].val[4]' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:400)." projectName="canny" solutionName="solution1" date="2019-04-08T12:37:47.371+0200" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'k_buf[0].val[3]' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:400)." projectName="canny" solutionName="solution1" date="2019-04-08T12:37:47.367+0200" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'linebuff.val[1]' (canny/canny_edge.cpp:186)." projectName="canny" solutionName="solution1" date="2019-04-08T12:37:47.362+0200" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'linebuff.val[0]' (canny/canny_edge.cpp:186)." projectName="canny" solutionName="solution1" date="2019-04-08T12:37:47.352+0200" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuff.val[1]' (canny/canny_edge.cpp:186)." projectName="canny" solutionName="solution1" date="2019-04-08T12:37:47.348+0200" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuff.val[0]' (canny/canny_edge.cpp:186)." projectName="canny" solutionName="solution1" date="2019-04-08T12:37:47.345+0200" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'lbuffer.val[0]' (canny/canny_edge.cpp:78)." projectName="canny" solutionName="solution1" date="2019-04-08T12:37:47.342+0200" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'lbuffer.val[1]' (canny/canny_edge.cpp:78)." projectName="canny" solutionName="solution1" date="2019-04-08T12:37:47.336+0200" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'lbuffer.val[0]' (canny/canny_edge.cpp:78)." projectName="canny" solutionName="solution1" date="2019-04-08T12:37:47.332+0200" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'lbuffer.val[1]' (canny/canny_edge.cpp:78)." projectName="canny" solutionName="solution1" date="2019-04-08T12:37:47.328+0200" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'lbuffer.val[0]' (canny/canny_edge.cpp:78)." projectName="canny" solutionName="solution1" date="2019-04-08T12:37:47.324+0200" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'lbuffer.val[1]' (canny/canny_edge.cpp:78)." projectName="canny" solutionName="solution1" date="2019-04-08T12:37:47.320+0200" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'Block_Mat.exit27932_proc' to 'Block_Mat.exit27932_' (canny/canny_edge.cpp:296:22)" projectName="canny" solutionName="solution1" date="2019-04-08T12:37:47.316+0200" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'gradient_decomposition' to 'gradient_decompositi' (canny/canny_edge.cpp:26:35)" projectName="canny" solutionName="solution1" date="2019-04-08T12:37:47.162+0200" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'hls::Duplicate&lt;1080, 1920, 0, 0>' to 'Duplicate' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_arithm.h:672:50)" projectName="canny" solutionName="solution1" date="2019-04-08T12:37:47.157+0200" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'hls::Filter2D&lt;hls::BORDER_DEFAULT, 0, 3, ap_int&lt;8>, int, 1080, 1920, 3, 3>' to 'Filter2D' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:113:33)" projectName="canny" solutionName="solution1" date="2019-04-08T12:37:47.155+0200" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'hls::Sobel&lt;0, 1, 3, 0, 3, 1080, 1920, 1080, 1920>' to 'Sobel.1' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:2619:1)" projectName="canny" solutionName="solution1" date="2019-04-08T12:37:47.151+0200" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'hls::Sobel&lt;1, 0, 3, 0, 3, 1080, 1920, 1080, 1920>' to 'Sobel' (/home/cwalk/Xilinx2018/Vivado/2018.3/common/technology/autopilot/hls/hls_video_imgproc.h:2619:1)" projectName="canny" solutionName="solution1" date="2019-04-08T12:37:47.144+0200" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-561] Updating loop lower bound from 9 to 10 for loop 'loop_height' in function 'hls::Filter2D&lt;hls::BORDER_DEFAULT, 0, 3, ap_int&lt;8>, int, 1080, 1920, 3, 3>'." projectName="canny" solutionName="solution1" date="2019-04-08T12:37:45.760+0200" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-561] Updating loop upper bound from 1083 to 1082 for loop 'loop_height' in function 'hls::Filter2D&lt;hls::BORDER_DEFAULT, 0, 3, ap_int&lt;8>, int, 1080, 1920, 3, 3>'." projectName="canny" solutionName="solution1" date="2019-04-08T12:37:45.676+0200" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-561] Updating loop lower bound from 0 to 1 for loop 'Loop-0' (canny/canny_edge.cpp:199:1) in function 'hysteresis'." projectName="canny" solutionName="solution1" date="2019-04-08T12:37:44.935+0200" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-561] Updating loop lower bound from 0 to 1 for loop 'Loop-0-0' (canny/canny_edge.cpp:201:1) in function 'hysteresis'." projectName="canny" solutionName="solution1" date="2019-04-08T12:37:44.910+0200" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-1103] Ignored data pack directive on non-struct variable 'src_bw.data_stream.V.3' (canny/canny_edge.cpp:285)." projectName="canny" solutionName="solution1" date="2019-04-08T12:37:44.861+0200" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-1103] Ignored data pack directive on non-struct variable 'src_bw.data_stream.V.2' (canny/canny_edge.cpp:285)." projectName="canny" solutionName="solution1" date="2019-04-08T12:37:44.619+0200" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-1103] Ignored data pack directive on non-struct variable 'src_bw.data_stream.V.1' (canny/canny_edge.cpp:285)." projectName="canny" solutionName="solution1" date="2019-04-08T12:37:44.616+0200" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-1103] Ignored data pack directive on non-struct variable 'src_bw.data_stream.V' (canny/canny_edge.cpp:285)." projectName="canny" solutionName="solution1" date="2019-04-08T12:37:44.613+0200" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-1103] Ignored data pack directive on non-struct variable 'grad_gd.data_stream.V' (canny/canny_edge.cpp:291)." projectName="canny" solutionName="solution1" date="2019-04-08T12:37:44.611+0200" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-1103] Ignored data pack directive on non-struct variable 'src2.data_stream.V' (canny/canny_edge.cpp:288)." projectName="canny" solutionName="solution1" date="2019-04-08T12:37:44.609+0200" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-1103] Ignored data pack directive on non-struct variable 'src1.data_stream.V' (canny/canny_edge.cpp:287)." projectName="canny" solutionName="solution1" date="2019-04-08T12:37:44.606+0200" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-1103] Ignored data pack directive on non-struct variable 'canny_edges.data_stream.V' (canny/canny_edge.cpp:294)." projectName="canny" solutionName="solution1" date="2019-04-08T12:37:44.605+0200" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-1103] Ignored data pack directive on non-struct variable 'suppressed.data_stream.V' (canny/canny_edge.cpp:292)." projectName="canny" solutionName="solution1" date="2019-04-08T12:37:44.597+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-471] Dataflow form checks found 1 issue(s) in file canny/canny_edge.cpp" projectName="canny" solutionName="solution1" date="2019-04-08T12:37:41.229+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 214-114] Since the only kind of statements allowed in a dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region: canny/canny_edge.cpp:306:2" projectName="canny" solutionName="solution1" date="2019-04-08T12:37:13.795+0200" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>
