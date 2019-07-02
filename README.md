@@ -9,6 +9,10 @@ https://www.youtube.com/watch?v=6s_39VUlr0U
 ![alt text](https://imgur.com/vBWzqCv.png)
 ![alt text](https://imgur.com/frIadVr.png)
 
+CREDITS: https://github.com/wbrueckner/cv2PYNQ-The-project-behind-the-library
+for Helping with the IP block and PYNQ base project.
+
+
 Nowadays, Image processing systems are applied in many fields, such as automotive, biomedical, object tracking due to its precision and some important data which we could be able to retrieve from an image. Respectively, in the automotive field we could develop a Lane Detection and Tracking system applying an ROI (Region of Interest) and extracting relevant information from the region of interest of the image, like edge lines of the highway. In the biomedical field, we could retrieve important information from medical diagnosis (X-Ray, Ultrasound, etc). The increase of the popularity of digital image processing technology is inseparable with perfecting of processing systems. In the image processing system, the key is the real-time image acquisition and processing. Meanwhile, the speed and quality of image acquisition directly affect the system. 
 
 Edge detection based on image processing technology has become an important research topic. It is widely used in machine vision and industrial detection systems. 
