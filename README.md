@@ -1,5 +1,5 @@
 # Canny-ArtyZ7
-Canny Edge detector algorith optimized on the Programmable Logic (HW) of the Zynq-7000 Architecture
+Canny Edge detector C++ algorithm optimized on the Programmable Logic (HW) of FPGA
 
 https://www.youtube.com/watch?v=6s_39VUlr0U
 
