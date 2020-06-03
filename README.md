@@ -14,7 +14,7 @@ Software used:
 ![alt text](https://imgur.com/vBWzqCv.png)
 ![alt text](https://imgur.com/frIadVr.png)
 
-CREDITS: https://github.com/wbrueckner/cv2PYNQ-The-project-behind-the-library
+Helping CREDITS: https://github.com/wbrueckner/cv2PYNQ-The-project-behind-the-library
 for Helping with the IP block and PYNQ base project.
 
 
